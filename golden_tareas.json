@@ -269,7 +269,7 @@
       "entregable": "*.ipynb",
       "real": "Actividad de clase S2·MAR (MMIA 6013, Semana 2), convertida de notebook a PDF sin las soluciones.",
       "trampa": "El código dado intenta primero un servidor Qdrant en http://localhost:6333: es red, y el sandbox no lo deja correr sin una persona. Además, el generador global rng = default_rng(7) se consume en orden a lo largo del notebook.",
-      "nota_verdad": "El recall@10 no es reproducible exacto: KMeans multihilo da 0.916 o 0.926 con nprobe=1 en corridas idénticas (medido). Por eso solo lleva tolerancia 0.015; las comprobaciones exactas van sobre cifras deterministas.",
+      "nota_verdad": "Con varios hilos, KMeans daba un recall@10 de 0.916 o 0.926 (nprobe=1) en corridas idénticas (medido). verdades.real_r1() lo calcula con un solo hilo: siempre da lo mismo y coincide con las salidas del notebook del profesor. La tolerancia de 0.015 se mantiene porque el solver ejecuta su propio KMeans, con varios hilos.",
       "checks": [
         {
           "id": "R101",

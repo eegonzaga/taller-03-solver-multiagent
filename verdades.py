@@ -179,7 +179,12 @@ def real_r1() -> dict:
     for n in [10_000, 50_000, 100_000, 200_000]:            # Parte 1: bases (solo tiempos)
         normalizar(datos(n))
     base = normalizar(datos(100_000))                       # Parte 2
-    km = KMeans(n_clusters=64, n_init=3, random_state=7).fit(base)
+    # Un solo hilo: con varios, el orden de las sumas de KMeans cambia y el recall@10 salía
+    # 0.916 o 0.926 (nprobe = 1) en corridas idénticas. Con uno, siempre da lo mismo, y
+    # coincide con las salidas guardadas del notebook del profesor.
+    from threadpoolctl import threadpool_limits
+    with threadpool_limits(limits=1):
+        km = KMeans(n_clusters=64, n_init=3, random_state=7).fit(base)
     centroides = normalizar(km.cluster_centers_.astype(np.float32))
     celdas = [np.where(km.labels_ == c)[0] for c in range(64)]
 

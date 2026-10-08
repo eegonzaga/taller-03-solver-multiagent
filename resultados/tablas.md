@@ -96,7 +96,7 @@
 | R1 | R101 | archivo | ✓ | ✓ | 1 archivo(s) con *.ipynb |
 | R1 | R102 | ipynb_ejecutado | ✓ | ✓ | 4 celdas, 0 sin ejecutar, 0 con error |
 | R1 | R103 | cifra_presente | ✓ | ✓ | verdad=1562.5000 ±0.6; hallada |
-| R1 | R104 | cifra | ✓ | ✓ | verdad=0.9920 ±0.015; hallada |
+| R1 | R104 | cifra | ✓ | ✓ | verdad=0.9980 ±0.015; hallada |
 | R1 | R105 | cifra_presente | ✓ | ✗ | verdad=0.1018 ±0.0006; hallada |
 | R1 | R106 | archivo | ✓ | ✓ | 2 archivo(s) con **/*.png |
 | R1 | R107 | codigo_sin | ✓ | ✓ | ninguno |
