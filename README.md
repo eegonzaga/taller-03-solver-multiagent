@@ -99,6 +99,15 @@ Contrato: `Solver().solve(pdf, salida)` y `Solver().run(ruta)`, en `solver/solve
 └── informe/                informe.md → informe.pdf (python informe/construir_informe.py) y diagramas
 ```
 
+## Los CSV de la Parte 2.b
+
+El taller pide `resultados_solver.csv` y `resumen_solver.csv` de las dos versiones:
+
+| Pide el PDF | Versión completa | Versión sin grafo |
+|---|---|---|
+| `resultados_solver.csv` (una fila por comprobación) | `resultados/resultados_solver_completo.csv` | `resultados/resultados_solver_sin_grafo.csv` |
+| `resumen_solver.csv` (una fila por tarea) | `resultados/resumen_solver_completo.csv` | `resultados/resumen_solver_sin_grafo.csv` |
+
 ## Qué está en el repositorio y qué no
 
 - **Sí:** el código, los enunciados (`.md` y `.pdf`), el corpus, el golden set, las corridas
