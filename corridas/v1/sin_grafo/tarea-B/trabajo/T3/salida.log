@@ -1,0 +1,15 @@
+Verificación función de atención vs Parte 1: max|Δ| = 0.000e+00
+
+--- Parte 3: Codificación posicional sinusoidal (d_model=16, pos 0-49) ---
+PE[10, 0] = sin(10 / 10000^0)        = -0.5440211109
+PE[10, 1] = cos(10 / 10000^0)        = -0.8390715291
+PE[25, 6] = sin(25 / 10000^(6/16))   = 0.7107539373
+
+Atención con PE[10] como consulta (d_k = 16, sqrt(d_k) = 4.0):
+Posición con mayor peso: 10
+Valor del mayor peso:    0.0418133390
+Top-3 posiciones por peso: [(10, 0.04181333902522971), (9, 0.03676355366702694), (11, 0.03676355366702694)]
+
+Resultados guardados en resultados.json
+Figura guardada: figura_mapa_calor_PE.png
+Figura guardada: figura_pesos_atencion_PE10.png

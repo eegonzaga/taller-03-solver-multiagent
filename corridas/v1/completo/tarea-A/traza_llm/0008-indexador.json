@@ -1,0 +1,18 @@
+{
+ "mensajes": [
+  {
+   "role": "system",
+   "content": "Extraes entidades de un texto de un curso de maestría en IA (un enunciado o\nun fragmento de un paper, en español o en inglés).\nTipos permitidos: dataset, metodo, metrica, concepto.\n- dataset: conjuntos de datos concretos (p. ej. «Breast Cancer Wisconsin», «Palmer Penguins»).\n- metodo: algoritmos, modelos o técnicas (p. ej. «Naive Bayes gaussiano», «TF-IDF», «PCA», «SVD»).\n- metrica: medidas de evaluación (p. ej. «accuracy», «F1 macro», «MRR», «entropía»).\n- concepto: ideas teóricas (p. ej. «sesgo y varianza», «temperatura», «gradiente»).\nNombres cortos y canónicos, en español salvo nombres propios (sin artículos). Máximo 12 entidades. Responde solo JSON:\n{\"entidades\": [{\"nombre\": \"...\", \"tipo\": \"dataset|metodo|metrica|concepto\"}]}"
+  },
+  {
+   "role": "user",
+   "content": "Tarea A — ¿Gana el generativo con pocos datos? Ng y Jordan sobre dígitos\nMMIA 6013 · Tarea de práctica para el solver multiagente (Taller 03 v2) Entrega: un reporte en\nMarkdown (reporte.md) con el código que lo produce.\nNg y Jordan (2001), On Discriminative vs. Generative Classifiers (corpus del curso), sostienen que un\nclasificador generativo como Naive Bayes se acerca a su error asintótico con menos ejemplos que su\npar discriminativo, la regresión logística, aunque ese error asintótico sea mayor. Esta tarea pone a\nprueba esa afirmación sobre un conjunto de datos de imágenes."
+  }
+ ],
+ "respuesta": {
+  "contenido": "{\"entidades\": [{\"nombre\": \"Naive Bayes\", \"tipo\": \"metodo\"}, {\"nombre\": \"regresión logística\", \"tipo\": \"metodo\"}, {\"nombre\": \"clasificador generativo\", \"tipo\": \"concepto\"}, {\"nombre\": \"clasificador discriminativo\", \"tipo\": \"concepto\"}, {\"nombre\": \"error asintótico\", \"tipo\": \"concepto\"}, {\"nombre\": \"dígitos\", \"tipo\": \"dataset\"}, {\"nombre\": \"solver multiagente\", \"tipo\": \"concepto\"}]}",
+  "fin": "stop",
+  "tokens_entrada": 402,
+  "tokens_salida": 738
+ }
+}

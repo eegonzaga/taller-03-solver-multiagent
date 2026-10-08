@@ -1,0 +1,59 @@
+{
+  "subtarea": "T1_parte1_knn_exacto_latencia_vs_N",
+  "parametros": {
+    "D": 128,
+    "k": 10,
+    "n_centros_gaussianos": 200,
+    "valores_N": [
+      10000,
+      50000,
+      100000,
+      200000
+    ],
+    "n_consultas_promediadas": 20,
+    "semilla": 42
+  },
+  "latencia_media_ms_por_N": {
+    "10000": 0.12916670239064842,
+    "50000": 0.7026667008176446,
+    "100000": 1.2999853497603908,
+    "200000": 2.4277853503008373
+  },
+  "latencia_std_ms_por_N": {
+    "10000": 0.03777141431309968,
+    "50000": 0.09425002266100421,
+    "100000": 0.1459917366548443,
+    "200000": 0.38090634111301425
+  },
+  "factor_escalamiento_lineal": {
+    "10000_a_50000": {
+      "factor_N_teorico": 5.0,
+      "factor_latencia_medido": 5.4399987598391855,
+      "razon_medido_teorico": 1.087999751967837
+    },
+    "50000_a_100000": {
+      "factor_N_teorico": 2.0,
+      "factor_latencia_medido": 1.8500739372560104,
+      "razon_medido_teorico": 0.9250369686280052
+    },
+    "100000_a_200000": {
+      "factor_N_teorico": 2.0,
+      "factor_latencia_medido": 1.867548238715397,
+      "razon_medido_teorico": 0.9337741193576985
+    },
+    "10000_a_200000_global": {
+      "factor_N_teorico": 20.0,
+      "factor_latencia_medido": 18.795752352323017,
+      "razon_medido_teorico": 0.9397876176161508
+    }
+  },
+  "ajuste_lineal": {
+    "pendiente_ms_por_vector": 1.1961199891422694e-05,
+    "intercepto_ms": 0.06339303558933773,
+    "r2": 0.9975800622379516
+  },
+  "escalamiento_es_lineal": true,
+  "conclusion": "Escalamiento LINEAL O(N·d): el factor de latencia sigue al factor de N",
+  "score_max_primera_consulta": 0.9527909755706787,
+  "figura_png": "t1_parte1_latencia_vs_N.png"
+}

@@ -1,0 +1,16 @@
+Base: (100000, 128) float32 | Consultas: (50, 128)
+T1: latencia exacta reportada en N=100000: 1.4425 ms/consulta
+IVF entrenado en 3.4 s: 64 celdas, tamano medio 1562.5 (min 463, max 3710)
+kNN exacto: 1.1746 ms/consulta (std 0.2111)
+
+Triangulo recall/latencia (50 consultas, k=10, base N=100000):
+nprobe | recall@10 |  lat IVF ms |  speedup | candidatos |  comps teo
+     1 |    0.8020 |      0.1676 |     7.01 |       1712 |       1626
+     2 |    0.9220 |      0.3303 |     3.56 |       3417 |       3189
+     4 |    0.9340 |      0.5743 |     2.05 |       6608 |       6314
+     8 |    0.9460 |      1.2002 |     0.98 |      12636 |      12564
+    16 |    0.9780 |      2.4822 |     0.47 |      24852 |      25064
+(exacto: 100000 comparaciones, 1.1746 ms/consulta)
+
+Figura guardada: t2_parte2_recall_vs_speedup.png
+Resultados guardados en resultados.json

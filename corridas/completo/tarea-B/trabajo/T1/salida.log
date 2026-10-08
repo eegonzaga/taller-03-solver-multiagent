@@ -1,0 +1,39 @@
+============================================================
+Atención escalada: Attention(Q,K,V) = softmax(QK^T/sqrt(d_k))V
+============================================================
+d_k = 4  ->  sqrt(d_k) = 2.0000
+
+Q (2x4):
+[[1.  0.  1.  0.5]
+ [0.  2.  0.  1. ]]
+
+K (3x4):
+[[1.  1.  0.  0. ]
+ [0.  1.  1.  0.5]
+ [1.  0.  1.  1. ]]
+
+V (3x2):
+[[1. 0.]
+ [0. 1.]
+ [2. 2.]]
+
+Scores escalados QK^T/sqrt(d_k) (2x3):
+[[0.5   0.625 1.25 ]
+ [1.    1.25  0.5  ]]
+
+Pesos de atención softmax(QK^T/sqrt(d_k)) (2x3):
+[[0.2353 0.2666 0.4981]
+ [0.346  0.4442 0.2098]]
+Pesos redondeados a 4 decimales:
+[[0.2353 0.2666 0.4981]
+ [0.346  0.4442 0.2098]]
+
+Salida Attention(Q,K,V) (2x2):
+[[1.2315 1.2628]
+ [0.7656 0.8639]]
+Salida redondeada a 4 decimales:
+[[1.2315 1.2628]
+ [0.7656 0.8639]]
+
+Verificación: cada fila de los pesos suma 1 -> [0.9999999999999999, 1.0]
+Resultados guardados en 'resultados.json'.

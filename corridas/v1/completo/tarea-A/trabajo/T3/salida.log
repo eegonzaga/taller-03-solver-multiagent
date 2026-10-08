@@ -1,0 +1,18 @@
+T3 — Curva de aprendizaje (evaluación siempre sobre el mismo test de T1)
+Partición: test_size=0.25, random_state=7 -> n_train=1347, n_test=450
+Submuestras: train_test_split(X_train, y_train, train_size=m, stratify=y_train, random_state=7)
+
+   m     acc_GNB     acc_LR
+   20   0.366667   0.704444
+   50   0.602222   0.851111
+  100   0.755556   0.895556
+  200   0.833333   0.933333
+  400   0.840000   0.966667
+ 1347   0.855556   0.971111   (entrenamiento completo)
+
+Verificación con T2 (train completo):
+  GNB: 0.855556 (T3) vs 0.855556 (T2)
+  LR : 0.971111 (T3) vs 0.971111 (T2)
+
+Figura guardada: curva_aprendizaje.png
+Resultados guardados: resultados.json

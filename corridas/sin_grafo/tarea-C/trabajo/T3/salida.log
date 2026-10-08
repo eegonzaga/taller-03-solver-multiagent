@@ -1,0 +1,51 @@
+========================================================================================================
+T3 - Parte 3: ¿Recupera LDA los temas reales?
+========================================================================================================
+
+Tabla de asignación por documento:
+ id | etiqueta real                  | tema LDA | p(tema dom.) | etiqueta mayoritaria del tema  | resultado
+--------------------------------------------------------------------------------------------------------
+  0 | deporte                        |        1 |     0.932015 | deporte                        | bien
+  1 | deporte                        |        0 |     0.900494 | deporte                        | bien
+  2 | deporte                        |        0 |     0.898467 | deporte                        | bien
+  3 | deporte                        |        1 |     0.915664 | deporte                        | bien
+  4 | cocina                         |        0 |     0.929448 | deporte                        | MAL AGRUPADO
+  5 | cocina                         |        0 |     0.913507 | deporte                        | MAL AGRUPADO
+  6 | cocina                         |        2 |     0.923618 | cocina                         | bien
+  7 | cocina                         |        2 |     0.937847 | cocina                         | bien
+  8 | astronomía                     |        2 |     0.915488 | cocina                         | MAL AGRUPADO
+  9 | astronomía                     |        0 |     0.915960 | deporte                        | MAL AGRUPADO
+ 10 | astronomía                     |        2 |     0.916171 | cocina                         | MAL AGRUPADO
+ 11 | astronomía                     |        0 |     0.914934 | deporte                        | MAL AGRUPADO
+
+Resumen por tema LDA:
+  Tema LDA 0: palabras top = [órbita, planetas, partido, minutos, huevos]
+      documentos asignados: [1, 2, 4, 5, 9, 11]
+      etiquetas reales presentes: {'deporte': 2, 'cocina': 2, 'astronomía': 2}
+      etiqueta mayoritaria: deporte (2 documentos)
+  Tema LDA 1: palabras top = [equipo, partido, liga, ganó, dos]
+      documentos asignados: [0, 3]
+      etiquetas reales presentes: {'deporte': 2}
+      etiqueta mayoritaria: deporte (2 documentos)
+  Tema LDA 2: palabras top = [sal, nebulosa, galaxia, estrellas, ajo]
+      documentos asignados: [6, 7, 8, 10]
+      etiquetas reales presentes: {'cocina': 2, 'astronomía': 2}
+      etiqueta mayoritaria: cocina (2 documentos)
+
+Cruce tema LDA vs etiqueta real:
+  Tema LDA 0: {'deporte': 2, 'cocina': 2, 'astronomía': 2}
+  Tema LDA 1: {'deporte': 2}
+  Tema LDA 2: {'cocina': 2, 'astronomía': 2}
+
+Cifras principales:
+  Pureza = 6/12 = 0.5
+  Número de documentos mal agrupados: 6
+  Documentos mal agrupados:
+    - id 4: etiqueta real 'cocina' -> tema LDA 0 (mayoria del tema: 'deporte', p(tema dom.) = 0.929448)
+    - id 5: etiqueta real 'cocina' -> tema LDA 0 (mayoria del tema: 'deporte', p(tema dom.) = 0.913507)
+    - id 8: etiqueta real 'astronomía' -> tema LDA 2 (mayoria del tema: 'cocina', p(tema dom.) = 0.915488)
+    - id 9: etiqueta real 'astronomía' -> tema LDA 0 (mayoria del tema: 'deporte', p(tema dom.) = 0.915960)
+    - id 10: etiqueta real 'astronomía' -> tema LDA 2 (mayoria del tema: 'cocina', p(tema dom.) = 0.916171)
+    - id 11: etiqueta real 'astronomía' -> tema LDA 0 (mayoria del tema: 'deporte', p(tema dom.) = 0.914934)
+
+Resultados guardados en 'resultados.json'.

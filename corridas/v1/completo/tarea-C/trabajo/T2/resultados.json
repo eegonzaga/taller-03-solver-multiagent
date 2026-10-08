@@ -1,0 +1,195 @@
+{
+  "perplejidad_k2": 107.89088069511578,
+  "perplejidad_k3": 137.78770156685167,
+  "perplejidad_k4": 156.41981736227808,
+  "k_con_menor_perplejidad": 2,
+  "nota_evaluacion": "Perplejidad de cada modelo LDA calculada sobre el corpus completo (los 12 documentos), tal como pide el enunciado, con el mismo CountVectorizer de la Parte 1 (mismas palabras vacias, demas parametros por defecto) y los mismos hiperparametros de LDA (learning_method='batch', max_iter=50, random_state=0).",
+  "n_documentos": 12,
+  "ids_documentos": [
+    "d01",
+    "d02",
+    "d03",
+    "d04",
+    "d05",
+    "d06",
+    "d07",
+    "d08",
+    "d09",
+    "d10",
+    "d11",
+    "d12"
+  ],
+  "temas_reales": [
+    "deporte",
+    "deporte",
+    "deporte",
+    "deporte",
+    "cocina",
+    "cocina",
+    "cocina",
+    "cocina",
+    "astronomía",
+    "astronomía",
+    "astronomía",
+    "astronomía"
+  ],
+  "tamano_vocabulario": 71,
+  "vocabulario": [
+    "aceite",
+    "agua",
+    "ajo",
+    "amasar",
+    "azúcar",
+    "añade",
+    "año",
+    "baloncesto",
+    "campeona",
+    "cebolla",
+    "cocina",
+    "defensa",
+    "delantero",
+    "dos",
+    "dura",
+    "entrenador",
+    "equipo",
+    "espacial",
+    "estrella",
+    "estrellas",
+    "final",
+    "fotografió",
+    "fuego",
+    "fútbol",
+    "galaxia",
+    "ganó",
+    "gas",
+    "giran",
+    "goles",
+    "harina",
+    "hornea",
+    "huevos",
+    "júpiter",
+    "largo",
+    "lejana",
+    "lento",
+    "levadura",
+    "liga",
+    "lleva",
+    "luna",
+    "marcó",
+    "masa",
+    "minutos",
+    "nacen",
+    "nebulosa",
+    "nube",
+    "nuevas",
+    "observó",
+    "pan",
+    "partido",
+    "perdió",
+    "planetas",
+    "preparó",
+    "punto",
+    "receta",
+    "sal",
+    "salsa",
+    "segundo",
+    "sofríe",
+    "sopa",
+    "telescopio",
+    "tenista",
+    "tierra",
+    "tomate",
+    "torneo",
+    "treinta",
+    "varias",
+    "verduras",
+    "zanahoria",
+    "órbita",
+    "último"
+  ],
+  "n_tokens_corpus": 91,
+  "palabras_top_por_tema_k2": [
+    [
+      "lleva",
+      "sal",
+      "masa",
+      "hornea",
+      "harina"
+    ],
+    [
+      "partido",
+      "equipo",
+      "liga",
+      "ganó",
+      "galaxia"
+    ]
+  ],
+  "palabras_top_por_tema_k3": [
+    [
+      "órbita",
+      "planetas",
+      "partido",
+      "minutos",
+      "huevos"
+    ],
+    [
+      "equipo",
+      "partido",
+      "liga",
+      "ganó",
+      "dos"
+    ],
+    [
+      "sal",
+      "nebulosa",
+      "galaxia",
+      "estrellas",
+      "ajo"
+    ]
+  ],
+  "palabras_top_por_tema_k4": [
+    [
+      "órbita",
+      "planetas",
+      "azúcar",
+      "minutos",
+      "treinta"
+    ],
+    [
+      "partido",
+      "equipo",
+      "liga",
+      "ganó",
+      "delantero"
+    ],
+    [
+      "telescopio",
+      "masa",
+      "hornea",
+      "harina",
+      "estrellas"
+    ],
+    [
+      "cebolla",
+      "ajo",
+      "lleva",
+      "sopa",
+      "cocina"
+    ]
+  ],
+  "tabla_comparativa": [
+    {
+      "n_componentes_k": 2,
+      "perplejidad_corpus": 107.89088069511578
+    },
+    {
+      "n_componentes_k": 3,
+      "perplejidad_corpus": 137.78770156685167
+    },
+    {
+      "n_componentes_k": 4,
+      "perplejidad_corpus": 156.41981736227808
+    }
+  ],
+  "perplejidad_k3_parte1": 137.78770156685167
+}

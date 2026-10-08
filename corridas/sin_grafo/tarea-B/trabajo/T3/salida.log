@@ -1,0 +1,21 @@
+Verificación de la función de atención vs T1:
+  max|Δ pesos|  = 0.0
+  max|Δ salida| = 0.0
+
+Codificación posicional (d_model=16, pos=0..49):
+  PE[10, 0] = -0.5440211108893698
+  PE[10, 1] = -0.8390715290764524
+  PE[25, 6] = 0.7107539373458333
+
+Atención con PE[10] como consulta (d_k = 16):
+  Posición con mayor peso: 10
+  Peso mayor: 0.04181333902522971
+  Suma de los 50 pesos: 1.0
+  Top-5 posiciones por peso:
+    pos 10 -> peso 0.041813
+    pos  9 -> peso 0.036764
+    pos 11 -> peso 0.036764
+    pos  4 -> peso 0.028344
+    pos 16 -> peso 0.028344
+
+Guardado: resultados.json, mapa_calor_pe.png, pesos_atencion_pe.png

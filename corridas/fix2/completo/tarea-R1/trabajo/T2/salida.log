@@ -1,0 +1,32 @@
+[montaje] entradas/T1.json leído -> modo_qdrant=embebido | qdrant_client_disponible=True (dependencia opcional, solo Parte 3)
+[check] knn_exacto coincide con argsort completo en base pequeña: True
+
+=== Ejercicio 1.1 — latencia de knn_exacto (dot = coseno) ===
+N= 10,000 | media = 0.1200 ms/consulta | std = 0.0185 ms | min = 0.0738 ms
+N= 50,000 | media = 0.6569 ms/consulta | std = 0.1103 ms | min = 0.4260 ms
+N=100,000 | media = 1.1885 ms/consulta | std = 0.2413 ms | min = 0.7480 ms
+N=200,000 | media = 2.6172 ms/consulta | std = 0.4573 ms | min = 1.3618 ms
+
+--- Factores de crecimiento entre N consecutivos ---
+N  10,000 ->  50,000: tiempo ×5.475 (N ×5) | factor/razón = 1.095
+N  50,000 -> 100,000: tiempo ×1.809 (N ×2) | factor/razón = 0.905
+N 100,000 -> 200,000: tiempo ×2.202 (N ×2) | factor/razón = 1.101
+Pendiente log-log = 1.0191 (1.0 ⇒ O(N·d)); 10k→200k: N ×20, tiempo ×21.814
+Extrapolación lineal a 10M vectores: ~130.9 ms/consulta → con tráfico real esto muere; entra IVF (Parte 2).
+
+[figura] T2_latencia_vs_N.png guardada en la carpeta actual
+[resultados] resultados.json escrito en la carpeta actual
+
+=== CIFRAS PRINCIPALES — T2 / Ejercicio 1.1 ===
+k = 10, consultas por punto = 50, D = 128
+  N =  10,000: np.float64(0.1199775590794161) ms/consulta (media)  [std np.float64(0.01853802559927367)]
+  N =  50,000: np.float64(0.6568533007521182) ms/consulta (media)  [std np.float64(0.1102712319580533)]
+  N = 100,000: np.float64(1.1885166814317927) ms/consulta (media)  [std np.float64(0.24131009926036334)]
+  N = 200,000: np.float64(2.6172041980316862) ms/consulta (media)  [std np.float64(0.4572915880713663)]
+  tiempo_medio_ms_por_N: {'10000': 0.1199775590794161, '50000': 0.6568533007521182, '100000': 1.1885166814317927, '200000': 2.6172041980316862}
+  factor_escalamiento_lineal (N consecutivos): [5.474801336117623, 1.8094096201859726, 2.2020761163223805]
+  razones de N consecutivas: [5.0, 2.0, 2.0]
+  factor/razón (≈1 ⇒ lineal): [1.0949602672235246, 0.9047048100929863, 1.1010380581611903]
+  pendiente log-log: 1.0190540205285508 (≈1 ⇒ O(N·d))
+  ¿consistente con escalado lineal O(N·d)?: True
+  latencia estimada con 10M vectores: 130.8602099015843 ms

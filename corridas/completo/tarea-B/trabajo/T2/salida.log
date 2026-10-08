@@ -1,0 +1,15 @@
+Efecto de escalar por sqrt(d_k) — softmax de K @ q (10 claves)
+Entropía máxima posible (uniforme, 10 claves): 3.3219 bits
+
+  d_k |  peso_max_sin |  H_bits_sin |  peso_max_esc |  H_bits_esc
+-----------------------------------------------------------------
+    4 |        0.2049 |      3.0792 |        0.1497 |      3.2542
+   64 |        0.9511 |      0.3537 |        0.2480 |      2.9802
+  512 |        0.7503 |      0.8114 |        0.1945 |      3.0363
+
+Valores con precisión completa:
+d_k=4: sin escalar -> peso_max=0.20485252483535019, entropia_bits=3.079238113192825 | escalado -> peso_max=0.149659127182818, entropia_bits=3.254238320333844
+d_k=64: sin escalar -> peso_max=0.9510548134515442, entropia_bits=0.3536586163885896 | escalado -> peso_max=0.2480301668328573, entropia_bits=2.9801627906557933
+d_k=512: sin escalar -> peso_max=0.7502787070295298, entropia_bits=0.8114162792180564 | escalado -> peso_max=0.19454829106456933, entropia_bits=3.0363260510347274
+
+Resultados guardados en 'resultados.json'.

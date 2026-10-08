@@ -1,0 +1,8 @@
+
+[ERROR] No se han podido obtener los 12 textos originales de la practica.
+  - 'entradas/T1.json' no los conserva (solo guarda metadatos de la Parte 1).
+  - Esta subtarea no dispone de archivos de datos con los textos.
+Segun la correccion recibida, NO se reconstruye el corpus troceando
+fragmentos del PDF ni se inventan datos: se aborta la ejecucion aqui.
+Para resolver la subtarea hay que regenerar T1.json conservando los
+textos o aportar los archivos de datos del enunciado.

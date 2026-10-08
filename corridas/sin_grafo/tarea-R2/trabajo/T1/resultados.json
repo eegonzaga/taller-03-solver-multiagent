@@ -1,0 +1,90 @@
+{
+  "tarea": "T1 - Parte 1: chunking fijo con solapamiento (Ejercicio 1.1)",
+  "parametros": {
+    "tamano_chunk_caracteres": 300,
+    "overlap_por_defecto": 80,
+    "overlap_alternativo": 0
+  },
+  "corpus": {
+    "documentos": [
+      "politica_vacaciones.md",
+      "politica_remoto.md",
+      "gastos.md"
+    ],
+    "longitud_docs_caracteres": {
+      "politica_vacaciones.md": 784,
+      "politica_remoto.md": 815,
+      "gastos.md": 824
+    }
+  },
+  "frase_idea": "hasta un máximo de 5 días",
+  "doc_de_la_idea": "politica_vacaciones.md",
+  "criterio_idea_cortada": "True si NINGUN chunk contiene la frase completa (idea mutilada e irrecuperable desde el indice)",
+  "detalle_overlap80": {
+    "overlap": 80,
+    "paso": 220,
+    "num_chunks_total": 12,
+    "num_chunks_por_doc": {
+      "politica_vacaciones.md": 4,
+      "politica_remoto.md": 4,
+      "gastos.md": 4
+    },
+    "posicion_frase_en_doc": 294,
+    "fin_frase_en_doc": 319,
+    "idea_aparece_completa_en_algun_chunk": true,
+    "idea_cortada": false,
+    "chunks_con_idea_completa_doc": [
+      1
+    ],
+    "chunks_con_idea_completa_global": [
+      1
+    ],
+    "chunks_que_cortan_la_idea_doc": [
+      0
+    ],
+    "extracto_corte": {
+      "chunk_que_corta": 0,
+      "frontera_en_caracter": 300,
+      "final_del_chunk_que_corta": "cicio se\ntransfieren al año siguiente, hasta ",
+      "inicio_del_chunk_siguiente": "es no utilizados al cierre del ejercicio se\nt"
+    }
+  },
+  "detalle_overlap0": {
+    "overlap": 0,
+    "paso": 300,
+    "num_chunks_total": 9,
+    "num_chunks_por_doc": {
+      "politica_vacaciones.md": 3,
+      "politica_remoto.md": 3,
+      "gastos.md": 3
+    },
+    "posicion_frase_en_doc": 294,
+    "fin_frase_en_doc": 319,
+    "idea_aparece_completa_en_algun_chunk": false,
+    "idea_cortada": true,
+    "chunks_con_idea_completa_doc": [],
+    "chunks_con_idea_completa_global": [],
+    "chunks_que_cortan_la_idea_doc": [
+      0,
+      1
+    ],
+    "extracto_corte": {
+      "chunk_que_corta": 0,
+      "frontera_en_caracter": 300,
+      "final_del_chunk_que_corta": "cicio se\ntransfieren al año siguiente, hasta ",
+      "inicio_del_chunk_siguiente": "un máximo de 5 días.\n\nEl disfrute de los días"
+    }
+  },
+  "num_chunks_overlap80": 12,
+  "num_chunks_overlap0": 9,
+  "idea_cortada_overlap80": false,
+  "idea_cortada_overlap0": true,
+  "idea_aparece_completa_en_algun_chunk_overlap80": true,
+  "idea_aparece_completa_en_algun_chunk_overlap0": false,
+  "algun_chunk_corta_la_frase_overlap80": true,
+  "algun_chunk_corta_la_frase_overlap0": true,
+  "inflacion_indice_empirica_num80_entre_num0": 1.3333333333333333,
+  "inflacion_indice_teorica_C_sobre_C_menos_V": 1.3636363636363635,
+  "inflacion_porcentual_teorica": 36.36363636363635,
+  "notas_observacion": "Con overlap=80 (paso 220) la frase idea 'hasta un máximo de 5 días' (caracteres 294 a 318 de politica_vacaciones.md) queda cortada en la frontera del caracter 300: el chunk 0 termina con 'cicio se\\ntransfieren al año siguiente, hasta ', pero la ventana solapada siguiente la contiene COMPLETA (chunk [1] del documento), de modo que la idea es recuperable: idea_cortada_overlap80=False. Con overlap=0 (paso 300) la misma frase cae sobre la frontera del caracter 300: el chunk 0 termina con 'cicio se\\ntransfieren al año siguiente, hasta ' y el chunk siguiente empieza con 'un máximo de 5 días.\\n\\nEl disfrute de los días'; ningun chunk la contiene completa y la idea queda mutilada en los dos fragmentos: idea_cortada_overlap0=True. Diferencia en los cortes: en ambos casos algun chunk corta la frase, pero con solapamiento el corte se repara en la ventana siguiente, mientras que sin solapamiento la frontera parte la frase en dos mitades irrecuperables. Coste del solapamiento: el indice pasa de 9 a 12 chunks (factor 1.3333); la formula teorica C/(C-V) = 300/220 da un factor 1.3636 (mas 36.4 por ciento)."
+}

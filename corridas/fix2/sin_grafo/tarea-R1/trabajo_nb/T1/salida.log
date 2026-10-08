@@ -1,0 +1,24 @@
+N =  10,000 | latencia media =    0.112 ms (± 0.021 ms) | 0.0112 µs/vector
+N =  50,000 | latencia media =    0.761 ms (± 0.087 ms) | 0.0152 µs/vector
+N = 100,000 | latencia media =    1.442 ms (± 0.164 ms) | 0.0144 µs/vector
+N = 200,000 | latencia media =    2.627 ms (± 0.361 ms) | 0.0131 µs/vector
+
+=== T1 · Parte 1 — kNN exacto: latencia vs. N ===
+Setup: 200 centros gaussianos fijos, D=128, vectores normalizados a norma 1
+k=10, 20 consultas normalizadas (las mismas para cada N)
+  N =  10,000: latencia media = 0.112 ms (± 0.021 ms)
+  N =  50,000: latencia media = 0.761 ms (± 0.087 ms)
+  N = 100,000: latencia media = 1.442 ms (± 0.164 ms)
+  N = 200,000: latencia media = 2.627 ms (± 0.361 ms)
+
+Factor de crecimiento entre valores de N (lineal ⇒ factor_latencia ≈ factor_N):
+   10,000 →  50,000: factor_N =   5.0 | factor_latencia =  6.79 | razón = 1.357
+   50,000 → 100,000: factor_N =   2.0 | factor_latencia =  1.90 | razón = 0.948
+  100,000 → 200,000: factor_N =   2.0 | factor_latencia =  1.82 | razón = 0.911
+  Global 10,000 → 200,000: factor_N = 20.0 | factor_latencia = 23.42 | razón = 1.171
+
+Ajuste lineal latencia(N): pendiente = 0.013 µs/vector, intercepto = 0.060 ms, R² = 0.99528
+Conclusión: Desviación de la linealidad (posible ruido de medición en esta máquina)
+
+Resultados guardados en 'resultados.json'
+Figura guardada como 't1_parte1_latencia_vs_N.png'

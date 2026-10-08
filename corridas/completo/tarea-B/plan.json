@@ -1,0 +1,131 @@
+{
+  "entrega": {
+    "formato": "ipynb",
+    "archivo": "tarea_b_atencion_escalada.ipynb",
+    "secciones": [
+      "Parte 1 — Atención escalada",
+      "Parte 2 — Por qué se divide por √d_k",
+      "Parte 3 — Codificación posicional",
+      "Parte 4 — Pregunta conceptual"
+    ],
+    "max_palabras": null,
+    "max_paginas": null
+  },
+  "subtareas": [
+    {
+      "id": "T1",
+      "titulo": "Parte 1 — Atención escalada en NumPy",
+      "tipo": "calculo",
+      "secciones": [
+        "S1"
+      ],
+      "depende_de": [],
+      "objetivo": "Definir Q (2×4), K (3×4) y V (3×2) de la tabla del enunciado; implementar Attention(Q,K,V)=softmax(QK^T/√d_k)V con softmax numéricamente estable (restar el máximo de cada fila) en NumPy; calcular y reportar la matriz de pesos (2×3) y la salida (2×2) con cuatro decimales.",
+      "figura": false,
+      "resultados": [
+        "pesos_atencion_2x3",
+        "salida_atencion_2x2"
+      ]
+    },
+    {
+      "id": "T2",
+      "titulo": "Parte 2 — Efecto de escalar por √d_k",
+      "tipo": "calculo",
+      "secciones": [
+        "S2"
+      ],
+      "depende_de": [],
+      "objetivo": "Crear una sola vez rng = np.random.default_rng(0); para d_k = 4, 64 y 512 (en ese orden) tomar q = rng.standard_normal(d_k) y luego K = rng.standard_normal((10, d_k)); calcular los pesos softmax de K @ q sin escalar y escalados por √d_k; reportar en una tabla con cuatro decimales el peso máximo y la entropía en bits de las dos distribuciones para cada d_k.",
+      "figura": false,
+      "resultados": [
+        "peso_maximo_sin_escalar",
+        "entropia_bits_sin_escalar",
+        "peso_maximo_escalado",
+        "entropia_bits_escalado"
+      ]
+    },
+    {
+      "id": "T3",
+      "titulo": "Parte 3 — Codificación posicional sinusoidal",
+      "tipo": "calculo",
+      "secciones": [
+        "S3"
+      ],
+      "depende_de": [
+        "T1"
+      ],
+      "objetivo": "Calcular la codificación sinusoidal PE(pos,2i)=sin(pos/10000^(2i/d_model)) y PE(pos,2i+1)=cos(pos/10000^(2i/d_model)) con d_model=16 para posiciones 0 a 49; reportar PE[10,0], PE[10,1] y PE[25,6]; dibujar la matriz como mapa de calor (PNG); reutilizando la función de atención de la Parte 1, usar PE[10] como consulta y la matriz PE completa (50×16) como claves y valores, e identificar qué posición recibe el mayor peso y cuánto vale.",
+      "figura": true,
+      "resultados": [
+        "PE_10_0",
+        "PE_10_1",
+        "PE_25_6",
+        "posicion_mayor_peso",
+        "valor_mayor_peso"
+      ]
+    },
+    {
+      "id": "T4",
+      "titulo": "Parte 4 — Discusión conceptual del factor √d_k",
+      "tipo": "redaccion",
+      "secciones": [
+        "S4"
+      ],
+      "depende_de": [
+        "T2"
+      ],
+      "objetivo": "Redactar la respuesta conceptual usando las entropías de la Parte 2: explicar qué problema resuelve la división por √d_k (distribuciones demasiado concentradas/picos de softmax al crecer d_k), qué le pasaría al gradiente del softmax sin ella (gradientes diminutos por salidas casi one-hot) y relacionarlo con lo que dice el paper de Vaswani et al. (2017) sobre los productos punto con varianza creciente.",
+      "figura": false,
+      "resultados": []
+    },
+    {
+      "id": "T5",
+      "titulo": "Ensamblaje del notebook final",
+      "tipo": "redaccion",
+      "secciones": [
+        "S5"
+      ],
+      "depende_de": [
+        "T1",
+        "T2",
+        "T3",
+        "T4"
+      ],
+      "objetivo": "Construir el notebook .ipynb final: una celda de Markdown encabezando cada parte (Parte 1 a Parte 4), insertar el código y las salidas calculadas de T1–T3 y la redacción de T4, verificar que se ejecuta de principio a fin sin errores, con todas las cifras calculadas en el notebook (no escritas a mano) y las salidas visibles.",
+      "figura": false,
+      "resultados": []
+    }
+  ],
+  "estado_final": [
+    {
+      "id": "T1",
+      "tipo": "calculo",
+      "status": "completado",
+      "intentos": 1
+    },
+    {
+      "id": "T2",
+      "tipo": "calculo",
+      "status": "completado",
+      "intentos": 1
+    },
+    {
+      "id": "T3",
+      "tipo": "calculo",
+      "status": "completado",
+      "intentos": 1
+    },
+    {
+      "id": "T4",
+      "tipo": "redaccion",
+      "status": "para_redactor",
+      "intentos": 0
+    },
+    {
+      "id": "T5",
+      "tipo": "redaccion",
+      "status": "para_redactor",
+      "intentos": 0
+    }
+  ]
+}

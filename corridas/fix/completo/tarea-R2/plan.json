@@ -1,0 +1,122 @@
+{
+  "entrega": {
+    "formato": "ipynb",
+    "archivo": "rag_minimo_semana2.ipynb",
+    "secciones": [
+      "RAG mínimo en ~60 líneas — MMIA 6013 · Semana 2 · Miércoles",
+      "Parte 1 — Chunking",
+      "Parte 2 — Índice (embeddings + kNN)",
+      "Parte 3 — Generación con contexto",
+      "Diagnóstico final",
+      "Cierre"
+    ],
+    "max_palabras": null,
+    "max_paginas": null
+  },
+  "subtareas": [
+    {
+      "id": "T1",
+      "titulo": "Parte 1 — Chunking fijo con solapamiento (Ejercicio 1.1)",
+      "tipo": "calculo",
+      "secciones": [
+        "S1"
+      ],
+      "depende_de": [],
+      "objetivo": "Script que abre con los imports y el corpus DOCS dado en el enunciado (sección S0: politica_vacaciones.md, politica_remoto.md, gastos.md). Resuelve el Ejercicio 1.1: implementar chunk_fijo(texto, tamano=300, overlap=80) sobre caracteres, que devuelve una lista de strings. Construir el corpus fragmentado FUERA de la solución del ejercicio (listas chunks y origen recorriendo DOCS, tal como da el código del profesor) e imprimir cada chunk como '[i] (origen) primeros 70 caracteres...'. Reportar si algún chunk corta una idea (p. ej. la de días transferibles 'hasta un máximo de 5 días') y repetir la impresión con overlap=0 para comparar los cortes.",
+      "figura": false,
+      "resultados": [
+        "num_chunks",
+        "chunks_por_documento",
+        "idea_cortada_con_overlap_80",
+        "num_chunks_con_overlap_0"
+      ]
+    },
+    {
+      "id": "T2",
+      "titulo": "Parte 2 — Índice (embeddings + kNN), techo del modelo y recuperar() (Ejercicio 2.1)",
+      "tipo": "calculo",
+      "secciones": [
+        "S2"
+      ],
+      "depende_de": [
+        "T1"
+      ],
+      "objetivo": "Usando los chunks de T1, ejecutar la celda dada del índice: sentence-transformers 'paraphrase-multilingual-MiniLM-L12-v2' con embeddings normalizados, o fallback TF-IDF si no está disponible; imprimir MOTOR y la forma del índice V. Ejecutar la celda dada que mide el techo del modelo: max_seq_length del MiniLM frente a los tokens del fragmento más largo según su propio tokenizador, reportando si cabe entero o cuántos tokens se pierden en silencio (con fallback TF-IDF, imprimir que no hay modelo que trunque). Resolver el Ejercicio 2.1: recuperar(pregunta, k=3) → lista de (score, idx_chunk) ordenada de mayor a menor score, usando el índice V y vec_consulta(pregunta), con esa firma exacta porque la Parte 3 y el ejercicio 3.1 la llaman así. Mostrar un ejemplo de recuperación para verificar el orden.",
+      "figura": false,
+      "resultados": [
+        "motor_retrieval",
+        "forma_indice",
+        "tope_tokens_modelo",
+        "tokens_fragmento_mas_largo",
+        "cabe_entero_o_tokens_perdidos",
+        "top3_ejemplo_scores"
+      ]
+    },
+    {
+      "id": "T3",
+      "titulo": "Parte 3 — Generación con contexto y las tres pruebas de fuego (Ejercicio 3.1)",
+      "tipo": "calculo",
+      "secciones": [
+        "S3"
+      ],
+      "depende_de": [
+        "T2"
+      ],
+      "objetivo": "Nota: la dependencia por regla 'S2 depende_de S3' corresponde en realidad a que la Parte 3 consume la firma de recuperar(); el flujo sin ciclos es T1→T2→T3. Con chunks (T1) y recuperar (T2), montar la Parte 3 con el código dado: ABSTENCION ('El corpus no contiene información suficiente.'), PLANTILLA con contexto delimitado e instrucción de responder SOLO con base en él citando el fragmento [n], armar_prompt(pregunta, k=3), PRECAPTURADAS, generar con la cascada ANTHROPIC_API_KEY → H200 de la USFQ (GLM-5.3-Flash, http://172.28.230.10:12555, max_tokens=1500, temperature=0.1) → Ollama llama3.1:8b → modo inspección con respuesta pre-capturada, se_abstuvo con normalización NFKD (minúsculas, sin tildes, sin puntuación) y responder(pregunta, etiqueta). Ejecutar el Ejercicio 3.1 con las tres pruebas: '¿puedo trabajar desde el exterior?' (etiqueta exterior), '¿puedo llevar a mi mascota a la oficina?' (mascotas) y '¿qué necesita aprobación del gerente?' (ambigua); para cada una imprimir los top-3 chunks con score y documento de origen, la respuesta y si se abstuvo. Verificar que en la prueba 2 el mejor comportamiento posible es la frase de abstención exacta.",
+      "figura": false,
+      "resultados": [
+        "chunks_recuperados_prueba_exterior",
+        "chunks_recuperados_prueba_mascotas",
+        "chunks_recuperados_prueba_ambigua",
+        "respuestas_de_las_tres_pruebas",
+        "abstencion_detectada_prueba_mascotas"
+      ]
+    },
+    {
+      "id": "T4",
+      "titulo": "Diagnóstico final y cierre — reflexiones con las cifras medidas",
+      "tipo": "redaccion",
+      "secciones": [
+        "S3",
+        "S4"
+      ],
+      "depende_de": [
+        "T1",
+        "T2",
+        "T3"
+      ],
+      "objetivo": "Redactar en celdas Markdown del notebook: (a) el análisis del Ejercicio 3.1 usando las cifras medidas en T1–T3 — para cada una de las tres pruebas, qué chunks recuperó (scores y documentos) y si la respuesta se apoya en ellos, destacando que en la prueba fuera del corpus la respuesta correcta es la abstención y que un RAG que siempre responde es un generador de alucinaciones con citas decorativas; (b) la respuesta al comentario 'Diagnóstico final': de las 4 cajas del pipeline (ingesta / chunking / retrieval / generación), cuál es la más frágil en el propio proyecto y qué se haría para vigilarla, apoyándose en lo observado (cortes de ideas del chunking, truncado silencioso del MiniLM, calidad del retrieval); (c) el Cierre (S4): resumen del RAG completo (chunking con overlap, índice, retrieval top-k, generación con contexto delimitado y derecho a decir 'no sé') y anticipo de la clase siguiente: Hit Rate, MRR, Recall@k, golden sets y extensiones que compiten contra el baseline.",
+      "figura": false,
+      "resultados": [
+        "diagnostico_caja_mas_fragil",
+        "analisis_tres_pruebas"
+      ]
+    }
+  ],
+  "estado_final": [
+    {
+      "id": "T1",
+      "tipo": "calculo",
+      "status": "completado",
+      "intentos": 1
+    },
+    {
+      "id": "T2",
+      "tipo": "calculo",
+      "status": "en_curso",
+      "intentos": 2
+    },
+    {
+      "id": "T3",
+      "tipo": "calculo",
+      "status": "pendiente",
+      "intentos": 0
+    },
+    {
+      "id": "T4",
+      "tipo": "redaccion",
+      "status": "pendiente",
+      "intentos": 0
+    }
+  ]
+}

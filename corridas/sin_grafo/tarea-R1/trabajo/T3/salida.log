@@ -1,0 +1,38 @@
+Usando Qdrant embebido (:memory:) — misma API, ejecución local
+  en el mismo proceso (ruta de respaldo prevista por el enunciado).
+Colección creada con 6 puntos
+
+Consulta: ¿cuándo me devuelven el dinero?
+Filtro de metadata: tema='pagos'   limit=2
+Hits filtrados (score | [tema] | texto):
+  -0.102 [pagos] La factura electrónica se emite al confirmar el pago.
+  -0.112 [pagos] Los reembolsos se procesan en 5 a 7 días hábiles.
+
+MECÁNICA documentada: colección → upsert(vector+payload) → query con filtro
+  1) create_collection('faqs', size=64, Distance.COSINE): declara dimensión y métrica.
+  2) upsert(PointStruct(id, vector, payload)): cada punto es vector + payload;
+     el payload {texto, tema} es la metadata filtrable.
+  3) query_points(query=embed(pregunta), query_filter=tema=='pagos', limit=2):
+     el filtro no reemplaza la búsqueda vectorial: la acota.
+
+(Nota: con embeddings sintéticos el score no es semántico —
+ el objetivo aquí es la MECÁNICA de colección/upsert/query/filtro.)
+
+Cifras guardadas en resultados.json:
+  num_puntos_coleccion = 6
+  hits_qdrant_filtrados =
+[
+  {
+    "pos": 1,
+    "score": -0.10180602784901141,
+    "tema": "pagos",
+    "texto": "La factura electrónica se emite al confirmar el pago."
+  },
+  {
+    "pos": 2,
+    "score": -0.11198835242873917,
+    "tema": "pagos",
+    "texto": "Los reembolsos se procesan en 5 a 7 días hábiles."
+  }
+]
+  modo de ejecución = embebido_memory

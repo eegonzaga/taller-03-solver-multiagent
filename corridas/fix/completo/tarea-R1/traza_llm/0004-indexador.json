@@ -1,0 +1,18 @@
+{
+ "mensajes": [
+  {
+   "role": "system",
+   "content": "Extraes entidades de un texto de un curso de maestría en IA (un enunciado o\nun fragmento de un paper, en español o en inglés).\nTipos permitidos: dataset, metodo, metrica, concepto.\n- dataset: conjuntos de datos concretos (p. ej. «Breast Cancer Wisconsin», «Palmer Penguins»).\n- metodo: algoritmos, modelos o técnicas (p. ej. «Naive Bayes gaussiano», «TF-IDF», «PCA», «SVD»).\n- metrica: medidas de evaluación (p. ej. «accuracy», «F1 macro», «MRR», «entropía»).\n- concepto: ideas teóricas (p. ej. «sesgo y varianza», «temperatura», «gradiente»).\nNombres cortos y canónicos, en español salvo nombres propios (sin artículos). Máximo 12 entidades. Responde solo JSON:\n{\"entidades\": [{\"nombre\": \"...\", \"tipo\": \"dataset|metodo|metrica|concepto\"}]}"
+  },
+  {
+   "role": "user",
+   "content": "Cierre\n•  kNN exacto: O(N·d), lineal — se mide, no se asume.\n•  IVF: carpetas + nprobe; HNSW: grafo jerárquico + ef_search. Mismo triángulo: recall / latencia /\nmemoria.\n•  Qdrant: colección → upsert(vector+payload) → query con filtros.\nMañana: armamos el pipeline RAG completo — y descubrimos que el chunking importa más que el\níndice."
+  }
+ ],
+ "respuesta": {
+  "contenido": "{\"entidades\": [{\"nombre\": \"kNN\", \"tipo\": \"metodo\"}, {\"nombre\": \"IVF\", \"tipo\": \"metodo\"}, {\"nombre\": \"HNSW\", \"tipo\": \"metodo\"}, {\"nombre\": \"nprobe\", \"tipo\": \"concepto\"}, {\"nombre\": \"ef_search\", \"tipo\": \"concepto\"}, {\"nombre\": \"recall\", \"tipo\": \"metrica\"}, {\"nombre\": \"latencia\", \"tipo\": \"metrica\"}, {\"nombre\": \"memoria\", \"tipo\": \"metrica\"}, {\"nombre\": \"Qdrant\", \"tipo\": \"metodo\"}, {\"nombre\": \"upsert\", \"tipo\": \"metodo\"}, {\"nombre\": \"RAG\", \"tipo\": \"metodo\"}, {\"nombre\": \"chunking\", \"tipo\": \"concepto\"}]}",
+  "fin": "stop",
+  "tokens_entrada": 357,
+  "tokens_salida": 726
+ }
+}

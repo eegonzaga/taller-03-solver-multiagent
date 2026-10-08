@@ -1,0 +1,22 @@
+=== [1] Inspeccion de entradas/T1.json ===
+Numero de claves: 15
+  - subtarea: 'T1 - Parte 1 - LDA con tres temas'
+  - n_documentos: 12
+  - ids_documentos: lista de 12 cadenas (p. ej. 'd01')
+  - etiquetas_reales: lista de 12 cadenas (p. ej. 'deporte')
+  - n_palabras_vacias: 23
+  - tamano_vocabulario: 71
+  - vocabulario: lista de 71 cadenas (p. ej. 'aceite')
+  - n_componentes: 3
+  - learning_method: 'batch'
+  - max_iter: 50
+  - random_state: 0
+  - top5_palabras_por_tema: diccionario con claves ['tema_0', 'tema_1', 'tema_2']
+  - top5_pesos_por_tema: diccionario con claves ['tema_0', 'tema_1', 'tema_2']
+  - perplejidad_k3: 137.78770156685167
+  - distribucion_documentos_temas: diccionario con claves ['d01', 'd02', 'd03', 'd04', 'd05', 'd06']
+
+=== [2] Origen de los datos ===
+Palabras vacias (23): lista literal transcrita del enunciado (T1.json solo conserva el conteo n_palabras_vacias)
+  lista: ['the', 'a', 'an', 'and', 'or', 'but', 'if', 'of', 'to', 'in', 'on', 'at', 'by', 'for', 'with', 'from', 'as', 'is', 'are', 'was', 'were', 'be', 'this']
+Textos originales: NO disponibles (ninguna estructura con 12 cadenas de texto).

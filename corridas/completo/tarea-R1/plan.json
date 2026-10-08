@@ -1,0 +1,112 @@
+{
+  "entrega": {
+    "formato": "ipynb",
+    "archivo": "MMIA6013_S2_ann.ipynb",
+    "secciones": [
+      "Parte 1 — kNN exacto: latencia vs. N",
+      "Parte 2 — Mini-IVF: clustering + búsqueda local",
+      "Parte 3 — Qdrant embebido: una vector DB real sin Docker",
+      "Cierre — Reflexión final"
+    ],
+    "max_palabras": null,
+    "max_paginas": null
+  },
+  "subtareas": [
+    {
+      "id": "T1",
+      "titulo": "Setup + Parte 1: kNN exacto, latencia vs. N",
+      "tipo": "calculo",
+      "secciones": [
+        "S0",
+        "S1"
+      ],
+      "depende_de": [],
+      "objetivo": "Incluir el código de setup dado (datos_realistas con 200 centros gaussianos, D=128, normalizar a norma 1, rng semilla 7). Implementar knn_exacto(consulta, base, k) con producto punto sobre vectores normalizados y medir el tiempo medio de consulta para N = 10k, 50k, 100k, 200k (varias consultas por N para promediar). Graficar latencia vs. N (PNG) verificando el crecimiento lineal O(N·d).",
+      "figura": true,
+      "resultados": [
+        "latencia_media_ms_por_N",
+        "factor_escalamiento_N"
+      ]
+    },
+    {
+      "id": "T2",
+      "titulo": "Parte 2: Mini-IVF con KMeans, recall@10 vs. speedup",
+      "tipo": "calculo",
+      "secciones": [
+        "S2"
+      ],
+      "depende_de": [
+        "T1"
+      ],
+      "objetivo": "Con N=100_000, base normalizada y NLIST=64, entrenar KMeans (n_init=3, random_state=7), normalizar centroides y construir las celdas. Implementar knn_ivf(consulta, nprobe, k): scores contra centroides → nprobe celdas más cercanas → kNN exacto dentro de esas celdas devolviendo índices globales. Para nprobe = 1, 2, 4, 8, 16 medir recall@10 (vs. knn_exacto de T1) promediado sobre 50 consultas y el speedup de latencia vs. exacto; reportar tabla y gráfica recall vs. speedup (PNG), más el tamaño medio de celda.",
+      "figura": true,
+      "resultados": [
+        "recall10_por_nprobe",
+        "speedup_por_nprobe",
+        "tamano_medio_celda"
+      ]
+    },
+    {
+      "id": "T3",
+      "titulo": "Parte 3: Qdrant embebido con filtros de metadata",
+      "tipo": "calculo",
+      "secciones": [
+        "S3"
+      ],
+      "depende_de": [],
+      "objetivo": "Ejecutar el código dado de Qdrant: intentar servidor en localhost:6333 y caer a modo embebido (:memory:) si no responde; crear colección 'faqs' (64 dims, COSINE), upsert de los 6 FAQs con payload {texto, tema} usando embed_demo (semilla vía hashlib.sha256), y consultar '¿cuándo me devuelven el dinero?' con filtro tema='pagos', limit=2. Si qdrant-client no está instalado, la parte se salta sola (try/except ImportError) sin romper el notebook. Registrar los hits (score, tema, texto) y el modo de conexión usado.",
+      "figura": false,
+      "resultados": [
+        "modo_qdrant",
+        "num_puntos_coleccion",
+        "hits_filtro_pagos"
+      ]
+    },
+    {
+      "id": "T4",
+      "titulo": "Cierre: reflexión final con las cifras medidas",
+      "tipo": "redaccion",
+      "secciones": [
+        "S4"
+      ],
+      "depende_de": [
+        "T1",
+        "T2",
+        "T3"
+      ],
+      "objetivo": "Redactar el cierre del notebook: resumen (kNN exacto O(N·d) medido; IVF con dial nprobe; Qdrant colección→upsert→query con filtros) y responder la reflexión final con números: a) para un proyecto de ~N documentos estimado, ¿basta kNN exacto o se necesita índice ANN? (justificar con las latencias de T1 y el triángulo recall/speedup de T2); b) qué motor elegir (Qdrant/pgvector/otro) y por qué operacionalmente (mencionando la mecánica de filtros de metadata de T3). Citar las cifras medidas, no valores asumidos.",
+      "figura": false,
+      "resultados": [
+        "estimacion_N_documentos",
+        "decision_ann_vs_exacto",
+        "motor_elegido_justificacion"
+      ]
+    }
+  ],
+  "estado_final": [
+    {
+      "id": "T1",
+      "tipo": "calculo",
+      "status": "completado",
+      "intentos": 1
+    },
+    {
+      "id": "T2",
+      "tipo": "calculo",
+      "status": "completado",
+      "intentos": 2
+    },
+    {
+      "id": "T3",
+      "tipo": "calculo",
+      "status": "completado",
+      "intentos": 2
+    },
+    {
+      "id": "T4",
+      "tipo": "redaccion",
+      "status": "para_redactor",
+      "intentos": 0
+    }
+  ]
+}

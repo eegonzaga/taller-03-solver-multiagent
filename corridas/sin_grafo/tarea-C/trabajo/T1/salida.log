@@ -1,0 +1,18 @@
+======================================================================
+T1 - Parte 1: LDA con tres temas (corpus de 12 oraciones)
+======================================================================
+Documentos: 12 -> ['d01', 'd02', 'd03', 'd04', 'd05', 'd06', 'd07', 'd08', 'd09', 'd10', 'd11', 'd12']
+Tamaño del vocabulario: 71
+Vocabulario: aceite, agua, ajo, amasar, azúcar, añade, año, baloncesto, campeona, cebolla, cocina, defensa, delantero, dos, dura, entrenador, equipo, espacial, estrella, estrellas, final, fotografió, fuego, fútbol, galaxia, ganó, gas, giran, goles, harina, hornea, huevos, júpiter, largo, lejana, lento, levadura, liga, lleva, luna, marcó, masa, minutos, nacen, nebulosa, nube, nuevas, observó, pan, partido, perdió, planetas, preparó, punto, receta, sal, salsa, segundo, sofríe, sopa, telescopio, tenista, tierra, tomate, torneo, treinta, varias, verduras, zanahoria, órbita, último
+----------------------------------------------------------------------
+Cinco palabras más probables por tema:
+  tema_1: órbita, planetas, partido, minutos, huevos
+      con p(palabra|tema): órbita (0.0351), planetas (0.0351), partido (0.0345), minutos (0.0200), huevos (0.0200)
+  tema_2: equipo, partido, liga, ganó, dos
+      con p(palabra|tema): equipo (0.0600), partido (0.0596), liga (0.0341), ganó (0.0339), dos (0.0335)
+  tema_3: sal, nebulosa, galaxia, estrellas, ajo
+      con p(palabra|tema): sal (0.0419), nebulosa (0.0419), galaxia (0.0419), estrellas (0.0419), ajo (0.0240)
+----------------------------------------------------------------------
+Perplejidad (k=3) sobre el corpus: 137.78770156685167
+======================================================================
+Resultados guardados en resultados.json

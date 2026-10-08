@@ -1,0 +1,17 @@
+Partición utilizada: índices de entrenamiento/prueba leídos de entradas/T1.json (train_indices/test_indices)
+Ejemplos: 1797 | Atributos: 64 | Clases: 10
+Entrenamiento: 1347 ejemplos | Prueba: 450 ejemplos
+
+Tabla: desempeño sobre el conjunto de prueba
+----------------------------------------------------------
+Modelo                                  Accuracy  F1 macro
+----------------------------------------------------------
+GaussianNB (atributos sin escalar)      0.855556  0.855162
+LogisticRegression (atributos estand.)  0.971111  0.971052
+----------------------------------------------------------
+
+Cifras guardadas en resultados.json:
+  accuracy_gnb = 0.8555555555555555
+  f1_macro_gnb = 0.8551624776853188
+  accuracy_lr = 0.9711111111111111
+  f1_macro_lr = 0.9710523343057076

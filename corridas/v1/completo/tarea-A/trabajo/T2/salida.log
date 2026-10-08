@@ -1,0 +1,14 @@
+=== T2: Clasificadores base sobre dígitos (partición de T1) ===
+Partición: train=1347, test=450, test_size=0.25, random_state=7, estratificado=True
+
+| Modelo                              | Accuracy   | F1 macro   |
+|-------------------------------------|------------|------------|
+| GaussianNB (sin escalar)            | 0.855556 | 0.855162 |
+| LogisticRegression (estandarizado)  | 0.971111 | 0.971052 |
+
+accuracy_gnb = 0.8555555555555555
+f1_macro_gnb = 0.8551624776853188
+accuracy_lr  = 0.9711111111111111
+f1_macro_lr  = 0.9710523343057076
+
+Resultados guardados en resultados.json

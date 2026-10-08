@@ -1,0 +1,113 @@
+{
+  "entrega": {
+    "formato": "ipynb",
+    "archivo": "semana2_ann.ipynb",
+    "secciones": [
+      "Setup",
+      "Parte 1 — kNN exacto: latencia vs. N",
+      "Parte 2 — Mini-IVF: clustering + búsqueda local",
+      "Parte 3 — Qdrant embebido: una vector DB real sin Docker",
+      "Cierre — Reflexión final"
+    ],
+    "max_palabras": null,
+    "max_paginas": null
+  },
+  "subtareas": [
+    {
+      "id": "T1",
+      "titulo": "Parte 3 — Qdrant embebido: colección, upsert y query con filtro",
+      "tipo": "calculo",
+      "secciones": [
+        "S3"
+      ],
+      "depende_de": [],
+      "objetivo": "Ejecutar la Parte 3 con el código dado: intentar conexión a servidor Qdrant en http://localhost:6333 (timeout 3s) y, si no responde, usar QdrantClient(':memory:'). Si qdrant-client no está instalado, intentar 'pip install qdrant-client'; si no es posible, registrar que la parte se omite sola (comportamiento previsto por el enunciado). Crear colección 'faqs' (64 dims, Distance.COSINE), upsert de los 6 FAQs con payload {texto, tema} usando embed_demo (semilla vía hashlib.sha256, no hash()), y consultar '¿cuándo me devuelven el dinero?' con query_filter tema='pagos', limit=2. Registrar el modo usado (servidor/embebido/omitido) y los hits devueltos (score, tema, texto).",
+      "figura": false,
+      "resultados": [
+        "modo_qdrant",
+        "scores_hits_tema_pagos"
+      ]
+    },
+    {
+      "id": "T2",
+      "titulo": "Setup + Parte 1 — kNN exacto: latencia vs. N",
+      "tipo": "calculo",
+      "secciones": [
+        "S0",
+        "S1"
+      ],
+      "depende_de": [
+        "T1"
+      ],
+      "objetivo": "Incluir el código de setup dado (datos_realistas con D=128 y 200 centros gaussianos fijos, normalizar a norma 1). Ejercicio 1.1: implementar knn_exacto(consulta, base, k) usando dot (vectores normalizados → producto punto = coseno) y medir el tiempo medio de consulta para N = 10_000, 50_000, 100_000, 200_000 (promediar sobre varias consultas, p.ej. 50, con k=10). Graficar latencia vs. N (PNG) y reportar el factor de crecimiento entre N consecutivos para verificar el escalado lineal O(N·d). La dependencia de T1 es de montaje: el setup anuncia la dependencia opcional qdrant-client que usa la Parte 3.",
+      "figura": true,
+      "resultados": [
+        "tiempo_medio_ms_por_N",
+        "factor_escalamiento_lineal"
+      ]
+    },
+    {
+      "id": "T3",
+      "titulo": "Parte 2 — Mini-IVF: recall@10 vs. speedup según nprobe",
+      "tipo": "calculo",
+      "secciones": [
+        "S2"
+      ],
+      "depende_de": [
+        "T2"
+      ],
+      "objetivo": "Con el código dado (N=100_000, base normalizada, NLIST=64, KMeans n_init=3 random_state=7, centroides normalizados, celdas por km.labels_): Ejercicio 2.1 implementar knn_ivf(consulta, nprobe, k): (1) scores contra los centroides → nprobe celdas más cercanas; (2) kNN exacto solo dentro de esas celdas devolviendo índices GLOBALES. Ejercicio 2.2: para nprobe = 1, 2, 4, 8, 16 medir sobre 50 consultas el recall@10 (vs. knn_exacto de T2) y el speedup (tiempo exacto / tiempo IVF). Graficar recall@10 vs. speedup según nprobe (PNG) y reportar el tamaño medio de celda del IVF entrenado.",
+      "figura": true,
+      "resultados": [
+        "recall_at10_por_nprobe",
+        "speedup_por_nprobe",
+        "tamano_medio_celda"
+      ]
+    },
+    {
+      "id": "T4",
+      "titulo": "Cierre y reflexión final + ensamblado del notebook",
+      "tipo": "redaccion",
+      "secciones": [
+        "S4"
+      ],
+      "depende_de": [
+        "T1",
+        "T2",
+        "T3"
+      ],
+      "objetivo": "Redactar el Cierre: bullets (kNN exacto O(N·d) lineal — medido, no asumido; IVF con nprobe y HNSW con ef_search comparten el triángulo recall/latencia/memoria; Qdrant: colección → upsert(vector+payload) → query con filtros) y responder la reflexión final CON LAS CIFRAS MEDIDAS: a) estimando el ~N de documentos del proyecto propio, ¿basta kNN exacto o hace falta un índice ANN? (justificar con los tiempos de la Parte 1 y el triángulo de la Parte 2); b) qué motor usar (Qdrant / pgvector / otro) y por qué operacionalmente. Ensamblar el notebook final .ipynb ejecutado de principio a fin sin errores, con una celda Markdown encabezando cada parte (Setup, Parte 1, Parte 2, Parte 3, Cierre), los ejercicios 1.1, 2.1 y 2.2 resueltos, la Parte 3 con su resultado (o la nota de omisión si qdrant-client no está), las figuras PNG embebidas y las reflexiones con las cifras.",
+      "figura": false,
+      "resultados": [
+        "decision_ann_vs_exacto_con_cifras",
+        "motor_recomendado_y_justificacion"
+      ]
+    }
+  ],
+  "estado_final": [
+    {
+      "id": "T1",
+      "tipo": "calculo",
+      "status": "completado",
+      "intentos": 2
+    },
+    {
+      "id": "T2",
+      "tipo": "calculo",
+      "status": "completado",
+      "intentos": 1
+    },
+    {
+      "id": "T3",
+      "tipo": "calculo",
+      "status": "completado",
+      "intentos": 2
+    },
+    {
+      "id": "T4",
+      "tipo": "redaccion",
+      "status": "para_redactor",
+      "intentos": 0
+    }
+  ]
+}

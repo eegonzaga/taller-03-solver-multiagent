@@ -1,0 +1,18 @@
+{
+ "mensajes": [
+  {
+   "role": "system",
+   "content": "Extraes entidades de un texto de un curso de maestría en IA (un enunciado o\nun fragmento de un paper, en español o en inglés).\nTipos permitidos: dataset, metodo, metrica, concepto.\n- dataset: conjuntos de datos concretos (p. ej. «Breast Cancer Wisconsin», «Palmer Penguins»).\n- metodo: algoritmos, modelos o técnicas (p. ej. «Naive Bayes gaussiano», «TF-IDF», «PCA», «SVD»).\n- metrica: medidas de evaluación (p. ej. «accuracy», «F1 macro», «MRR», «entropía»).\n- concepto: ideas teóricas (p. ej. «sesgo y varianza», «temperatura», «gradiente»).\nNombres cortos y canónicos, en español salvo nombres propios (sin artículos). Máximo 12 entidades. Responde solo JSON:\n{\"entidades\": [{\"nombre\": \"...\", \"tipo\": \"dataset|metodo|metrica|concepto\"}]}"
+  },
+  {
+   "role": "user",
+   "content": "Parte 1 — Datos y partición\nCarga el conjunto de dígitos manuscritos que trae scikit-learn (sklearn.datasets.load_digits).\nReporta cuántos ejemplos, cuántos atributos y cuántas clases tiene. Divide los datos en\nentrenamiento y prueba, 75 % y 25 %, estratificando por la clase, con random_state=7. Esa partición\nes la única de toda la tarea: el conjunto de prueba no se usa para ajustar ni para elegir nada."
+  }
+ ],
+ "respuesta": {
+  "contenido": "{\"entidades\": [{\"nombre\": \"Digits\", \"tipo\": \"dataset\"}, {\"nombre\": \"división entrenamiento-prueba\", \"tipo\": \"concepto\"}, {\"nombre\": \"estratificación\", \"tipo\": \"concepto\"}, {\"nombre\": \"semilla aleatoria\", \"tipo\": \"concepto\"}]}",
+  "fin": "stop",
+  "tokens_entrada": 359,
+  "tokens_salida": 487
+ }
+}

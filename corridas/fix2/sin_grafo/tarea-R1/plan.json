@@ -1,0 +1,110 @@
+{
+  "entrega": {
+    "formato": "ipynb",
+    "archivo": "MMIA6013_S2_ann.ipynb",
+    "secciones": [
+      "Parte 1 — kNN exacto: latencia vs. N",
+      "Parte 2 — Mini-IVF: clustering + búsqueda local",
+      "Parte 3 — Qdrant embebido: una vector DB real sin Docker",
+      "Cierre"
+    ],
+    "max_palabras": null,
+    "max_paginas": null
+  },
+  "subtareas": [
+    {
+      "id": "T1",
+      "titulo": "Parte 1 — kNN exacto: latencia vs. N",
+      "tipo": "calculo",
+      "secciones": [
+        "S0",
+        "S1"
+      ],
+      "depende_de": [],
+      "objetivo": "Incluir el setup dado (datos_realistas con 200 centros gaussianos fijos, D=128, normalizar a norma 1) e implementar knn_exacto(consulta, base, k) usando producto punto sobre vectores normalizados. Medir el tiempo medio de consulta para N = 10_000, 50_000, 100_000 y 200_000 (mismas consultas normalizadas, k=10, promediar sobre varias consultas p.ej. 20), graficar latencia vs. N y verificar que el escalamiento es lineal O(N·d) reportando el factor de crecimiento entre valores de N.",
+      "figura": true,
+      "resultados": [
+        "latencia_media_ms_por_N",
+        "factor_escalamiento_lineal"
+      ]
+    },
+    {
+      "id": "T2",
+      "titulo": "Parte 2 — Mini-IVF: recall@10 vs. speedup según nprobe",
+      "tipo": "calculo",
+      "secciones": [
+        "S2"
+      ],
+      "depende_de": [
+        "T1"
+      ],
+      "objetivo": "Con la base normalizada de N=100_000 de T1, entrenar KMeans con NLIST=64 (n_init=3, random_state=7), normalizar los centroides y construir las celdas (índices globales por cluster, reportar tamaño medio de celda). Implementar knn_ivf(consulta, nprobe, k): scores contra los 64 centroides → seleccionar las nprobe celdas más cercanas → kNN exacto (knn_exacto de T1) solo dentro de esas celdas devolviendo índices globales. Para nprobe = 1, 2, 4, 8, 16 medir sobre 50 consultas: recall@10 contra el ground truth de knn_exacto y speedup (latencia exacta / latencia IVF). Producir tabla y gráfica recall@10 vs. speedup (eje doble o curva parametrizada por nprobe) mostrando el triángulo recall/latencia.",
+      "figura": true,
+      "resultados": [
+        "tamano_medio_celda",
+        "recall_at10_por_nprobe",
+        "speedup_por_nprobe"
+      ]
+    },
+    {
+      "id": "T3",
+      "titulo": "Parte 3 — Qdrant embebido: colección, upsert y query con filtro",
+      "tipo": "calculo",
+      "secciones": [
+        "S3"
+      ],
+      "depende_de": [],
+      "objetivo": "Ejecutar el código dado de Qdrant: intentar conexión a http://localhost:6333 con timeout 3s y caer a modo embebido (:memory:) si no responde; si qdrant-client no está instalado, instalarlo con pip (si no es posible, documentar el salto de la parte). Crear la colección 'faqs' (64 dims, Distance.COSINE) desde cero, hacer upsert de los 6 FAQs con embeddings deterministas via embed_demo (hashlib.sha256) y payload {texto, tema}, y ejecutar la consulta '¿cuándo me devuelven el dinero?' con query_filter tema='pagos' y limit=2. Reportar número de puntos en la colección y los hits con score, tema y texto, anotando que con embeddings sintéticos el score no es semántico (el objetivo es la mecánica colección/upsert/query/filtro).",
+      "figura": false,
+      "resultados": [
+        "num_puntos_coleccion",
+        "hits_filtro_pagos_scores"
+      ]
+    },
+    {
+      "id": "T4",
+      "titulo": "Cierre — reflexión final y ensamblaje del notebook",
+      "tipo": "redaccion",
+      "secciones": [
+        "S4"
+      ],
+      "depende_de": [
+        "T1",
+        "T2",
+        "T3"
+      ],
+      "objetivo": "Redactar la reflexión final del cierre respondiendo con las cifras medidas: (a) para el número estimado de documentos del proyecto propio, ¿basta kNN exacto o se necesita un índice ANN? justificar con las latencias de T1 (extrapolación lineal a N del proyecto) y el trade-off recall/speedup de T2; (b) qué motor elegir (Qdrant / pgvector / otro) y por qué operacionalmente (despliegue, filtros de metadata como los probados en T3, persistencia). Incluir el resumen del cierre (kNN O(N·d) medido; IVF/HNSW y el triángulo recall/latencia/memoria; flujo Qdrant colección→upsert→query con filtros) y la nota sobre chunking en el pipeline RAG. Ensamblar el notebook final .ipynb con una celda Markdown encabezando cada parte, todo el código ejecutado de principio a fin sin errores, las figuras embebidas y las reflexiones con las cifras medidas.",
+      "figura": false,
+      "resultados": [
+        "reflexion_a_umbral_N_ann_vs_exacto",
+        "reflexion_b_motor_eleccion"
+      ]
+    }
+  ],
+  "estado_final": [
+    {
+      "id": "T1",
+      "tipo": "calculo",
+      "status": "completado",
+      "intentos": 1
+    },
+    {
+      "id": "T2",
+      "tipo": "calculo",
+      "status": "completado",
+      "intentos": 2
+    },
+    {
+      "id": "T3",
+      "tipo": "calculo",
+      "status": "completado",
+      "intentos": 2
+    },
+    {
+      "id": "T4",
+      "tipo": "redaccion",
+      "status": "para_redactor",
+      "intentos": 0
+    }
+  ]
+}

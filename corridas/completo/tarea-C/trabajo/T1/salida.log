@@ -1,0 +1,25 @@
+=== T1 Parte 1: LDA con 3 temas sobre el corpus mínimo ===
+Tamaño del vocabulario: 71
+Vocabulario: aceite, agua, ajo, amasar, azúcar, añade, año, baloncesto, campeona, cebolla, cocina, defensa, delantero, dos, dura, entrenador, equipo, espacial, estrella, estrellas, final, fotografió, fuego, fútbol, galaxia, ganó, gas, giran, goles, harina, hornea, huevos, júpiter, largo, lejana, lento, levadura, liga, lleva, luna, marcó, masa, minutos, nacen, nebulosa, nube, nuevas, observó, pan, partido, perdió, planetas, preparó, punto, receta, sal, salsa, segundo, sofríe, sopa, telescopio, tenista, tierra, tomate, torneo, treinta, varias, verduras, zanahoria, órbita, último
+
+Cinco palabras más probables de tema_1: planetas, órbita, partido, receta, azúcar
+Cinco palabras más probables de tema_2: equipo, partido, liga, ganó, goles
+Cinco palabras más probables de tema_3: sal, estrellas, nebulosa, galaxia, ajo
+
+Perplejidad del modelo (3 temas) sobre el corpus: 137.7877015669
+
+Mezcla de temas por documento (filas suman 1):
+  d01 (deporte): [0.0345, 0.932, 0.0335]
+  d02 (deporte): [0.9005, 0.0575, 0.042]
+  d03 (deporte): [0.8985, 0.0536, 0.048]
+  d04 (deporte): [0.0425, 0.9157, 0.0418]
+  d05 (cocina): [0.9294, 0.0337, 0.0368]
+  d06 (cocina): [0.9135, 0.0422, 0.0443]
+  d07 (cocina): [0.039, 0.0374, 0.9236]
+  d08 (cocina): [0.0316, 0.0306, 0.9378]
+  d09 (astronomía): [0.0425, 0.042, 0.9155]
+  d10 (astronomía): [0.916, 0.0421, 0.042]
+  d11 (astronomía): [0.0419, 0.042, 0.9162]
+  d12 (astronomía): [0.9149, 0.0421, 0.043]
+
+Resultados guardados en resultados.json

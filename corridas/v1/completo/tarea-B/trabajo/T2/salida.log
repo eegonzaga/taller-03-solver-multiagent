@@ -1,0 +1,13 @@
+Efecto de escalar por sqrt(d_k) en los pesos de atención
+q, K ~ N(0, I); 10 claves; softmax de K @ q
+
+  d_k |  peso_max_sin |  H_bits_sin |  peso_max_esc |  H_bits_esc
+-----------------------------------------------------------------
+    4 |        0.2049 |      3.0792 |        0.1497 |      3.2542
+   64 |        0.9511 |      0.3537 |        0.2480 |      2.9802
+  512 |        0.7503 |      0.8114 |        0.1945 |      3.0363
+
+Referencia: entropía máxima posible con 10 claves = log2(10) = 3.3219 bits (distribución uniforme).
+Sin escalar, al crecer d_k la distribución se concentra (peso máx -> 1, entropía -> 0); escalando por sqrt(d_k) se mantiene cercana a la uniforme.
+
+Cifras guardadas en resultados.json

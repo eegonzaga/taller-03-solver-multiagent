@@ -1,0 +1,29 @@
+Base: 100000 vectores x 128 dims (float32), norma media = 1.000000
+Consultas de evaluación: 50 (generadas aparte; ninguna fila de la base)
+IVF entrenado: 64 celdas, tamaño medio 1562 (min=463, max=3710, std=789.7); KMeans: 3.5 s, inercia=86413.91, iter=74
+Verificación top-k (argpartition vs argsort completo): True
+Control nprobe=nlist=64 == exacto en las 50 consultas: True
+kNN exacto (referencia): 1.127 ms/consulta (std 0.209)
+nprobe= 1: recall@10=0.802 | latencia=0.100 ms | speedup=11.3x | candidatos medios=1712
+nprobe= 2: recall@10=0.922 | latencia=0.189 ms | speedup=6.0x | candidatos medios=3417
+nprobe= 4: recall@10=0.934 | latencia=0.427 ms | speedup=2.6x | candidatos medios=6608
+nprobe= 8: recall@10=0.946 | latencia=0.885 ms | speedup=1.3x | candidatos medios=12636
+nprobe=16: recall@10=0.978 | latencia=1.759 ms | speedup=0.6x | candidatos medios=24852
+
+Tabla recall/latencia (N=100k, NLIST=64, k=10, 50 consultas):
+ nprobe  recall@10  latencia_ivf_ms  speedup_x  candidatos_medios
+      1      0.802           0.1000      11.28               1712
+      2      0.922           0.1886       5.98               3417
+      4      0.934           0.4271       2.64               6608
+      8      0.946           0.8854       1.27              12636
+     16      0.978           1.7586       0.64              24852
+Referencia exacto: recall@10 = 1.000 | latencia = 1.127 ms | speedup = 1.00x
+
+Cifras principales:
+  tamano_medio_celda = 1562.50
+  nprobe= 1: recall@10=0.8020  speedup=11.28x
+  nprobe= 2: recall@10=0.9220  speedup=5.98x
+  nprobe= 4: recall@10=0.9340  speedup=2.64x
+  nprobe= 8: recall@10=0.9460  speedup=1.27x
+  nprobe=16: recall@10=0.9780  speedup=0.64x
+Archivos generados: resultados.json, T2_parte2_recall_vs_speedup.png

@@ -1,0 +1,21 @@
+Servidor no intentado (sin red en este entorno) — usando Qdrant embebido (:memory:)
+Colección creada con 6 puntos
+
+Consulta: ¿cuándo me devuelven el dinero?
+Filtro: tema="pagos"   limit=2
+Fuente de los hits: qdrant
+  -0.102 [pagos] La factura electrónica se emite al confirmar el pago.
+  -0.112 [pagos] Los reembolsos se procesan en 5 a 7 días hábiles.
+
+(Nota: con embeddings sintéticos el score no es semántico —
+ el objetivo aquí es la MECÁNICA de colección/upsert/query/filtro.)
+
+--- Cifras principales (guardadas en resultados.json) ---
+modo_qdrant: embebido
+qdrant_client_disponible: True
+servidor_local_intentado: False (sin red en este entorno)
+n_puntos_coleccion_faqs: 6
+scores_hits_tema_pagos (precisión completa):
+  id=3  score=-0.10180602784901141  tema='pagos'
+  id=1  score=-0.11198835242873917  tema='pagos'
+resultados.json guardado en la carpeta actual.

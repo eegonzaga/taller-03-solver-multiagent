@@ -1,0 +1,110 @@
+{
+  "entrega": {
+    "formato": "md",
+    "archivo": "reporte.md",
+    "max_palabras": 1000,
+    "max_paginas": null,
+    "secciones": [
+      "Introducción",
+      "Metodología",
+      "Resultados",
+      "Discusión",
+      "Conclusiones"
+    ]
+  },
+  "subtareas": [
+    {
+      "id": "T1",
+      "titulo": "Datos y partición",
+      "tipo": "calculo",
+      "secciones": [
+        "S1"
+      ],
+      "depende_de": [],
+      "objetivo": "load_digits, tamaños, partición 75/25 estratificada, random_state=7",
+      "figura": false,
+      "resultados": [
+        "n",
+        "atributos",
+        "clases"
+      ]
+    },
+    {
+      "id": "T2",
+      "titulo": "Dos clasificadores",
+      "tipo": "calculo",
+      "secciones": [
+        "S2"
+      ],
+      "depende_de": [
+        "T1"
+      ],
+      "objetivo": "GaussianNB y regresión logística estandarizada",
+      "figura": false,
+      "resultados": [
+        "accuracy",
+        "f1_macro"
+      ]
+    },
+    {
+      "id": "T3",
+      "titulo": "Curva de aprendizaje",
+      "tipo": "calculo",
+      "secciones": [
+        "S3"
+      ],
+      "depende_de": [
+        "T1",
+        "T2"
+      ],
+      "objetivo": "exactitud con 20, 50, 100, 200, 400 y todos",
+      "figura": true,
+      "resultados": [
+        "curva"
+      ]
+    },
+    {
+      "id": "T4",
+      "titulo": "Discusión y reporte",
+      "tipo": "redaccion",
+      "secciones": [
+        "S0",
+        "S4",
+        "S5"
+      ],
+      "depende_de": [
+        "T2",
+        "T3"
+      ],
+      "objetivo": "discutir el cruce de Ng y Jordan",
+      "figura": false,
+      "resultados": []
+    }
+  ],
+  "estado_final": [
+    {
+      "id": "T1",
+      "tipo": "calculo",
+      "status": "completado",
+      "intentos": 1
+    },
+    {
+      "id": "T2",
+      "tipo": "calculo",
+      "status": "fallida",
+      "intentos": 3
+    },
+    {
+      "id": "T3",
+      "tipo": "calculo",
+      "status": "completado",
+      "intentos": 1
+    },
+    {
+      "id": "T4",
+      "tipo": "redaccion",
+      "status": "para_redactor",
+      "intentos": 0
+    }
+  ]
+}

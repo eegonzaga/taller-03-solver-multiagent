@@ -1,0 +1,19 @@
+# Solver multiagente con GraphRAG — Taller 03 v2. Versiones exactas, probadas el 2026-10-06
+# sobre Python 3.14.7 (uv venv --python 3.14 .venv && uv pip install -r requirements.txt).
+langgraph==1.2.12          # el orquestador (grafo de estados)
+networkx==3.6.1            # el grafo de conocimiento y la validación del plan
+qdrant-client==1.19.1      # índice vectorial en memoria, la API del Taller 02
+pymupdf==1.28.2            # lector de PDF (con tablas) y Markdown → PDF
+markdown-it-py==4.2.0
+nbformat==5.11.1           # notebook entregable…
+nbconvert==7.17.1          # …ejecutado en el sandbox
+nbclient==0.11.0
+ipykernel==7.4.0
+# Lo que usan los scripts que escribe el programador (y verdades.py):
+numpy==2.5.3
+scipy==1.18.1
+scikit-learn==1.9.1
+pandas==3.0.6
+matplotlib==3.11.2
+# Servicios (no pip): la H200 de la USFQ con VPN GlobalProtect — LLM en el vLLM :12555
+# (réplica :12559), embeddings bge-m3 y juez gemma3:27b en el Ollama :11434.

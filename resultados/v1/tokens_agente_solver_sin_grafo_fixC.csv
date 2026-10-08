@@ -1,0 +1,5 @@
+tarea,agente,llamadas,tokens_entrada,tokens_salida,latencia_s
+C,planificador,1,2355,2019,19.83
+C,programador,9,45699,321658,2973.81
+C,redactor,1,4623,17790,139.83
+C,revisor,2,12010,5816,70.29

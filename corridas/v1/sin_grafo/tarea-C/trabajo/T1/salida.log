@@ -1,0 +1,12 @@
+============================================================
+T1 - Parte 1: LDA con tres temas (corpus de 12 oraciones)
+============================================================
+Documentos: 12
+Tamaño del vocabulario: 71
+Perplejidad (k=3) sobre el corpus: 137.787702
+------------------------------------------------------------
+tema_0: órbita (0.0351), planetas (0.0351), partido (0.0345), minutos (0.0200), huevos (0.0200)
+tema_1: equipo (0.0600), partido (0.0596), liga (0.0341), ganó (0.0339), dos (0.0335)
+tema_2: sal (0.0419), nebulosa (0.0419), galaxia (0.0419), estrellas (0.0419), ajo (0.0240)
+------------------------------------------------------------
+Resultados guardados en resultados.json

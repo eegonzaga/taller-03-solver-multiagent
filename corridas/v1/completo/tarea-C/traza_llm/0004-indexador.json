@@ -1,0 +1,18 @@
+{
+ "mensajes": [
+  {
+   "role": "system",
+   "content": "Extraes entidades de un texto de un curso de maestría en IA (un enunciado o\nun fragmento de un paper, en español o en inglés).\nTipos permitidos: dataset, metodo, metrica, concepto.\n- dataset: conjuntos de datos concretos (p. ej. «Breast Cancer Wisconsin», «Palmer Penguins»).\n- metodo: algoritmos, modelos o técnicas (p. ej. «Naive Bayes gaussiano», «TF-IDF», «PCA», «SVD»).\n- metrica: medidas de evaluación (p. ej. «accuracy», «F1 macro», «MRR», «entropía»).\n- concepto: ideas teóricas (p. ej. «sesgo y varianza», «temperatura», «gradiente»).\nNombres cortos y canónicos, en español salvo nombres propios (sin artículos). Máximo 12 entidades. Responde solo JSON:\n{\"entidades\": [{\"nombre\": \"...\", \"tipo\": \"dataset|metodo|metrica|concepto\"}]}"
+  },
+  {
+   "role": "user",
+   "content": "Parte 1 — LDA con tres temas\nVectoriza los doce textos con CountVectorizer y la lista de palabras vacías de arriba (el resto de\nparámetros\npor\ndefecto).\nAjusta\nLatentDirichletAllocation(n_components=3,\nlearning_method=\"batch\", max_iter=50, random_state=0). Reporta el tamaño del vocabulario,\nlas cinco palabras más probables de cada tema y la perplejidad del modelo sobre el corpus."
+  }
+ ],
+ "respuesta": {
+  "contenido": "{\"entidades\": [{\"nombre\": \"CountVectorizer\", \"tipo\": \"metodo\"}, {\"nombre\": \"LDA\", \"tipo\": \"metodo\"}, {\"nombre\": \"perplejidad\", \"tipo\": \"metrica\"}, {\"nombre\": \"modelado de temas\", \"tipo\": \"concepto\"}, {\"nombre\": \"palabras vacías\", \"tipo\": \"concepto\"}, {\"nombre\": \"vocabulario\", \"tipo\": \"concepto\"}]}",
+  "fin": "stop",
+  "tokens_entrada": 345,
+  "tokens_salida": 469
+ }
+}

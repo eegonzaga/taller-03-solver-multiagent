@@ -1,0 +1,24 @@
+Parte 2 - Perplejidad de LDA según el número de temas
+Documentos: 12 | Vocabulario: 71 palabras | Tokens totales: 91
+
+Tabla comparativa de perplejidad
+------------------------------------------------
+ n_temas |      perplejidad | n_iter
+------------------------------------------------
+       2 |       107.890881 |     50
+       3 |       137.787702 |     50
+       4 |       156.419817 |     50
+------------------------------------------------
+Modelo con menor perplejidad: 2 temas (perplejidad = 107.89088069511578)
+
+Cifras exactas (precisión completa):
+  perplejidad_2_temas = 107.89088069511578
+  perplejidad_3_temas = 137.78770156685167
+  perplejidad_4_temas = 156.41981736227808
+
+Verificación con la Parte 1:
+  perplejidad_3_temas (T1) = 137.78770156685167
+  diferencia (este script - T1) = 0.0
+  vocabulario idéntico al de la Parte 1: True
+
+Resultados guardados en resultados.json

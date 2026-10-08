@@ -1,0 +1,17 @@
+IVF entrenado: 64 celdas, tamaño medio 1562
+Verificación nprobe=NLIST == exacto (consulta 0): True
+
+kNN exacto (N=100000): tiempo medio 1.1919 ms/consulta
+
+Resultados sobre 50 consultas (k=10):
+nprobe |  recall@10 |  t IVF (ms) |  speedup
+     1 |     0.8020 |      0.1685 |     7.07
+     2 |     0.9220 |      0.3126 |     3.81
+     4 |     0.9340 |      0.5677 |     2.10
+     8 |     0.9460 |      1.0696 |     1.11
+    16 |     0.9780 |      2.3875 |     0.50
+
+Tamaño medio de celda del IVF: 1562.5000 (min 463, max 3710)
+
+Figura guardada: T3_parte2_recall_vs_speedup_nprobe.png
+Resultados guardados en resultados.json

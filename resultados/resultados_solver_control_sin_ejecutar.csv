@@ -1,0 +1,10 @@
+tarea,check,tipo,ok,detalle
+A,A01,archivo,1,1 archivo(s) con reporte.md
+A,A02,archivo,0,0 archivo(s) con **/*.png
+A,A03,secciones,1,"todas, en orden"
+A,A04,palabras_max,1,788 palabras
+A,A05,cifra_presente,1,verdad=1797.0000 ±0; hallada
+A,A06,cifra,0,verdad=0.8556 ±0.006; no hallada
+A,A07,cifra,1,verdad=0.9711 ±0.006; hallada
+A,A08,cifra_presente,0,verdad=0.3667 ±0.0006; no hallada
+A,A09,procedencia,0,0/30 cifras respaldadas (0.00)

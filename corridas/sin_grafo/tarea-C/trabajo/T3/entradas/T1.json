@@ -1,0 +1,249 @@
+{
+  "tamano_vocabulario": 71,
+  "palabras_top_por_tema": {
+    "tema_1": [
+      "órbita",
+      "planetas",
+      "partido",
+      "minutos",
+      "huevos"
+    ],
+    "tema_2": [
+      "equipo",
+      "partido",
+      "liga",
+      "ganó",
+      "dos"
+    ],
+    "tema_3": [
+      "sal",
+      "nebulosa",
+      "galaxia",
+      "estrellas",
+      "ajo"
+    ]
+  },
+  "perplejidad_k3": 137.78770156685167,
+  "palabras_top_por_tema_con_probabilidad": {
+    "tema_1": [
+      {
+        "palabra": "órbita",
+        "probabilidad": 0.03509013116304852
+      },
+      {
+        "palabra": "planetas",
+        "probabilidad": 0.03509013116304852
+      },
+      {
+        "palabra": "partido",
+        "probabilidad": 0.034486309035956106
+      },
+      {
+        "palabra": "minutos",
+        "probabilidad": 0.020046648903741388
+      },
+      {
+        "palabra": "huevos",
+        "probabilidad": 0.020046648903741388
+      }
+    ],
+    "tema_2": [
+      {
+        "palabra": "equipo",
+        "probabilidad": 0.06004850866861515
+      },
+      {
+        "palabra": "partido",
+        "probabilidad": 0.05958553797984229
+      },
+      {
+        "palabra": "liga",
+        "probabilidad": 0.03411966403102423
+      },
+      {
+        "palabra": "ganó",
+        "probabilidad": 0.03385295908885087
+      },
+      {
+        "palabra": "dos",
+        "probabilidad": 0.0334600778159318
+      }
+    ],
+    "tema_3": [
+      {
+        "palabra": "sal",
+        "probabilidad": 0.04188664131526747
+      },
+      {
+        "palabra": "nebulosa",
+        "probabilidad": 0.04188442041075001
+      },
+      {
+        "palabra": "galaxia",
+        "probabilidad": 0.04188442041075001
+      },
+      {
+        "palabra": "estrellas",
+        "probabilidad": 0.04188442041075001
+      },
+      {
+        "palabra": "ajo",
+        "probabilidad": 0.024028574438672467
+      }
+    ]
+  },
+  "vocabulario": [
+    "aceite",
+    "agua",
+    "ajo",
+    "amasar",
+    "azúcar",
+    "añade",
+    "año",
+    "baloncesto",
+    "campeona",
+    "cebolla",
+    "cocina",
+    "defensa",
+    "delantero",
+    "dos",
+    "dura",
+    "entrenador",
+    "equipo",
+    "espacial",
+    "estrella",
+    "estrellas",
+    "final",
+    "fotografió",
+    "fuego",
+    "fútbol",
+    "galaxia",
+    "ganó",
+    "gas",
+    "giran",
+    "goles",
+    "harina",
+    "hornea",
+    "huevos",
+    "júpiter",
+    "largo",
+    "lejana",
+    "lento",
+    "levadura",
+    "liga",
+    "lleva",
+    "luna",
+    "marcó",
+    "masa",
+    "minutos",
+    "nacen",
+    "nebulosa",
+    "nube",
+    "nuevas",
+    "observó",
+    "pan",
+    "partido",
+    "perdió",
+    "planetas",
+    "preparó",
+    "punto",
+    "receta",
+    "sal",
+    "salsa",
+    "segundo",
+    "sofríe",
+    "sopa",
+    "telescopio",
+    "tenista",
+    "tierra",
+    "tomate",
+    "torneo",
+    "treinta",
+    "varias",
+    "verduras",
+    "zanahoria",
+    "órbita",
+    "último"
+  ],
+  "distribucion_documento_tema": {
+    "d01": {
+      "tema_1": 0.03451075388652934,
+      "tema_2": 0.9320154371970236,
+      "tema_3": 0.03347380891644702
+    },
+    "d02": {
+      "tema_1": 0.900493821844927,
+      "tema_2": 0.05751675610852142,
+      "tema_3": 0.04198942204655155
+    },
+    "d03": {
+      "tema_1": 0.8984673281398191,
+      "tema_2": 0.05355258461765944,
+      "tema_3": 0.04798008724252147
+    },
+    "d04": {
+      "tema_1": 0.0424992847658691,
+      "tema_2": 0.9156635781080892,
+      "tema_3": 0.04183713712604174
+    },
+    "d05": {
+      "tema_1": 0.9294479762188961,
+      "tema_2": 0.03372223035173579,
+      "tema_3": 0.03682979342936811
+    },
+    "d06": {
+      "tema_1": 0.9135073636675036,
+      "tema_2": 0.04215585605951542,
+      "tema_3": 0.044336780272980825
+    },
+    "d07": {
+      "tema_1": 0.039010951438234014,
+      "tema_2": 0.037371427657236486,
+      "tema_3": 0.9236176209045295
+    },
+    "d08": {
+      "tema_1": 0.03157440033680361,
+      "tema_2": 0.030579048494189204,
+      "tema_3": 0.9378465511690073
+    },
+    "d09": {
+      "tema_1": 0.04253454057705356,
+      "tema_2": 0.04197774298732245,
+      "tema_3": 0.915487716435624
+    },
+    "d10": {
+      "tema_1": 0.9159600976349318,
+      "tema_2": 0.04208216894515651,
+      "tema_3": 0.04195773341991178
+    },
+    "d11": {
+      "tema_1": 0.04185001671228145,
+      "tema_2": 0.04197880233340585,
+      "tema_3": 0.9161711809543127
+    },
+    "d12": {
+      "tema_1": 0.9149338522424816,
+      "tema_2": 0.042078805194867216,
+      "tema_3": 0.042987342562651215
+    }
+  },
+  "etiquetas_reales": {
+    "d01": "deporte",
+    "d02": "deporte",
+    "d03": "deporte",
+    "d04": "deporte",
+    "d05": "cocina",
+    "d06": "cocina",
+    "d07": "cocina",
+    "d08": "cocina",
+    "d09": "astronomía",
+    "d10": "astronomía",
+    "d11": "astronomía",
+    "d12": "astronomía"
+  },
+  "n_documentos": 12,
+  "n_componentes": 3,
+  "learning_method": "batch",
+  "max_iter": 50,
+  "random_state": 0
+}

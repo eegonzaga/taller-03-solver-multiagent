@@ -1,0 +1,28 @@
+Check de correccion de knn_exacto vs. fuerza bruta: OK
+
+================================================================================
+ Tabla de latencias — kNN exacto (d=128, coseno, k=10, media de 20 consultas)
+================================================================================
+         N | t medio (ms) |  std (ms) |  us/vector |     N·d (mults.)
+--------------------------------------------------------------------------------
+    10,000 |        0.150 |     0.045 |      0.015 |        1,280,000
+    50,000 |        1.012 |     0.130 |      0.020 |        6,400,000
+   100,000 |        1.872 |     0.222 |      0.019 |       12,800,000
+   200,000 |        3.808 |     0.519 |      0.019 |       25,600,000
+================================================================================
+
+Factor de escalado N=10k -> N=200k : 25.46x  (ideal lineal: 20x)
+Ajuste lineal  t(N) = 0.0191 us/vector * N + -0.005 ms   (R^2 = 0.999146)
+Extrapolacion a N = 10,000,000     : 190.4 ms por consulta (~0.2 s)
+  (10,000,000 x 128 = 1,280,000,000 multiplicaciones por consulta)
+
+CONCLUSION: la latencia crece LINEALMENTE con N (O(N·d)). Con 10M de vectores
+y trafico real, esto muere. Entra IVF (Parte 2).
+
+Figura guardada: figura_latencia_vs_N.png
+Resultados guardados: resultados.json
+
+Cifras principales:
+  tiempo_medio_ms_por_N: {'10000': 0.14954585203668103, '50000': 1.0123625514097512, '100000': 1.8721667511272244, '200000': 3.8080396538134664}
+  factor_escalado_N10k_a_N200k: 25.464027266228822
+  figura_latencia_vs_N: figura_latencia_vs_N.png

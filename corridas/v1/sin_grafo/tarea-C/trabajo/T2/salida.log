@@ -1,0 +1,40 @@
+========================================================================
+T2 - Parte 2 - Numero de temas (k = 2, 3 y 4)
+Mismo CountVectorizer y mismos parametros de LDA que en la Parte 1:
+learning_method='batch', max_iter=50, random_state=0.
+========================================================================
+[info] Resultados de T1 cargados desde entradas/T1.json.
+[info] Corpus tomado del enunciado (embebido en el script): 12 textos.
+[info] Matriz documento-termino: 12 documentos x 494 terminos (1908 palabras en total).
+[info] LDA con k=2: perplejidad = 251.77746292095216 (n_iter_ = 50)
+[info] LDA con k=3: perplejidad = 261.17751254699317 (n_iter_ = 50)
+[info] LDA con k=4: perplejidad = 266.5209263752077 (n_iter_ = 50)
+[verif 1] Vocabulario: 494 terminos obtenidos vs 71 en T1 | Jaccard = 0.000000 | listas identicas = False
+[verif 2] Perplejidad k=3: T2 = 261.17751254699317 | T1 = 137.78770156685167 | diferencia relativa = 8.955e-01 (tolerancia 1e-06)
+========================================================================
+[AVISO] La verificacion contra T1 NO se ha superado:
+         - el vocabulario no coincide con el de T1 (Jaccard = 0.000000)
+         - la perplejidad con k=3 (261.17751254699317) no reproduce perplejidad_k3 de T1 (137.78770156685167)
+[AVISO] Se continua con el protocolo de la subtarea y se reportan las perplejidades solicitadas, dejando constancia en
+         resultados.json de la procedencia del corpus (clave 'fuente_corpus') y del resultado de la verificacion.
+========================================================================
+
+[ok] Cifras guardadas en resultados.json
+
+========================================================================
+T2 - Parte 2 - Perplejidad segun el numero de temas (k = 2, 3, 4)
+Mismo CountVectorizer y mismos parametros de LDA que en la Parte 1.
+Fuente del corpus: corpus embebido en el script (doce textos del enunciado)
+========================================================================
+ n_temas  perplejidad  n_iteracion_final  log_verosimilitud_total
+       2   251.777463                 50            -10548.465031
+       3   261.177513                 50            -10618.402174
+       4   266.520926                 50            -10657.043873
+========================================================================
+Cifras principales (precision completa):
+  perplejidad_k2 = 251.77746292095216
+  perplejidad_k3 = 261.17751254699317
+  perplejidad_k4 = 266.5209263752077
+  Menor perplejidad (mejor ajuste): k = 2 (251.777463)
+  Verificacion contra T1: no_superada
+========================================================================

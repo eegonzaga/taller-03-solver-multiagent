@@ -1,0 +1,96 @@
+version,tarea,check,tipo,evaluador,juez,razon
+completo,A,A01,archivo,1,1,El archivo 'reporte.md' está presente en la lista de archivos entregados.
+completo,A,A02,archivo,1,1,El archivo 'trabajo/T3/curva_aprendizaje.png' está presente en la lista de archivos entregados.
+completo,A,A03,secciones,1,1,"El reporte.md tiene las secciones solicitadas en el orden correcto (Introducción, Metodología, Resultados, Discusión y Conclusiones)."
+completo,A,A04,palabras_max,1,1,"Aunque no puedo verificar el conteo exacto de palabras, el reporte parece conciso y es poco probable que exceda las 1000 palabras."
+completo,A,A05,cifra_presente,1,1,"El reporte indica que el conjunto de datos tiene 1797 ejemplos, lo cual es correcto."
+completo,A,A06,cifra,1,1,"El reporte indica una exactitud de 0.8556 para Naive Bayes en prueba con el entrenamiento completo, lo cual es consistente."
+completo,A,A07,cifra,1,1,"El reporte indica una exactitud de 0.9711 para la regresión logística en prueba con el entrenamiento completo, lo cual es consistente."
+completo,A,A08,cifra_presente,1,1,"El reporte indica una exactitud de 0.3667 para Naive Bayes con 20 ejemplos de entrenamiento, lo cual es consistente."
+completo,A,A09,procedencia,1,1,"El reporte afirma que todas las cifras provienen de la ejecución del código, y la consistencia de los resultados con los esperados sugiere que es plausible."
+completo,B,B01,archivo,1,1,Se entregó un archivo .ipynb.
+completo,B,B02,ipynb_ejecutado,1,1,El texto indica que el notebook se ejecuta de principio a fin sin errores.
+completo,B,B03,cifra_presente,1,1,El texto reporta el peso de atención de la consulta 1 sobre la clave 3 como 0.4981.
+completo,B,B04,cifra_presente,1,1,"El texto reporta la salida de atención de la consulta 2, segunda columna, como 1.2628."
+completo,B,B05,cifra_presente,1,1,El texto reporta la entropía sin escalar para d_k = 64 como 0.3537 bits.
+completo,B,B06,cifra_presente,1,1,El texto reporta la entropía escalada para d_k = 512 como 3.0363 bits.
+completo,B,B07,cifra_presente,1,1,"El texto reporta PE[25, 6] como 0.7108."
+completo,B,B08,archivo,1,1,El texto indica que se incluye el mapa de calor de la codificación posicional.
+completo,B,B09,procedencia,1,1,El texto afirma que todas las cifras se calculan en las celdas de código.
+completo,C,C01,archivo,1,1,El archivo 'reporte.pdf' está presente en la lista de archivos entregados.
+completo,C,C02,paginas_max,1,1,"El reporte es conciso y parece ajustarse al límite de dos páginas (no puedo verificarlo directamente sin abrir el PDF, pero la extensión del texto sugiere que sí)."
+completo,C,C03,secciones,1,1,"El texto del reporte indica claramente la presencia de las secciones Objetivo, Método, Resultados y Discusión, en el orden especificado."
+completo,C,C04,cifra,1,1,"El reporte indica una perplejidad de 137.7877 para el modelo de tres temas, lo cual es plausible."
+completo,C,C05,cifra_presente,1,1,"El reporte indica una perplejidad de 156.4198 para el modelo de cuatro temas, lo cual es plausible."
+completo,C,C06,cifra,1,1,"El reporte indica una pureza de 0.5, calculada correctamente según la descripción en el método."
+completo,C,C07,cifra_presente,1,1,"El reporte indica un tamaño de vocabulario de 71 términos, lo cual es plausible."
+completo,C,C08,codigo_sin,1,1,El reporte indica explícitamente que se utilizó el corpus proporcionado en el enunciado y no se descargó ningún otro.
+completo,C,C09,procedencia,1,1,"El reporte afirma que todas las cifras provienen de la ejecución del código, lo cual es consistente con el enunciado."
+completo,R1,R101,archivo,1,1,Se entregó un archivo .ipynb.
+completo,R1,R102,ipynb_ejecutado,1,1,El texto indica que el notebook se ejecutó de principio a fin sin errores.
+completo,R1,R103,cifra_presente,1,1,Se reporta el tamaño medio de las celdas del IVF (1562.5).
+completo,R1,R104,cifra,1,1,Se reporta un recall@10 de 0.978 para nprobe = 16.
+completo,R1,R105,cifra_presente,1,1,Se reporta el score del mejor resultado de Qdrant filtrado por tema 'pagos' (-0.1018).
+completo,R1,R106,archivo,1,1,"El texto menciona que se generaron y guardaron las gráficas de latencia y del trade-off recall/speedup, y se muestran en el notebook."
+completo,R1,R107,codigo_sin,1,1,Se indica que se usó Qdrant en modo embebido (:memory:) sin conexión de red.
+completo,R1,R108,procedencia,0,1,El texto indica que las cifras del notebook provienen de una ejecución.
+completo,R2,R201,archivo,1,1,Se entregó un archivo .ipynb.
+completo,R2,R202,ipynb_ejecutado,1,1,El texto indica que el notebook se ejecutó sin errores.
+completo,R2,R203,cifra,1,1,"El notebook reporta 6 fragmentos, que es el número correcto según el enunciado y la configuración."
+completo,R2,R204,cifra_presente,1,1,"El notebook reporta 0.499 como el puntaje top-1 para la pregunta sobre días de vacaciones, lo cual es correcto."
+completo,R2,R205,cifra_presente,1,1,"El notebook reporta 0.399 como el puntaje top-1 para la pregunta sobre trabajar desde el exterior, lo cual es correcto."
+completo,R2,R206,contiene,0,1,"El notebook indica que para la pregunta sobre mascotas, el RAG se abstiene, lo cual es correcto."
+completo,R2,R207,codigo_sin,1,1,El texto indica explícitamente que no se llama a ninguna API por red.
+completo,R2,R208,procedencia,1,1,El texto indica que las cifras provienen de una ejecución del notebook.
+sin_grafo,A,A01,archivo,1,1,El archivo 'reporte.md' está presente en la lista de archivos entregados.
+sin_grafo,A,A02,archivo,1,1,El archivo 'trabajo/T3/T3_parte3_curva_aprendizaje.png' está presente en la lista de archivos entregados.
+sin_grafo,A,A03,secciones,1,1,"El reporte.md tiene las secciones solicitadas en el orden correcto (Introducción, Metodología, Resultados, Discusión y Conclusiones)."
+sin_grafo,A,A04,palabras_max,1,1,"Aunque no puedo verificar el conteo exacto de palabras, el reporte parece conciso y es poco probable que exceda las 1000 palabras."
+sin_grafo,A,A05,cifra_presente,1,1,El reporte indica correctamente que el conjunto de dígitos tiene 1797 ejemplos.
+sin_grafo,A,A06,cifra,1,1,"El reporte indica una exactitud de 0.8556 para Naive Bayes en prueba con el entrenamiento completo, lo cual es consistente con los resultados presentados."
+sin_grafo,A,A07,cifra,1,1,"El reporte indica una exactitud de 0.9711 para la regresión logística en prueba con el entrenamiento completo, lo cual es consistente con los resultados presentados."
+sin_grafo,A,A08,cifra_presente,1,1,"El reporte indica una exactitud de 0.3667 para Naive Bayes con 20 ejemplos de entrenamiento, lo cual es consistente con los resultados presentados."
+sin_grafo,A,A09,procedencia,1,1,"El reporte afirma que todas las cifras provienen de la ejecución del código, y la consistencia interna de los resultados lo sugiere."
+sin_grafo,B,B01,archivo,1,1,Se entrega un archivo .ipynb
+sin_grafo,B,B02,ipynb_ejecutado,1,1,El texto indica que el notebook se ejecuta de principio a fin sin errores.
+sin_grafo,B,B03,cifra_presente,1,1,El texto reporta el peso de atención de la consulta 1 sobre la clave 3 como 0.4981.
+sin_grafo,B,B04,cifra_presente,1,1,"El texto reporta la salida de atención de la consulta 2, segunda columna, como 0.8639."
+sin_grafo,B,B05,cifra_presente,1,1,El texto reporta la entropía sin escalar para d_k = 64 como 0.3537.
+sin_grafo,B,B06,cifra_presente,1,1,El texto reporta la entropía escalada para d_k = 512 como 3.0363.
+sin_grafo,B,B07,cifra_presente,1,1,"El texto reporta PE[25, 6] como 0.7108."
+sin_grafo,B,B08,archivo,1,1,El texto indica que se incluye el mapa de calor de la codificación posicional y se adjuntan imágenes.
+sin_grafo,B,B09,procedencia,1,1,El texto indica que todas las cifras se calculan en el notebook.
+sin_grafo,C,C01,archivo,1,1,El archivo 'reporte.pdf' está presente en la lista de archivos entregados.
+sin_grafo,C,C02,paginas_max,1,1,"El entregable es un PDF y, aunque no puedo verificar el número exacto de páginas, el texto indica que el reporte tiene dos páginas como máximo."
+sin_grafo,C,C03,secciones,1,1,"El reporte contiene las secciones Objetivo, Método, Resultados y Discusión, en ese orden, según se describe en el texto."
+sin_grafo,C,C04,cifra,1,1,"El reporte indica que la perplejidad del modelo con tres temas es 137.7877, lo cual parece un valor plausible."
+sin_grafo,C,C05,cifra_presente,0,0,El reporte indica que la subtarea para k=4 falló y no se pudo obtener la perplejidad.
+sin_grafo,C,C06,cifra,1,1,"El reporte indica que la pureza es 0.5, lo cual es un valor numérico plausible dado el contexto del problema."
+sin_grafo,C,C07,cifra_presente,1,1,"El reporte indica que el tamaño del vocabulario es 71, lo cual es un valor numérico plausible."
+sin_grafo,C,C08,codigo_sin,1,1,"El enunciado especifica que no se debe descargar ningún corpus externo, y el reporte indica que se usó el corpus proporcionado."
+sin_grafo,C,C09,procedencia,1,1,El reporte afirma explícitamente que todas las cifras provienen de la ejecución del modelo.
+sin_grafo,R1,R101,archivo,1,1,Se entrega un archivo .ipynb.
+sin_grafo,R1,R102,ipynb_ejecutado,1,1,El texto indica que el notebook se ejecutó de principio a fin sin errores.
+sin_grafo,R1,R103,cifra_presente,1,1,Se reporta el tamaño medio de las celdas del IVF (1562.5).
+sin_grafo,R1,R104,cifra,1,1,Se reporta un recall@10 de 0.9780 para nprobe = 16.
+sin_grafo,R1,R105,cifra_presente,0,0,La Parte 3 falló y no hay resultados de Qdrant.
+sin_grafo,R1,R106,archivo,1,1,Se mencionan y se incluyen las gráficas de latencia y del trade-off recall/speedup.
+sin_grafo,R1,R107,codigo_sin,1,1,El texto indica que se usó Qdrant en modo embebido.
+sin_grafo,R1,R108,procedencia,0,1,El texto indica que las cifras provienen de una ejecución del notebook.
+sin_grafo,R2,R201,archivo,1,1,Se entregó un archivo .ipynb.
+sin_grafo,R2,R202,ipynb_ejecutado,1,0,El notebook no se ejecutó completamente. La Parte 2 y 3 están fallidas/pendientes.
+sin_grafo,R2,R203,cifra,0,1,"El notebook reporta el número de fragmentos (12 con overlap 80, 9 con overlap 0) y explica el cálculo."
+sin_grafo,R2,R204,cifra_presente,0,0,No hay resultados de recuperación (puntajes) porque la Parte 2 está fallida.
+sin_grafo,R2,R205,cifra_presente,0,0,No hay resultados de recuperación (puntajes) porque la Parte 2 está fallida.
+sin_grafo,R2,R206,contiene,1,0,"No hay generación de respuesta, por lo que no se puede verificar la abstención."
+sin_grafo,R2,R207,codigo_sin,1,1,El notebook indica que funciona sin API y en modo inspección.
+sin_grafo,R2,R208,procedencia,0,0,"Aunque el notebook se ejecutó parcialmente, las partes fallidas impiden verificar que todas las cifras provengan de una ejecución completa."
+control_sin_ejecutar,A,A01,archivo,1,1,El entregable incluye un archivo llamado 'reporte.md'
+control_sin_ejecutar,A,A02,archivo,0,1,"El reporte menciona que la figura 'curva_aprendizaje.png' se guarda, lo cual implica que se incluye."
+control_sin_ejecutar,A,A03,secciones,1,1,"El reporte tiene las secciones solicitadas en el orden correcto: Introducción, Metodología, Resultados, Discusión y Conclusiones."
+control_sin_ejecutar,A,A04,palabras_max,1,1,"El reporte parece estar dentro del límite de 1000 palabras, dada su extensión visible."
+control_sin_ejecutar,A,A05,cifra_presente,1,1,El reporte indica correctamente que el dataset tiene 1797 ejemplos.
+control_sin_ejecutar,A,A06,cifra,0,1,"El reporte indica una exactitud de 0.844 para Naive Bayes con el entrenamiento completo, lo cual es plausible."
+control_sin_ejecutar,A,A07,cifra,1,1,"El reporte indica una exactitud de 0.969 para la regresión logística con el entrenamiento completo, lo cual es plausible."
+control_sin_ejecutar,A,A08,cifra_presente,0,1,"El reporte indica una exactitud de 0.489 para Naive Bayes con 20 ejemplos de entrenamiento, lo cual es plausible."
+control_sin_ejecutar,A,A09,procedencia,0,1,"El reporte incluye un bloque de código que parece generar todas las cifras presentadas, lo que sugiere que no son inventadas."

@@ -1,0 +1,50 @@
+==============================================================================
+T3 · Parte 3 — ¿Recupera LDA los temas reales?
+==============================================================================
+Fuente de la distribución documento-tema: entradas/T1.json -> 'distribucion_documentos_temas' (modelo de la Parte 1)
+
+Distribución documento-tema (filas = documentos, columnas = temas LDA):
+     tema_0  tema_1  tema_2
+d01  0.0345  0.9320  0.0335
+d02  0.9005  0.0575  0.0420
+d03  0.8985  0.0536  0.0480
+d04  0.0425  0.9157  0.0418
+d05  0.9294  0.0337  0.0368
+d06  0.9135  0.0422  0.0443
+d07  0.0390  0.0374  0.9236
+d08  0.0316  0.0306  0.9378
+d09  0.0425  0.0420  0.9155
+d10  0.9160  0.0421  0.0420
+d11  0.0419  0.0420  0.9162
+d12  0.9149  0.0421  0.0430
+
+Asignación por documento (índices de tema LDA: 0–2):
+ id etiqueta_real  tema_lda_dominante  p_tema_dominante etiqueta_mayoritaria_del_tema bien_agrupado
+d01       deporte                   1            0.9320                       deporte            sí
+d02       deporte                   0            0.9005                    astronomía            NO
+d03       deporte                   0            0.8985                    astronomía            NO
+d04       deporte                   1            0.9157                       deporte            sí
+d05        cocina                   0            0.9294                    astronomía            NO
+d06        cocina                   0            0.9135                    astronomía            NO
+d07        cocina                   2            0.9236                    astronomía            NO
+d08        cocina                   2            0.9378                    astronomía            NO
+d09    astronomía                   2            0.9155                    astronomía            sí
+d10    astronomía                   0            0.9160                    astronomía            sí
+d11    astronomía                   2            0.9162                    astronomía            sí
+d12    astronomía                   0            0.9149                    astronomía            sí
+
+Composición real de cada tema LDA (conteo de etiquetas asignadas):
+  tema 0 -> etiqueta mayoritaria: astronomía | conteos: {'deporte': 2, 'cocina': 2, 'astronomía': 2}
+  tema 1 -> etiqueta mayoritaria: deporte | conteos: {'deporte': 2}
+  tema 2 -> etiqueta mayoritaria: astronomía | conteos: {'cocina': 2, 'astronomía': 2}
+
+Pureza = 6 / 12 = 0.500000
+Documentos mal agrupados: d02, d03, d05, d06, d07, d08
+  - d02 (etiqueta real: deporte) asignado al tema 0, cuyo grupo mayoritario es 'astronomía'
+  - d03 (etiqueta real: deporte) asignado al tema 0, cuyo grupo mayoritario es 'astronomía'
+  - d05 (etiqueta real: cocina) asignado al tema 0, cuyo grupo mayoritario es 'astronomía'
+  - d06 (etiqueta real: cocina) asignado al tema 0, cuyo grupo mayoritario es 'astronomía'
+  - d07 (etiqueta real: cocina) asignado al tema 2, cuyo grupo mayoritario es 'astronomía'
+  - d08 (etiqueta real: cocina) asignado al tema 2, cuyo grupo mayoritario es 'astronomía'
+
+Resultados guardados en resultados.json

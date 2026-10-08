@@ -1,0 +1,34 @@
+T2 - Parte 2: numero de temas (k = 2, 3, 4) - perplejidad sobre el corpus
+Corpus: 12 documentos, vocabulario de 71 palabras, 91 tokens tras quitar las palabras vacias
+
+Tabla comparativa (perplejidad sobre el corpus de 12 documentos):
+ n_componentes_k  perplejidad_corpus
+               2          107.890881
+               3          137.787702
+               4          156.419817
+
+Cifras principales (precision completa):
+  perplejidad_k2 = 107.89088069511578
+  perplejidad_k3 = 137.78770156685167
+  perplejidad_k4 = 156.41981736227808
+  k con menor perplejidad: 2
+
+Top 5 palabras por tema (k = 2):
+  tema 1: lleva, sal, masa, hornea, harina
+  tema 2: partido, equipo, liga, ganó, galaxia
+
+Top 5 palabras por tema (k = 3):
+  tema 1: órbita, planetas, partido, minutos, huevos
+  tema 2: equipo, partido, liga, ganó, dos
+  tema 3: sal, nebulosa, galaxia, estrellas, ajo
+
+Top 5 palabras por tema (k = 4):
+  tema 1: órbita, planetas, azúcar, minutos, treinta
+  tema 2: partido, equipo, liga, ganó, delantero
+  tema 3: telescopio, masa, hornea, harina, estrellas
+  tema 4: cebolla, ajo, lleva, sopa, cocina
+
+[control] perplejidad_k3 de la Parte 1: 137.78770156685167
+[control] perplejidad_k3 de esta parte:  137.78770156685167
+
+Resultados guardados en resultados.json

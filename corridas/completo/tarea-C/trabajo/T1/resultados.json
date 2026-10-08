@@ -1,0 +1,199 @@
+{
+  "tamano_vocabulario": 71,
+  "palabras_top_por_tema": {
+    "tema_1": [
+      "planetas",
+      "órbita",
+      "partido",
+      "receta",
+      "azúcar"
+    ],
+    "tema_2": [
+      "equipo",
+      "partido",
+      "liga",
+      "ganó",
+      "goles"
+    ],
+    "tema_3": [
+      "sal",
+      "estrellas",
+      "nebulosa",
+      "galaxia",
+      "ajo"
+    ]
+  },
+  "perplejidad_3_temas": 137.78770156685167,
+  "vocabulario": [
+    "aceite",
+    "agua",
+    "ajo",
+    "amasar",
+    "azúcar",
+    "añade",
+    "año",
+    "baloncesto",
+    "campeona",
+    "cebolla",
+    "cocina",
+    "defensa",
+    "delantero",
+    "dos",
+    "dura",
+    "entrenador",
+    "equipo",
+    "espacial",
+    "estrella",
+    "estrellas",
+    "final",
+    "fotografió",
+    "fuego",
+    "fútbol",
+    "galaxia",
+    "ganó",
+    "gas",
+    "giran",
+    "goles",
+    "harina",
+    "hornea",
+    "huevos",
+    "júpiter",
+    "largo",
+    "lejana",
+    "lento",
+    "levadura",
+    "liga",
+    "lleva",
+    "luna",
+    "marcó",
+    "masa",
+    "minutos",
+    "nacen",
+    "nebulosa",
+    "nube",
+    "nuevas",
+    "observó",
+    "pan",
+    "partido",
+    "perdió",
+    "planetas",
+    "preparó",
+    "punto",
+    "receta",
+    "sal",
+    "salsa",
+    "segundo",
+    "sofríe",
+    "sopa",
+    "telescopio",
+    "tenista",
+    "tierra",
+    "tomate",
+    "torneo",
+    "treinta",
+    "varias",
+    "verduras",
+    "zanahoria",
+    "órbita",
+    "último"
+  ],
+  "ids_documentos": [
+    "d01",
+    "d02",
+    "d03",
+    "d04",
+    "d05",
+    "d06",
+    "d07",
+    "d08",
+    "d09",
+    "d10",
+    "d11",
+    "d12"
+  ],
+  "etiquetas_reales": [
+    "deporte",
+    "deporte",
+    "deporte",
+    "deporte",
+    "cocina",
+    "cocina",
+    "cocina",
+    "cocina",
+    "astronomía",
+    "astronomía",
+    "astronomía",
+    "astronomía"
+  ],
+  "distribucion_documento_tema": {
+    "d01": [
+      0.03451075388652934,
+      0.9320154371970236,
+      0.03347380891644702
+    ],
+    "d02": [
+      0.900493821844927,
+      0.05751675610852142,
+      0.04198942204655155
+    ],
+    "d03": [
+      0.8984673281398191,
+      0.05355258461765944,
+      0.04798008724252147
+    ],
+    "d04": [
+      0.0424992847658691,
+      0.9156635781080892,
+      0.04183713712604174
+    ],
+    "d05": [
+      0.9294479762188961,
+      0.03372223035173579,
+      0.03682979342936811
+    ],
+    "d06": [
+      0.9135073636675036,
+      0.04215585605951542,
+      0.044336780272980825
+    ],
+    "d07": [
+      0.039010951438234014,
+      0.037371427657236486,
+      0.9236176209045295
+    ],
+    "d08": [
+      0.03157440033680361,
+      0.030579048494189204,
+      0.9378465511690073
+    ],
+    "d09": [
+      0.04253454057705356,
+      0.04197774298732245,
+      0.915487716435624
+    ],
+    "d10": [
+      0.9159600976349318,
+      0.04208216894515651,
+      0.04195773341991178
+    ],
+    "d11": [
+      0.04185001671228145,
+      0.04197880233340585,
+      0.9161711809543127
+    ],
+    "d12": [
+      0.9149338522424816,
+      0.042078805194867216,
+      0.042987342562651215
+    ]
+  },
+  "configuracion": {
+    "n_components": 3,
+    "learning_method": "batch",
+    "max_iter": 50,
+    "random_state": 0,
+    "n_iter_ejecutadas": 50,
+    "n_documentos": 12,
+    "n_tokens_corpus": 91
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "entrega": {
+    "formato": "ipynb",
+    "archivo": "semana2_ann.ipynb",
+    "secciones": [
+      "Parte 0 — Setup",
+      "Parte 1 — kNN exacto: latencia vs. N",
+      "Parte 2 — Mini-IVF: clustering + búsqueda local",
+      "Parte 3 — Qdrant embebido: una vector DB real sin Docker",
+      "Cierre"
+    ],
+    "max_palabras": null,
+    "max_paginas": null
+  },
+  "subtareas": [
+    {
+      "id": "T1",
+      "titulo": "Setup + Parte 1: kNN exacto, latencia vs. N",
+      "tipo": "calculo",
+      "secciones": [
+        "S0",
+        "S1"
+      ],
+      "depende_de": [],
+      "objetivo": "Incluir el código dado del setup (datos_realistas con D=128, 200 centros gaussianos fijos, semillas 7/2026, y normalizar a norma 1). Implementar knn_exacto(consulta, base, k) usando producto punto sobre vectores normalizados (Ejercicio 1.1) y medir el tiempo medio de consulta para N = 10_000, 50_000, 100_000, 200_000. Graficar latencia vs. N (PNG) y verificar empíricamente el escalado lineal O(N·d), cerrando con la conclusión de que con 10M vectores y tráfico real esto no escala.",
+      "figura": true,
+      "resultados": [
+        "latencia_media_ms_por_N"
+      ]
+    },
+    {
+      "id": "T2",
+      "titulo": "Parte 2: Mini-IVF con KMeans, recall@10 vs. speedup",
+      "tipo": "calculo",
+      "secciones": [
+        "S2"
+      ],
+      "depende_de": [
+        "T1"
+      ],
+      "objetivo": "Con el código dado (base = normalizar(datos_realistas(100_000)), KMeans con NLIST=64, n_init=3, random_state=7, centroides normalizados y celdas por labels): reportar tamaño medio de celda; implementar knn_ivf(consulta, nprobe, k) (Ejercicio 2.1: scores contra centroides → nprobe celdas más cercanas → kNN exacto solo dentro de esas celdas, devolviendo índices globales); y para nprobe = 1, 2, 4, 8, 16 (Ejercicio 2.2) medir recall@10 contra knn_exacto promediado sobre 50 consultas y el speedup vs. búsqueda exacta. Graficar la curva recall@10 vs. speedup (PNG) y comentar el triángulo recall/latencia (fronteras entre celdas) y el paralelismo con ef_search de HNSW.",
+      "figura": true,
+      "resultados": [
+        "tamano_medio_celda",
+        "recall_at10_por_nprobe",
+        "speedup_por_nprobe"
+      ]
+    },
+    {
+      "id": "T3",
+      "titulo": "Parte 3: Qdrant embebido con filtros de metadata",
+      "tipo": "calculo",
+      "secciones": [
+        "S3"
+      ],
+      "depende_de": [],
+      "objetivo": "Ejecutar el código dado de Qdrant: intentar conexión a http://localhost:6333 con timeout 3 y fallback a QdrantClient(':memory:'); crear la colección 'faqs' (64 dims, Distance.COSINE) desde cero, upsert de los 6 FAQs con embed_demo (semilla vía hashlib.sha256, no hash()) y payload {texto, tema}; ejecutar la consulta '¿cuándo me devuelven el dinero?' con query_filter tema='pagos' y limit=2, registrando los hits (score, tema, texto) y el conteo de puntos. Nota: con embeddings sintéticos el score no es semántico; el objetivo es la mecánica colección/upsert/query/filtro. La parte se salta sola si qdrant-client no está instalado.",
+      "figura": false,
+      "resultados": [
+        "num_puntos_coleccion",
+        "hits_consulta_filtro_pagos"
+      ]
+    },
+    {
+      "id": "T4",
+      "titulo": "Reflexión final + Cierre y armado del notebook",
+      "tipo": "redaccion",
+      "secciones": [
+        "S3",
+        "S4"
+      ],
+      "depende_de": [
+        "T1",
+        "T2",
+        "T3"
+      ],
+      "objetivo": "Redactar el notebook final .ipynb ejecutado de principio a fin sin errores, con una celda Markdown encabezando cada parte. Incluir la reflexión final respondida con las cifras medidas: a) para ~N documentos del proyecto propio, ¿basta kNN exacto o se necesita índice ANN? (justificar con las latencias de T1 y los speedups/recall de T2); b) qué motor elegir (Qdrant / pgvector / otro) y por qué operacionalmente. Cerrar con la sección Cierre: kNN exacto O(N·d) medido, IVF (nlist/nprobe) vs. HNSW (ef_search) en el triángulo recall/latencia/memoria, y el flujo Qdrant colección → upsert(vector+payload) → query con filtros.",
+      "figura": false,
+      "resultados": [
+        "reflexion_a_con_cifras",
+        "reflexion_b_con_cifras"
+      ]
+    }
+  ],
+  "estado_final": [
+    {
+      "id": "T1",
+      "tipo": "calculo",
+      "status": "completado",
+      "intentos": 1
+    },
+    {
+      "id": "T2",
+      "tipo": "calculo",
+      "status": "completado",
+      "intentos": 1
+    },
+    {
+      "id": "T3",
+      "tipo": "calculo",
+      "status": "fallida",
+      "intentos": 3
+    },
+    {
+      "id": "T4",
+      "tipo": "redaccion",
+      "status": "para_redactor",
+      "intentos": 0
+    }
+  ]
+}

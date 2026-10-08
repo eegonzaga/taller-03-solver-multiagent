@@ -1,0 +1,25 @@
+Número de documentos: 12
+Tamaño del vocabulario: 71
+Vocabulario: aceite, agua, ajo, amasar, azúcar, añade, año, baloncesto, campeona, cebolla, cocina, defensa, delantero, dos, dura, entrenador, equipo, espacial, estrella, estrellas, final, fotografió, fuego, fútbol, galaxia, ganó, gas, giran, goles, harina, hornea, huevos, júpiter, largo, lejana, lento, levadura, liga, lleva, luna, marcó, masa, minutos, nacen, nebulosa, nube, nuevas, observó, pan, partido, perdió, planetas, preparó, punto, receta, sal, salsa, segundo, sofríe, sopa, telescopio, tenista, tierra, tomate, torneo, treinta, varias, verduras, zanahoria, órbita, último
+
+tema_1: órbita (0.035090), planetas (0.035090), partido (0.034486), minutos (0.020047), huevos (0.020047)
+tema_2: equipo (0.060049), partido (0.059586), liga (0.034120), ganó (0.033853), dos (0.033460)
+tema_3: sal (0.041887), nebulosa (0.041884), galaxia (0.041884), estrellas (0.041884), ajo (0.024029)
+
+Perplejidad del modelo (k=3) sobre el corpus: 137.78770156685167
+
+Mezcla de temas por documento (tema_1, tema_2, tema_3):
+  d01: [0.0345, 0.9320, 0.0335]
+  d02: [0.9005, 0.0575, 0.0420]
+  d03: [0.8985, 0.0536, 0.0480]
+  d04: [0.0425, 0.9157, 0.0418]
+  d05: [0.9294, 0.0337, 0.0368]
+  d06: [0.9135, 0.0422, 0.0443]
+  d07: [0.0390, 0.0374, 0.9236]
+  d08: [0.0316, 0.0306, 0.9378]
+  d09: [0.0425, 0.0420, 0.9155]
+  d10: [0.9160, 0.0421, 0.0420]
+  d11: [0.0419, 0.0420, 0.9162]
+  d12: [0.9149, 0.0421, 0.0430]
+
+Resultados guardados en resultados.json

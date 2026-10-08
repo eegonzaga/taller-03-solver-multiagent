@@ -1,0 +1,24 @@
+IVF entrenado: 64 celdas, tamaño medio 1562 (min 463, max 3710; KMeans tardó 3.9 s)
+
+kNN exacto sobre 100.000 vectores: 1.346 ms/consulta (promedio de 50 consultas)
+Verificación nprobe=nlist=64 == exacto: True
+
+nprobe | recall@10 | lat IVF (ms) |   speedup
+------------------------------------------------
+     1 |     0.802 |        0.208 |      6.5x
+     2 |     0.922 |        0.377 |      3.6x
+     4 |     0.934 |        0.955 |      1.4x
+     8 |     0.946 |        1.449 |      0.9x
+    16 |     0.978 |        3.135 |      0.4x
+
+Referencia T1 (exacto, N=100k): 1.386 ms/consulta | medida hoy aquí: 1.346 ms
+
+Figura guardada: T2_parte2_recall_vs_speedup.png
+
+--- Reflexión ---
+1) Triángulo recall/latencia: con nprobe=1 se abre UNA celda (~1562 de los 100000 vectores) y la consulta cuesta 0.208 ms (6.5x más rápida que el exacto, 1.346 ms), pero el recall@10 cae a 0.80.
+   El recall perdido vive en las FRONTERAS entre celdas: un vecino verdadero puede estar en una celda vecina cuya frontera pasa cerca de la consulta; esa celda no se abre aunque el punto sí esté entre los 10 más cercanos.
+2) Subir la perilla recupera recall pagando latencia: nprobe=16 da recall 0.98 con speedup 0.4x. El costo crece ~lineal con nprobe (~nprobe x 1562 vectores explorados) y con nprobe=nlist=64 IVF ES el kNN exacto (verificado: True) — la aproximación es un dial, no otro algoritmo.
+3) Paralelismo con ef_search de HNSW: es la MISMA clase de perilla de consulta — cuántos candidatos explora por consulta (celdas abiertas en IVF, nodos visitados en el grafo de HNSW) — con el mismo intercambio recall por latencia. Lo que cambia es la estructura subyacente (celdas vs. grafo) y con ello la forma de la curva; aquí solo medimos IVF, así que la frase 'HNSW ofrece el mismo dial con mejor curva' queda como hipótesis del material, no como cifra medida en este notebook.
+
+Cifras guardadas en resultados.json: tamano_medio_celda, recall_at10_por_nprobe, speedup_por_nprobe (y extras de latencia/verificación).

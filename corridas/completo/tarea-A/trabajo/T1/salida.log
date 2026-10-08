@@ -1,0 +1,35 @@
+============================================================
+T1 — Datos y partición única (load_digits)
+============================================================
+n_ejemplos  (total de imágenes)      : 1797
+n_atributos (características 8x8)    : 64
+n_clases    (dígitos 0-9)            : 10
+n_train     (75%, estratificado)     : 1347
+n_test      (25%, estratificado)     : 450
+------------------------------------------------------------
+Cuentas por clase en entrenamiento:
+  clase 0: 133
+  clase 1: 136
+  clase 2: 133
+  clase 3: 137
+  clase 4: 136
+  clase 5: 136
+  clase 6: 136
+  clase 7: 134
+  clase 8: 131
+  clase 9: 135
+Cuentas por clase en prueba:
+  clase 0: 45
+  clase 1: 46
+  clase 2: 44
+  clase 3: 46
+  clase 4: 45
+  clase 5: 46
+  clase 6: 45
+  clase 7: 45
+  clase 8: 43
+  clase 9: 45
+------------------------------------------------------------
+Partición guardada en 'resultados.json' y 'entradas/T1.json'
+(índices de train/test; random_state=7, stratify=y, test_size=0.25)
+El conjunto de prueba NO se usa para ajustar ni elegir nada.

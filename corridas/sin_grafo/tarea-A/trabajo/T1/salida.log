@@ -1,0 +1,19 @@
+=== T1 — Parte 1: Datos y partición ===
+n_ejemplos  : 1797
+n_atributos : 64
+n_clases    : 10
+n_train     : 1347  (0.7496 del total)
+n_test      : 450  (0.2504 del total)
+Clases      : [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Distribución por clase (total | train | test):
+  clase 0:  178 |  133 (0.0987) |  45 (0.1000)
+  clase 1:  182 |  136 (0.1010) |  46 (0.1022)
+  clase 2:  177 |  133 (0.0987) |  44 (0.0978)
+  clase 3:  183 |  137 (0.1017) |  46 (0.1022)
+  clase 4:  181 |  136 (0.1010) |  45 (0.1000)
+  clase 5:  182 |  136 (0.1010) |  46 (0.1022)
+  clase 6:  181 |  136 (0.1010) |  45 (0.1000)
+  clase 7:  179 |  134 (0.0995) |  45 (0.1000)
+  clase 8:  174 |  131 (0.0973) |  43 (0.0956)
+  clase 9:  180 |  135 (0.1002) |  45 (0.1000)
+Archivos guardados: resultados.json, X_train.npy, X_test.npy, y_train.npy, y_test.npy, entradas/T1.json

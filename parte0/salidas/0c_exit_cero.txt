@@ -1,0 +1,11 @@
+Revisión estática del sandbox (REGLA 3): permitido
+stdout del experimento: Exactitud: 1.000
+
+1) Evaluador ingenuo: APROBADO  (código de salida=0, resultados.json=sí)
+
+2) Revisiones con código del revisor (REGLA 4):
+   estática  — se predice sobre lo mismo que se ajustó: ['X']
+   plausible — métricas ≥ 0,999 en un problema con ruido: ['accuracy=1.0']
+   → RECHAZADO sin consultar al LLM. El programador recibe esto como corrección:
+     - métricas implausibles (≥ 0,999) en un problema con ruido: ['accuracy=1.0']; ¿se evaluó sobre los datos de entrenamiento?
+     - fuga de datos: se predice/evalúa sobre ['X'], la misma variable con que se ajustó

@@ -1,0 +1,18 @@
+{
+ "mensajes": [
+  {
+   "role": "system",
+   "content": "Extraes entidades de un texto de un curso de maestría en IA (un enunciado o\nun fragmento de un paper, en español o en inglés).\nTipos permitidos: dataset, metodo, metrica, concepto.\n- dataset: conjuntos de datos concretos (p. ej. «Breast Cancer Wisconsin», «Palmer Penguins»).\n- metodo: algoritmos, modelos o técnicas (p. ej. «Naive Bayes gaussiano», «TF-IDF», «PCA», «SVD»).\n- metrica: medidas de evaluación (p. ej. «accuracy», «F1 macro», «MRR», «entropía»).\n- concepto: ideas teóricas (p. ej. «sesgo y varianza», «temperatura», «gradiente»).\nNombres cortos y canónicos, en español salvo nombres propios (sin artículos). Máximo 12 entidades. Responde solo JSON:\n{\"entidades\": [{\"nombre\": \"...\", \"tipo\": \"dataset|metodo|metrica|concepto\"}]}"
+  },
+  {
+   "role": "user",
+   "content": "Parte 1 — kNN exacto: latencia vs. N\n✏\u0000 Ejercicio 1.1\nImplementa knn_exacto(consulta, base, k) (vectores normalizados → usar dot) y mide el tiempo\nmedio de consulta para N = 10k, 50k, 100k, 200k. Grafica.\n# Ejercicio 1.1 — el costo O(N·d), medido\n# (a completar)\nLineal en N. Con 10M de vectores y tráfico real, esto muere. Entra IVF."
+  }
+ ],
+ "respuesta": {
+  "contenido": "{\"entidades\": [{\"nombre\": \"kNN exacto\", \"tipo\": \"metodo\"}, {\"nombre\": \"producto punto\", \"tipo\": \"metodo\"}, {\"nombre\": \"normalización de vectores\", \"tipo\": \"concepto\"}, {\"nombre\": \"latencia\", \"tipo\": \"metrica\"}, {\"nombre\": \"complejidad O(N·d)\", \"tipo\": \"concepto\"}, {\"nombre\": \"IVF\", \"tipo\": \"metodo\"}]}",
+  "fin": "stop",
+  "tokens_entrada": 371,
+  "tokens_salida": 1052
+ }
+}

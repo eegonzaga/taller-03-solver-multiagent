@@ -1,0 +1,18 @@
+{
+ "mensajes": [
+  {
+   "role": "system",
+   "content": "Extraes entidades de un texto de un curso de maestría en IA (un enunciado o\nun fragmento de un paper, en español o en inglés).\nTipos permitidos: dataset, metodo, metrica, concepto.\n- dataset: conjuntos de datos concretos (p. ej. «Breast Cancer Wisconsin», «Palmer Penguins»).\n- metodo: algoritmos, modelos o técnicas (p. ej. «Naive Bayes gaussiano», «TF-IDF», «PCA», «SVD»).\n- metrica: medidas de evaluación (p. ej. «accuracy», «F1 macro», «MRR», «entropía»).\n- concepto: ideas teóricas (p. ej. «sesgo y varianza», «temperatura», «gradiente»).\nNombres cortos y canónicos, en español salvo nombres propios (sin artículos). Máximo 12 entidades. Responde solo JSON:\n{\"entidades\": [{\"nombre\": \"...\", \"tipo\": \"dataset|metodo|metrica|concepto\"}]}"
+  },
+  {
+   "role": "user",
+   "content": "Parte 4 — Pregunta conceptual\nExplica con las entropías de la Parte 2 qué problema resuelve la división por √d_k y qué le pasaría al\ngradiente del softmax sin ella. Relaciónalo con lo que dice el paper."
+  }
+ ],
+ "respuesta": {
+  "contenido": "{\"entidades\": [{\"nombre\": \"entropía\", \"tipo\": \"metrica\"}, {\"nombre\": \"escala por √d_k\", \"tipo\": \"metodo\"}, {\"nombre\": \"softmax\", \"tipo\": \"metodo\"}, {\"nombre\": \"gradiente\", \"tipo\": \"concepto\"}]}",
+  "fin": "stop",
+  "tokens_entrada": 299,
+  "tokens_salida": 474
+ }
+}

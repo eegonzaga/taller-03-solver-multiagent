@@ -1,0 +1,96 @@
+{
+  "num_chunks": 9,
+  "longitud_max_chunk_caracteres": 300,
+  "idea_cortada_overlap_80": true,
+  "idea_cortada_overlap_0": true,
+  "idea_completa_en_algun_chunk_overlap_80": true,
+  "idea_completa_en_algun_chunk_overlap_0": false,
+  "chunks_donde_la_idea_queda_cortada_overlap_80": [
+    0
+  ],
+  "chunks_donde_la_idea_queda_cortada_overlap_0": [
+    0,
+    1
+  ],
+  "chunks_donde_la_idea_aparece_completa_overlap_80": [
+    1
+  ],
+  "chunks_donde_la_idea_aparece_completa_overlap_0": [],
+  "fragmentos_visibles_de_la_idea_overlap_80": [
+    {
+      "chunk": 0,
+      "origen": "politica_vacaciones",
+      "fragmento_visible": "hasta un máx"
+    }
+  ],
+  "fragmentos_visibles_de_la_idea_overlap_0": [
+    {
+      "chunk": 0,
+      "origen": "politica_vacaciones",
+      "fragmento_visible": "hasta un máx"
+    },
+    {
+      "chunk": 1,
+      "origen": "politica_vacaciones",
+      "fragmento_visible": "imo de 5 días"
+    }
+  ],
+  "idea_buscada": "hasta un máximo de 5 días",
+  "tamano_chunk_caracteres": 300,
+  "overlap_caracteres": 80,
+  "overlap_alternativo_caracteres": 0,
+  "num_chunks_overlap_0": 8,
+  "num_chunks_por_documento": {
+    "politica_vacaciones": 3,
+    "politica_teletrabajo": 3,
+    "politica_gastos_viaje": 3
+  },
+  "longitud_documentos_caracteres": {
+    "politica_vacaciones": 684,
+    "politica_teletrabajo": 589,
+    "politica_gastos_viaje": 608
+  },
+  "chunks": [
+    "POLÍTICA DE VACACIONES DE NIMBUSSOFT. Todo empleado tiene derecho a 23 días naturales de vacaciones al año. Se devengan mensualmente y se solicitan en el portal interno con 15 días de antelación. La aprueba el responsable directo. Los días no disfrutados se transfieren al año siguiente, hasta un máx",
+    "e directo. Los días no disfrutados se transfieren al año siguiente, hasta un máximo de 5 días; el exceso se pierde sin compensación económica. Si un festivo cae dentro del periodo vacacional, no se descuenta del saldo. En caso de baja médica durante las vacaciones, se interrumpe el cómputo y los día",
+    "n caso de baja médica durante las vacaciones, se interrumpe el cómputo y los días afectados se recuperan. Al cese del empleado, se liquidan las vacaciones devengadas y no disfrutadas. Las dudas sobre esta política se canalizan en People Office.",
+    "POLÍTICA DE TELETRABAJO DE NIMBUSSOFT. El personal puede trabajar en remoto hasta dos días por semana, previo acuerdo con su responsable. Los días de teletrabajo se registran en la herramienta de control horario y el empleado debe ser localizable en su franja habitual. NimbusSoft proporciona el port",
+    "leado debe ser localizable en su franja habitual. NimbusSoft proporciona el portátil y una ayuda de 20 euros al mes para la conexión. El puesto en casa debe cumplir los criterios de ergonomía y seguridad publicados en la intranet. El equipo en remoto acude a la oficina en las jornadas de equipo marc",
+    " intranet. El equipo en remoto acude a la oficina en las jornadas de equipo marcadas en el calendario anual. Esta política se revisa cada doce meses.",
+    "POLÍTICA DE GASTOS DE VIAJE DE NIMBUSSOFT. Los gastos de viaje en servicio se reembolsan contra factura dentro de los 30 días siguientes a su fecha. El transporte en tren se abona íntegro; en coche particular se aplican 0,35 euros por kilómetro. La pernoctación tiene un límite de 120 euros por noche",
+    "0,35 euros por kilómetro. La pernoctación tiene un límite de 120 euros por noche en ciudad de nivel uno y de 90 euros en el resto. Las comidas se cubren con dietas de 40 euros por día completo y 25 euros por media jornada. Los vuelos se reservan en la agencia corporativa con al menos siete días de a",
+    "a. Los vuelos se reservan en la agencia corporativa con al menos siete días de antelación. Toda factura debe incluir el NIF de NimbusSoft; si no lo incluye, se rechaza."
+  ],
+  "origen": [
+    "politica_vacaciones",
+    "politica_vacaciones",
+    "politica_vacaciones",
+    "politica_teletrabajo",
+    "politica_teletrabajo",
+    "politica_teletrabajo",
+    "politica_gastos_viaje",
+    "politica_gastos_viaje",
+    "politica_gastos_viaje"
+  ],
+  "chunks_overlap_0": [
+    "POLÍTICA DE VACACIONES DE NIMBUSSOFT. Todo empleado tiene derecho a 23 días naturales de vacaciones al año. Se devengan mensualmente y se solicitan en el portal interno con 15 días de antelación. La aprueba el responsable directo. Los días no disfrutados se transfieren al año siguiente, hasta un máx",
+    "imo de 5 días; el exceso se pierde sin compensación económica. Si un festivo cae dentro del periodo vacacional, no se descuenta del saldo. En caso de baja médica durante las vacaciones, se interrumpe el cómputo y los días afectados se recuperan. Al cese del empleado, se liquidan las vacaciones deven",
+    "gadas y no disfrutadas. Las dudas sobre esta política se canalizan en People Office.",
+    "POLÍTICA DE TELETRABAJO DE NIMBUSSOFT. El personal puede trabajar en remoto hasta dos días por semana, previo acuerdo con su responsable. Los días de teletrabajo se registran en la herramienta de control horario y el empleado debe ser localizable en su franja habitual. NimbusSoft proporciona el port",
+    "átil y una ayuda de 20 euros al mes para la conexión. El puesto en casa debe cumplir los criterios de ergonomía y seguridad publicados en la intranet. El equipo en remoto acude a la oficina en las jornadas de equipo marcadas en el calendario anual. Esta política se revisa cada doce meses.",
+    "POLÍTICA DE GASTOS DE VIAJE DE NIMBUSSOFT. Los gastos de viaje en servicio se reembolsan contra factura dentro de los 30 días siguientes a su fecha. El transporte en tren se abona íntegro; en coche particular se aplican 0,35 euros por kilómetro. La pernoctación tiene un límite de 120 euros por noche",
+    " en ciudad de nivel uno y de 90 euros en el resto. Las comidas se cubren con dietas de 40 euros por día completo y 25 euros por media jornada. Los vuelos se reservan en la agencia corporativa con al menos siete días de antelación. Toda factura debe incluir el NIF de NimbusSoft; si no lo incluye, se ",
+    "rechaza."
+  ],
+  "origen_overlap_0": [
+    "politica_vacaciones",
+    "politica_vacaciones",
+    "politica_vacaciones",
+    "politica_teletrabajo",
+    "politica_teletrabajo",
+    "politica_gastos_viaje",
+    "politica_gastos_viaje",
+    "politica_gastos_viaje"
+  ],
+  "nota": "idea_cortada_overlap_80/0 = True si la frase queda cortada en algún chunk. Con overlap=80 la idea se corta en un chunk pero aparece COMPLETA en el siguiente (el retroceso de 80 caracteres la recoge entera). Con overlap=0 se corta y NO aparece completa en ningún chunk: la parte anterior al corte se pierde. 'chunks' y 'origen' (tamano=300, overlap=80) quedan guardados aquí para las Partes 2 y 3."
+}

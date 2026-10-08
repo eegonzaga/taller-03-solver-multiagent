@@ -1,0 +1,178 @@
+{
+  "tamano_vocabulario": 71,
+  "palabras_top_por_tema": {
+    "tema_0": [
+      "órbita",
+      "planetas",
+      "partido",
+      "minutos",
+      "huevos"
+    ],
+    "tema_1": [
+      "equipo",
+      "partido",
+      "liga",
+      "ganó",
+      "dos"
+    ],
+    "tema_2": [
+      "sal",
+      "nebulosa",
+      "galaxia",
+      "estrellas",
+      "ajo"
+    ]
+  },
+  "palabras_top_por_tema_con_pesos": {
+    "tema_0": [
+      {
+        "palabra": "órbita",
+        "probabilidad": 0.03509013116304852
+      },
+      {
+        "palabra": "planetas",
+        "probabilidad": 0.03509013116304852
+      },
+      {
+        "palabra": "partido",
+        "probabilidad": 0.034486309035956106
+      },
+      {
+        "palabra": "minutos",
+        "probabilidad": 0.020046648903741388
+      },
+      {
+        "palabra": "huevos",
+        "probabilidad": 0.020046648903741388
+      }
+    ],
+    "tema_1": [
+      {
+        "palabra": "equipo",
+        "probabilidad": 0.06004850866861515
+      },
+      {
+        "palabra": "partido",
+        "probabilidad": 0.05958553797984229
+      },
+      {
+        "palabra": "liga",
+        "probabilidad": 0.03411966403102423
+      },
+      {
+        "palabra": "ganó",
+        "probabilidad": 0.03385295908885087
+      },
+      {
+        "palabra": "dos",
+        "probabilidad": 0.0334600778159318
+      }
+    ],
+    "tema_2": [
+      {
+        "palabra": "sal",
+        "probabilidad": 0.04188664131526747
+      },
+      {
+        "palabra": "nebulosa",
+        "probabilidad": 0.04188442041075001
+      },
+      {
+        "palabra": "galaxia",
+        "probabilidad": 0.04188442041075001
+      },
+      {
+        "palabra": "estrellas",
+        "probabilidad": 0.04188442041075001
+      },
+      {
+        "palabra": "ajo",
+        "probabilidad": 0.024028574438672467
+      }
+    ]
+  },
+  "perplejidad_k3": 137.78770156685167,
+  "vocabulario": [
+    "aceite",
+    "agua",
+    "ajo",
+    "amasar",
+    "azúcar",
+    "añade",
+    "año",
+    "baloncesto",
+    "campeona",
+    "cebolla",
+    "cocina",
+    "defensa",
+    "delantero",
+    "dos",
+    "dura",
+    "entrenador",
+    "equipo",
+    "espacial",
+    "estrella",
+    "estrellas",
+    "final",
+    "fotografió",
+    "fuego",
+    "fútbol",
+    "galaxia",
+    "ganó",
+    "gas",
+    "giran",
+    "goles",
+    "harina",
+    "hornea",
+    "huevos",
+    "júpiter",
+    "largo",
+    "lejana",
+    "lento",
+    "levadura",
+    "liga",
+    "lleva",
+    "luna",
+    "marcó",
+    "masa",
+    "minutos",
+    "nacen",
+    "nebulosa",
+    "nube",
+    "nuevas",
+    "observó",
+    "pan",
+    "partido",
+    "perdió",
+    "planetas",
+    "preparó",
+    "punto",
+    "receta",
+    "sal",
+    "salsa",
+    "segundo",
+    "sofríe",
+    "sopa",
+    "telescopio",
+    "tenista",
+    "tierra",
+    "tomate",
+    "torneo",
+    "treinta",
+    "varias",
+    "verduras",
+    "zanahoria",
+    "órbita",
+    "último"
+  ],
+  "n_documentos": 12,
+  "n_componentes": 3,
+  "learning_method": "batch",
+  "max_iter": 50,
+  "random_state": 0,
+  "n_iteracion_final": 50,
+  "perplejidad_k3_detalle": {
+    "definicion": "perplejidad de sklearn sobre la matriz de conteos del corpus",
+    "valor": 137.78770156685167
+  }
+}

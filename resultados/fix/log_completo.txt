@@ -1,0 +1,21 @@
+  R1 R101 archivo         ✓  1 archivo(s) con *.ipynb
+  R1 R102 ipynb_ejecutado ✓  3 celdas, 0 sin ejecutar, 0 con error
+  R1 R103 cifra_presente  ✓  verdad=1562.5000 ±0.6; hallada
+  R1 R104 cifra           ✓  verdad=0.9980 ±0.015; hallada
+  R1 R105 cifra_presente  ✗  verdad=0.1018 ±0.0006; no hallada
+  R1 R106 archivo         ✓  4 archivo(s) con **/*.png
+  R1 R107 codigo_sin      ✗  encontrados: ['QdrantClient\\(\\s*url', 'https?://']
+  R1 R108 procedencia     ✓  71/71 cifras respaldadas (1.00)
+Tarea R1: 6/8 · status=parcial · 1076.8 s
+
+  R2 R201 archivo         ✓  1 archivo(s) con *.ipynb
+  R2 R202 ipynb_ejecutado ✓  2 celdas, 0 sin ejecutar, 0 con error
+  R2 R203 cifra           ✓  verdad=6.0000 ±0; hallada
+  R2 R204 cifra_presente  ✗  verdad=0.6410 ±0.0006; no hallada
+  R2 R205 cifra_presente  ✗  verdad=0.3985 ±0.0006; no hallada
+  R2 R206 contiene        ✓  todos presentes
+  R2 R207 codigo_sin      ✓  ninguno
+  R2 R208 procedencia     ✓  13/14 cifras respaldadas (0.93)
+Tarea R2: 6/8 · status=parcial · 2084.8 s
+
+Comprobaciones aprobadas: 12/16 → resultados/fix/resultados_solver_completo.csv

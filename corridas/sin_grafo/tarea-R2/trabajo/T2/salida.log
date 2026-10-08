@@ -1,0 +1,18 @@
+[inspección] Estructura real de 'detalle_overlap80' en entradas/T1.json:
+[inspección] detalle_overlap80: dict con 12 claves ['overlap', 'paso', 'num_chunks_total', 'num_chunks_por_doc', 'posicion_frase_en_doc', 'fin_frase_en_doc', 'idea_aparece_completa_en_algun_chunk', 'idea_cortada', 'chunks_con_idea_completa_doc', 'chunks_con_idea_completa_global', 'chunks_que_cortan_la_idea_doc', 'extracto_corte']
+  [inspección] detalle_overlap80.overlap: int = 80
+  [inspección] detalle_overlap80.paso: int = 220
+  [inspección] detalle_overlap80.num_chunks_total: int = 12
+  [inspección] detalle_overlap80.num_chunks_por_doc: dict con 3 claves ['politica_vacaciones.md', 'politica_remoto.md', 'gastos.md']
+  [inspección] detalle_overlap80.posicion_frase_en_doc: int = 294
+  [inspección] detalle_overlap80.fin_frase_en_doc: int = 319
+  [inspección] detalle_overlap80.idea_aparece_completa_en_algun_chunk: bool = True
+  [inspección] detalle_overlap80.idea_cortada: bool = False
+  [inspección] detalle_overlap80.chunks_con_idea_completa_doc: list de 1 ítems (tipos: ['int'])
+    [inspección] detalle_overlap80.chunks_con_idea_completa_doc[0]: int = 1
+  [inspección] detalle_overlap80.chunks_con_idea_completa_global: list de 1 ítems (tipos: ['int'])
+    [inspección] detalle_overlap80.chunks_con_idea_completa_global[0]: int = 1
+  [inspección] detalle_overlap80.chunks_que_cortan_la_idea_doc: list de 1 ítems (tipos: ['int'])
+    [inspección] detalle_overlap80.chunks_que_cortan_la_idea_doc[0]: int = 0
+  [inspección] detalle_overlap80.extracto_corte: dict con 4 claves ['chunk_que_corta', 'frontera_en_caracter', 'final_del_chunk_que_corta', 'inicio_del_chunk_siguiente']
+[aviso] 'detalle_overlap80' no rindió chunks; se intenta 'detalle_overlap0'.

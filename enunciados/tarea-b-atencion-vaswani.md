@@ -1,0 +1,46 @@
+# Tarea B — Atención escalada y codificación posicional (Vaswani et al., 2017)
+
+**MMIA 6013 · Tarea de práctica para el solver multiagente (Taller 03 v2)**
+**Entrega:** un notebook de Jupyter (`.ipynb`) **ejecutado**, con las salidas visibles.
+
+El Transformer de *Attention Is All You Need* (corpus del curso) calcula
+Attention(Q, K, V) = softmax(Q Kᵀ / √d_k) V y suma a cada token una codificación posicional
+sinusoidal. Usa estas matrices (dos consultas, tres claves de dimensión 4 y sus valores):
+
+| Matriz | Fila 1 | Fila 2 | Fila 3 |
+|---|---|---|---|
+| Q | 1.0, 0.0, 1.0, 0.5 | 0.0, 2.0, 0.0, 1.0 | — |
+| K | 1.0, 1.0, 0.0, 0.0 | 0.0, 1.0, 1.0, 0.5 | 1.0, 0.0, 1.0, 1.0 |
+| V | 1.0, 0.0 | 0.0, 1.0 | 2.0, 2.0 |
+
+## Parte 1 — Atención escalada
+
+Implementa en NumPy la atención escalada con un softmax numéricamente estable (resta el
+máximo de cada fila). Calcula la matriz de pesos (2 × 3) y la salida (2 × 2) para las matrices
+de arriba, y preséntalas con cuatro decimales.
+
+## Parte 2 — Por qué se divide por √d_k
+
+Crea **una sola vez** el generador `rng = np.random.default_rng(0)`. Para d_k = 4, 64 y 512,
+en ese orden, toma `q = rng.standard_normal(d_k)` y después `K = rng.standard_normal((10, d_k))`,
+y calcula los pesos softmax de los puntajes `K @ q` **sin escalar** y **escalados** por √d_k.
+Para cada d_k reporta el peso máximo y la entropía en bits de las dos distribuciones, en una
+tabla con cuatro decimales.
+
+## Parte 3 — Codificación posicional
+
+Calcula la codificación sinusoidal PE(pos, 2i) = sin(pos / 10000^(2i/d_model)) y
+PE(pos, 2i+1) = cos(pos / 10000^(2i/d_model)) con d_model = 16 para las posiciones 0 a 49.
+Reporta PE[10, 0], PE[10, 1] y PE[25, 6], y dibuja la matriz como un mapa de calor. Después,
+con la función de atención de la Parte 1, usa PE[10] como consulta y la matriz completa como
+claves y valores: ¿qué posición recibe el mayor peso y cuánto vale?
+
+## Parte 4 — Pregunta conceptual
+
+Explica con las entropías de la Parte 2 qué problema resuelve la división por √d_k y qué le
+pasaría al gradiente del softmax sin ella. Relaciónalo con lo que dice el paper.
+
+## Formato
+
+Un solo notebook, ejecutado de principio a fin sin errores, con una celda de Markdown que
+encabece cada parte. Las cifras se calculan en el notebook, no se escriben a mano.

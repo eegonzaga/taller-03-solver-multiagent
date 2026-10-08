@@ -1,0 +1,18 @@
+{
+ "mensajes": [
+  {
+   "role": "system",
+   "content": "Extraes entidades de un texto de un curso de maestría en IA (un enunciado o\nun fragmento de un paper, en español o en inglés).\nTipos permitidos: dataset, metodo, metrica, concepto.\n- dataset: conjuntos de datos concretos (p. ej. «Breast Cancer Wisconsin», «Palmer Penguins»).\n- metodo: algoritmos, modelos o técnicas (p. ej. «Naive Bayes gaussiano», «TF-IDF», «PCA», «SVD»).\n- metrica: medidas de evaluación (p. ej. «accuracy», «F1 macro», «MRR», «entropía»).\n- concepto: ideas teóricas (p. ej. «sesgo y varianza», «temperatura», «gradiente»).\nNombres cortos y canónicos, en español salvo nombres propios (sin artículos). Máximo 12 entidades. Responde solo JSON:\n{\"entidades\": [{\"nombre\": \"...\", \"tipo\": \"dataset|metodo|metrica|concepto\"}]}"
+  },
+  {
+   "role": "user",
+   "content": "S2·MIÉ — RAG mínimo en ~60 líneas\nMMIA 6013 · Semana 2 · Miércoles\nPipeline completo: chunking → índice → retrieval → prompt con contexto → LLM. Sin API funciona\nen \"modo inspección\": muestra el prompt armado y una respuesta pre-capturada, para que puedas\ndepurar el retrieval igual.\nTarea real de MMIA 6013 — actividad de clase de la Semana 2, convertida de notebook a PDF para\nel solver (apartado 2.a del Taller 03 v2). Se conservan el texto y el código que da el profesor; las\nsoluciones de los ejercicios se retiraron.\nEntrega: un notebook de Jupyter (.ipynb) ejecutado de principio a fin sin errores, con una celda de\nMarkdown que encabece cada parte, los ejercicios resueltos y las reflexiones respondidas con las\ncifras medidas.\nCódigo dado:\nimport os\nimport json\nimport numpy as np\nCódigo dado:\n# Corpus: documentación interna de una empresa ficticia\nDOCS = {\n\"politica_vacaciones.md\": \"\"\"Política de vacaciones de NimbusSoft.\nLos empleados a tiempo completo acumulan 1.5 días de vacaciones por mes trabajado,\nhasta un máximo de 18 días por año. Las vacaciones deben solicitarse con al menos\n15 días de anticipación a través del portal interno. Los días no utilizados pueden\ntransferirse al año siguiente hasta un máximo de 5 días. Durante el primer año,\nlos días solo pueden tomarse después de superar el período de prueba de 3\nmeses.\"\"\",\n\"politica_remoto.md\": \"\"\"Política de trabajo remoto de NimbusSoft.\nEl trabajo remoto está permitido hasta 3 días por semana para todos los roles\nexcepto soporte de infraestructura on-site. Los días remotos se coordinan con el\nlíder de equipo. Para trabajar desde el exterior del país se requiere aprobación\nde Recursos Humanos con 30 días de anticipación y un máximo de 60 días por año.\"\"\",\n\"gastos.md\": \"\"\"Política de reembolso de gastos de NimbusSoft.\nLos gastos de viaje se reembolsan presentando factura dentro de los 30 días\nposteriores al gasto. El límite diario de alimentación en viajes es de 45 USD.\nLos pasajes aéreos deben comprarse en clase económica salvo vuelos de más de\n8 horas, donde se permite económica premium con aprobación del gerente de área.\"\"\",\n}"
+  }
+ ],
+ "respuesta": {
+  "contenido": "{\"entidades\": [{\"nombre\": \"RAG\", \"tipo\": \"metodo\"}, {\"nombre\": \"chunking\", \"tipo\": \"metodo\"}, {\"nombre\": \"índice\", \"tipo\": \"metodo\"}, {\"nombre\": \"retrieval\", \"tipo\": \"metodo\"}, {\"nombre\": \"prompt con contexto\", \"tipo\": \"metodo\"}, {\"nombre\": \"LLM\", \"tipo\": \"metodo\"}, {\"nombre\": \"corpus NimbusSoft\", \"tipo\": \"dataset\"}]}",
+  "fin": "stop",
+  "tokens_entrada": 797,
+  "tokens_salida": 1589
+ }
+}

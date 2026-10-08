@@ -1,0 +1,123 @@
+{
+  "entrega": {
+    "formato": "ipynb",
+    "archivo": "taller03_2a_rag_minimo.ipynb",
+    "secciones": [
+      "Configuración y corpus",
+      "Parte 1 — Chunking",
+      "Parte 2 — Índice (embeddings + kNN)",
+      "Parte 3 — Generación con contexto",
+      "Diagnóstico final",
+      "Cierre"
+    ],
+    "max_palabras": null,
+    "max_paginas": null
+  },
+  "subtareas": [
+    {
+      "id": "T1",
+      "titulo": "Configuración y Parte 1 — chunking fijo con solapamiento",
+      "tipo": "calculo",
+      "secciones": [
+        "S0",
+        "S1"
+      ],
+      "depende_de": [],
+      "objetivo": "Montar la base del notebook: imports (os, json, numpy) y el corpus DOCS con las 3 políticas de NimbusSoft (vacaciones, remoto, gastos). Implementar chunk_fijo(texto, tamano=300, overlap=80) sobre caracteres que devuelva una lista de strings. Construir las listas chunks y origen FUERA de la solución del ejercicio (recorriendo DOCS, como pide el enunciado) e imprimir cada chunk con su índice y documento de origen. Observar si algún chunk corta una idea (p. ej. la de días transferibles 'hasta un máximo de 5 días') y repetir la fragmentación con overlap=0 para comparar los cortes.",
+      "figura": false,
+      "resultados": [
+        "num_chunks",
+        "chunks_por_documento",
+        "idea_cortada_overlap80",
+        "idea_cortada_overlap0",
+        "comparacion_overlap_80_vs_0"
+      ]
+    },
+    {
+      "id": "T2",
+      "titulo": "Parte 2 — índice de embeddings + kNN y recuperar()",
+      "tipo": "calculo",
+      "secciones": [
+        "S2"
+      ],
+      "depende_de": [
+        "T1"
+      ],
+      "objetivo": "Sobre los chunks de T1, ejecutar la celda dada del índice: sentence-transformers 'paraphrase-multilingual-MiniLM-L12-v2' con embeddings normalizados (o fallback TF-IDF si no está disponible), construyendo V y vec_consulta. Medir el techo del modelo: contar los tokens del fragmento más largo con el tokenizador del mismo modelo y compararlos con max_seq_length, reportando si cabe entero o cuántos tokens se pierden en silencio. Implementar recuperar(pregunta, k=3) → lista de (score, idx_chunk) ordenada de mayor a menor score usando V y vec_consulta, con esa firma exacta porque la Parte 3 y el ejercicio 3.1 la llaman.",
+      "figura": false,
+      "resultados": [
+        "motor_retrieval",
+        "forma_indice_V",
+        "tope_tokens_modelo",
+        "tokens_fragmento_mas_largo",
+        "fragmento_cabe_entero"
+      ]
+    },
+    {
+      "id": "T3",
+      "titulo": "Parte 3 — generación con contexto y las tres pruebas de fuego",
+      "tipo": "calculo",
+      "secciones": [
+        "S3"
+      ],
+      "depende_de": [
+        "T2"
+      ],
+      "objetivo": "Montar la generación del baseline: PLANTILLA con contexto delimitado e instrucción de responder SOLO con base en él, ABSTENCION = 'El corpus no contiene información suficiente.', armar_prompt(pregunta, k=3) que usa recuperar, se_abstuvo con normalización de texto (sin tildes ni puntuación), y generar con la cascada Anthropic → H200 (GLM, vLLM) → Ollama → modo inspección con PRECAPTURADAS; responder() une todo. Ejecutar el ejercicio 3.1 con las tres pruebas: '¿puedo trabajar desde el exterior?' (respuesta clara), '¿puedo llevar a mi mascota a la oficina?' (fuera del corpus, donde el mejor comportamiento posible es la frase de abstención) y '¿qué necesita aprobación del gerente?' (ambigua entre documentos); para cada una registrar los chunks recuperados con sus scores, la respuesta, si se abstuvo y si la respuesta se apoya en los chunks recuperados.",
+      "figura": false,
+      "resultados": [
+        "chunks_recuperados_por_prueba",
+        "respuesta_por_prueba",
+        "se_abstuvo_por_prueba",
+        "abstencion_en_mascotas"
+      ]
+    },
+    {
+      "id": "T4",
+      "titulo": "Entregable — notebook final con reflexiones y cierre",
+      "tipo": "redaccion",
+      "secciones": [
+        "S3",
+        "S4"
+      ],
+      "depende_de": [
+        "T1",
+        "T2",
+        "T3"
+      ],
+      "objetivo": "Ensamblar el notebook .ipynb ejecutado de principio a fin sin errores: una celda de Markdown encabezando cada parte, el código y salidas de T1–T3 en orden, y las reflexiones respondidas con las cifras medidas (idea cortada con overlap 80 vs 0, techo de tokens del modelo, chunks recuperados y abstenciones de las tres pruebas). Redactar el diagnóstico final de S3 (de las 4 cajas del pipeline — ingesta / chunking / retrieval / generación — cuál es más frágil en el proyecto y qué haría para vigilarla) y la celda de cierre de S4 (RAG completo: chunking con overlap, índice, retrieval top-k y generación con contexto delimitado y derecho a decir 'no sé').",
+      "figura": false,
+      "resultados": [
+        "notebook_ejecutado_sin_errores",
+        "diagnostico_final",
+        "cierre"
+      ]
+    }
+  ],
+  "estado_final": [
+    {
+      "id": "T1",
+      "tipo": "calculo",
+      "status": "completado",
+      "intentos": 1
+    },
+    {
+      "id": "T2",
+      "tipo": "calculo",
+      "status": "completado",
+      "intentos": 1
+    },
+    {
+      "id": "T3",
+      "tipo": "calculo",
+      "status": "en_curso",
+      "intentos": 1
+    },
+    {
+      "id": "T4",
+      "tipo": "redaccion",
+      "status": "pendiente",
+      "intentos": 0
+    }
+  ]
+}

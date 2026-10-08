@@ -1,0 +1,27 @@
+{
+  "modo_qdrant": "embebido_memory",
+  "num_puntos_coleccion": 6,
+  "hits_filtro_pagos": [
+    {
+      "id": 3,
+      "score": -0.10180602784901141,
+      "tema": "pagos",
+      "texto": "La factura electrónica se emite al confirmar el pago."
+    },
+    {
+      "id": 1,
+      "score": -0.11198835242873917,
+      "tema": "pagos",
+      "texto": "Los reembolsos se procesan en 5 a 7 días hábiles."
+    }
+  ],
+  "consulta": "¿cuándo me devuelven el dinero?",
+  "filtro_tema": "pagos",
+  "limit": 2,
+  "dims_coleccion": 64,
+  "distancia": "COSINE",
+  "num_faqs_upsert": 6,
+  "qdrant_ejecutado": true,
+  "nota_modo": "El intento de servidor en localhost:6333 del código original se omite: este entorno prohíbe conexiones de red (incluso localhost por HTTP). Se usa directamente el modo embebido :memory:, 100% local.",
+  "qdrant_client_version": "desconocida"
+}

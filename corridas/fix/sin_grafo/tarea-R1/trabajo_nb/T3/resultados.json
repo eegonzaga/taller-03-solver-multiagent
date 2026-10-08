@@ -1,0 +1,68 @@
+{
+  "qdrant_client_instalado": true,
+  "modo_qdrant_usado": "embebido (:memory:)",
+  "num_puntos_coleccion": 6,
+  "hits_con_filtro_tema_pagos": [
+    {
+      "pos": 0,
+      "id": 3,
+      "score": -0.10180602784901141,
+      "tema": "pagos",
+      "texto": "La factura electrónica se emite al confirmar el pago."
+    },
+    {
+      "pos": 1,
+      "id": 1,
+      "score": -0.11198835242873917,
+      "tema": "pagos",
+      "texto": "Los reembolsos se procesan en 5 a 7 días hábiles."
+    }
+  ],
+  "verificacion_filtro": {
+    "filtro_restringe_resultados": true,
+    "todos_los_hits_son_tema_pagos": true,
+    "ids_hits_coinciden_con_puntos_pagos": true,
+    "num_hits_filtro_pagos": 2,
+    "ids_hits_filtro_pagos": [
+      1,
+      3
+    ],
+    "ids_esperados_tema_pagos": [
+      1,
+      3
+    ],
+    "num_puntos_por_tema": {
+      "cuenta": 2,
+      "soporte": 1,
+      "api": 1,
+      "pagos": 2
+    },
+    "temas_en_hits_sin_filtro_limit6": [
+      "cuenta",
+      "soporte",
+      "cuenta",
+      "api",
+      "pagos",
+      "pagos"
+    ],
+    "otros_temas_visibles_sin_filtro": [
+      "api",
+      "cuenta",
+      "soporte"
+    ],
+    "contraprueba_filtro_tema_cuenta_todos_son_cuenta": true,
+    "hits_con_filtro_tema_cuenta": [
+      {
+        "id": 2,
+        "score": 0.157735403262871,
+        "tema": "cuenta"
+      },
+      {
+        "id": 0,
+        "score": 0.12447350905122045,
+        "tema": "cuenta"
+      }
+    ]
+  },
+  "norma_vector_consulta": 0.999999974155547
+}

@@ -1,0 +1,16 @@
+Usando Qdrant embebido (:memory:) — sin conexión de red.
+(El intento de servidor localhost:6333 se omite: red prohibida aquí.)
+Colección creada con 6 puntos
+  -0.102 [pagos] La factura electrónica se emite al confirmar el pago.
+  -0.112 [pagos] Los reembolsos se procesan en 5 a 7 días hábiles.
+
+(Nota: con embeddings sintéticos el score no es semántico —
+ el objetivo aquí es la MECÁNICA de colección/upsert/query/filtro.)
+
+=== Cifras principales (T3 · Parte 3) ===
+modo_qdrant: embebido_memory
+num_puntos_coleccion: 6
+hits_filtro_pagos:
+  score=-0.101806 | tema=pagos | texto=La factura electrónica se emite al confirmar el pago.
+  score=-0.111988 | tema=pagos | texto=Los reembolsos se procesan en 5 a 7 días hábiles.
+Resultados guardados en resultados.json

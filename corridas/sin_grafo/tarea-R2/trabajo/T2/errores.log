@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/Users/estefania.gonzaga/Documents/Personal/Master-USFQ-Classes/AIGenerativa&Agentes/Semana3/taller03/taller-03-solver-multiagent/corridas/sin_grafo/tarea-R2/trabajo/T2/script.py", line 224, in <module>
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: No se pudieron extraer chunks de entradas/T1.json. Estructura de 'detalle_overlap80': {overlap: 80, paso: 220, num_chunks_total: 12, num_chunks_por_doc: {politica_vacaciones.md: 4, politica_remoto.md: 4, gastos.md: 4}, posicion_frase_en_doc: 294, fin_frase_en_doc: 319, idea_aparece_completa_en_algun_chunk: True, idea_cortada: False, chunks_con_idea_completa_doc: list[1] de 1, chunks_con_idea_completa_global: list[1] de 1}

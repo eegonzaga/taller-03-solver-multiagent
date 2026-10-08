@@ -1,0 +1,15 @@
+completo A: juez 9/9 · evaluador 9
+completo B: juez 9/9 · evaluador 9
+completo C: juez 9/9 · evaluador 9
+completo R1: juez 8/8 · evaluador 7
+completo R2: juez 8/8 · evaluador 6
+sin_grafo A: juez 9/9 · evaluador 9
+sin_grafo B: juez 9/9 · evaluador 9
+sin_grafo C: juez 8/9 · evaluador 8
+sin_grafo R1: juez 7/8 · evaluador 6
+sin_grafo R2: juez 3/8 · evaluador 4
+control_sin_ejecutar A: juez 9/9 · evaluador 5
+{'grupo': 'completo', 'n': 43, 'acuerdo': 0.93, 'kappa': 0.0, 'aprueba_evaluador': 40, 'aprueba_juez': 43, 'juez_aprueba_y_codigo_rechaza': 3, 'juez_rechaza_y_codigo_aprueba': 0}
+{'grupo': 'sin_grafo', 'n': 43, 'acuerdo': 0.907, 'kappa': 0.659, 'aprueba_evaluador': 36, 'aprueba_juez': 36, 'juez_aprueba_y_codigo_rechaza': 2, 'juez_rechaza_y_codigo_aprueba': 2}
+{'grupo': 'control_sin_ejecutar', 'n': 9, 'acuerdo': 0.556, 'kappa': 0.0, 'aprueba_evaluador': 5, 'aprueba_juez': 9, 'juez_aprueba_y_codigo_rechaza': 4, 'juez_rechaza_y_codigo_aprueba': 0}
+{'grupo': 'total', 'n': 95, 'acuerdo': 0.884, 'kappa': 0.419, 'aprueba_evaluador': 81, 'aprueba_juez': 88, 'juez_aprueba_y_codigo_rechaza': 9, 'juez_rechaza_y_codigo_aprueba': 2}

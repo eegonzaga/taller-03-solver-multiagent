@@ -1,0 +1,18 @@
+{
+ "mensajes": [
+  {
+   "role": "system",
+   "content": "Extraes entidades de un texto de un curso de maestría en IA (un enunciado o\nun fragmento de un paper, en español o en inglés).\nTipos permitidos: dataset, metodo, metrica, concepto.\n- dataset: conjuntos de datos concretos (p. ej. «Breast Cancer Wisconsin», «Palmer Penguins»).\n- metodo: algoritmos, modelos o técnicas (p. ej. «Naive Bayes gaussiano», «TF-IDF», «PCA», «SVD»).\n- metrica: medidas de evaluación (p. ej. «accuracy», «F1 macro», «MRR», «entropía»).\n- concepto: ideas teóricas (p. ej. «sesgo y varianza», «temperatura», «gradiente»).\nNombres cortos y canónicos, en español salvo nombres propios (sin artículos). Máximo 12 entidades. Responde solo JSON:\n{\"entidades\": [{\"nombre\": \"...\", \"tipo\": \"dataset|metodo|metrica|concepto\"}]}"
+  },
+  {
+   "role": "user",
+   "content": "Parte 2 — Los dos clasificadores\nEntrena un Naive Bayes gaussiano (GaussianNB con sus valores por defecto) sobre los atributos\noriginales, sin escalar, y una regresión logística (LogisticRegression(max_iter=3000)) sobre los\natributos estandarizados, con un StandardScaler que se ajusta solo con el conjunto de\nentrenamiento. Reporta la exactitud (accuracy) y el F1 macro de cada modelo sobre el conjunto de\nprueba, en una tabla."
+  }
+ ],
+ "respuesta": {
+  "contenido": "{\"entidades\": [{\"nombre\": \"Naive Bayes gaussiano\", \"tipo\": \"metodo\"}, {\"nombre\": \"regresión logística\", \"tipo\": \"metodo\"}, {\"nombre\": \"StandardScaler\", \"tipo\": \"metodo\"}, {\"nombre\": \"accuracy\", \"tipo\": \"metrica\"}, {\"nombre\": \"F1 macro\", \"tipo\": \"metrica\"}, {\"nombre\": \"estandarización\", \"tipo\": \"concepto\"}, {\"nombre\": \"conjunto de entrenamiento\", \"tipo\": \"concepto\"}, {\"nombre\": \"conjunto de prueba\", \"tipo\": \"concepto\"}]}",
+  "fin": "stop",
+  "tokens_entrada": 358,
+  "tokens_salida": 588
+ }
+}

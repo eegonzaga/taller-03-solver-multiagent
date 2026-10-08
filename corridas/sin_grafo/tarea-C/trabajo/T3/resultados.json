@@ -1,0 +1,352 @@
+{
+  "asignacion_por_documento": [
+    {
+      "id": 0,
+      "etiqueta_real": "deporte",
+      "tema_lda": 1,
+      "probabilidad_tema_dominante": 0.9320154371970236,
+      "distribucion_documento_tema": [
+        0.03451075388652934,
+        0.9320154371970236,
+        0.03347380891644702
+      ],
+      "etiqueta_mayoritaria_del_tema": "deporte",
+      "bien_agrupado": true
+    },
+    {
+      "id": 1,
+      "etiqueta_real": "deporte",
+      "tema_lda": 0,
+      "probabilidad_tema_dominante": 0.900493821844927,
+      "distribucion_documento_tema": [
+        0.900493821844927,
+        0.05751675610852142,
+        0.04198942204655155
+      ],
+      "etiqueta_mayoritaria_del_tema": "deporte",
+      "bien_agrupado": true
+    },
+    {
+      "id": 2,
+      "etiqueta_real": "deporte",
+      "tema_lda": 0,
+      "probabilidad_tema_dominante": 0.8984673281398191,
+      "distribucion_documento_tema": [
+        0.8984673281398191,
+        0.05355258461765944,
+        0.04798008724252147
+      ],
+      "etiqueta_mayoritaria_del_tema": "deporte",
+      "bien_agrupado": true
+    },
+    {
+      "id": 3,
+      "etiqueta_real": "deporte",
+      "tema_lda": 1,
+      "probabilidad_tema_dominante": 0.9156635781080892,
+      "distribucion_documento_tema": [
+        0.0424992847658691,
+        0.9156635781080892,
+        0.04183713712604174
+      ],
+      "etiqueta_mayoritaria_del_tema": "deporte",
+      "bien_agrupado": true
+    },
+    {
+      "id": 4,
+      "etiqueta_real": "cocina",
+      "tema_lda": 0,
+      "probabilidad_tema_dominante": 0.9294479762188961,
+      "distribucion_documento_tema": [
+        0.9294479762188961,
+        0.03372223035173579,
+        0.03682979342936811
+      ],
+      "etiqueta_mayoritaria_del_tema": "deporte",
+      "bien_agrupado": false
+    },
+    {
+      "id": 5,
+      "etiqueta_real": "cocina",
+      "tema_lda": 0,
+      "probabilidad_tema_dominante": 0.9135073636675036,
+      "distribucion_documento_tema": [
+        0.9135073636675036,
+        0.04215585605951542,
+        0.044336780272980825
+      ],
+      "etiqueta_mayoritaria_del_tema": "deporte",
+      "bien_agrupado": false
+    },
+    {
+      "id": 6,
+      "etiqueta_real": "cocina",
+      "tema_lda": 2,
+      "probabilidad_tema_dominante": 0.9236176209045295,
+      "distribucion_documento_tema": [
+        0.039010951438234014,
+        0.037371427657236486,
+        0.9236176209045295
+      ],
+      "etiqueta_mayoritaria_del_tema": "cocina",
+      "bien_agrupado": true
+    },
+    {
+      "id": 7,
+      "etiqueta_real": "cocina",
+      "tema_lda": 2,
+      "probabilidad_tema_dominante": 0.9378465511690073,
+      "distribucion_documento_tema": [
+        0.03157440033680361,
+        0.030579048494189204,
+        0.9378465511690073
+      ],
+      "etiqueta_mayoritaria_del_tema": "cocina",
+      "bien_agrupado": true
+    },
+    {
+      "id": 8,
+      "etiqueta_real": "astronomía",
+      "tema_lda": 2,
+      "probabilidad_tema_dominante": 0.915487716435624,
+      "distribucion_documento_tema": [
+        0.04253454057705356,
+        0.04197774298732245,
+        0.915487716435624
+      ],
+      "etiqueta_mayoritaria_del_tema": "cocina",
+      "bien_agrupado": false
+    },
+    {
+      "id": 9,
+      "etiqueta_real": "astronomía",
+      "tema_lda": 0,
+      "probabilidad_tema_dominante": 0.9159600976349318,
+      "distribucion_documento_tema": [
+        0.9159600976349318,
+        0.04208216894515651,
+        0.04195773341991178
+      ],
+      "etiqueta_mayoritaria_del_tema": "deporte",
+      "bien_agrupado": false
+    },
+    {
+      "id": 10,
+      "etiqueta_real": "astronomía",
+      "tema_lda": 2,
+      "probabilidad_tema_dominante": 0.9161711809543127,
+      "distribucion_documento_tema": [
+        0.04185001671228145,
+        0.04197880233340585,
+        0.9161711809543127
+      ],
+      "etiqueta_mayoritaria_del_tema": "cocina",
+      "bien_agrupado": false
+    },
+    {
+      "id": 11,
+      "etiqueta_real": "astronomía",
+      "tema_lda": 0,
+      "probabilidad_tema_dominante": 0.9149338522424816,
+      "distribucion_documento_tema": [
+        0.9149338522424816,
+        0.042078805194867216,
+        0.042987342562651215
+      ],
+      "etiqueta_mayoritaria_del_tema": "deporte",
+      "bien_agrupado": false
+    }
+  ],
+  "pureza": 0.5,
+  "documentos_mal_agrupados": [
+    {
+      "id": 4,
+      "etiqueta_real": "cocina",
+      "tema_lda": 0,
+      "etiqueta_mayoritaria_del_tema": "deporte",
+      "probabilidad_tema_dominante": 0.9294479762188961
+    },
+    {
+      "id": 5,
+      "etiqueta_real": "cocina",
+      "tema_lda": 0,
+      "etiqueta_mayoritaria_del_tema": "deporte",
+      "probabilidad_tema_dominante": 0.9135073636675036
+    },
+    {
+      "id": 8,
+      "etiqueta_real": "astronomía",
+      "tema_lda": 2,
+      "etiqueta_mayoritaria_del_tema": "cocina",
+      "probabilidad_tema_dominante": 0.915487716435624
+    },
+    {
+      "id": 9,
+      "etiqueta_real": "astronomía",
+      "tema_lda": 0,
+      "etiqueta_mayoritaria_del_tema": "deporte",
+      "probabilidad_tema_dominante": 0.9159600976349318
+    },
+    {
+      "id": 10,
+      "etiqueta_real": "astronomía",
+      "tema_lda": 2,
+      "etiqueta_mayoritaria_del_tema": "cocina",
+      "probabilidad_tema_dominante": 0.9161711809543127
+    },
+    {
+      "id": 11,
+      "etiqueta_real": "astronomía",
+      "tema_lda": 0,
+      "etiqueta_mayoritaria_del_tema": "deporte",
+      "probabilidad_tema_dominante": 0.9149338522424816
+    }
+  ],
+  "n_documentos_mal_agrupados": 6,
+  "numerador_pureza": 6,
+  "n_documentos": 12,
+  "n_componentes": 3,
+  "tema_dominante_por_documento": [
+    1,
+    0,
+    0,
+    1,
+    0,
+    0,
+    2,
+    2,
+    2,
+    0,
+    2,
+    0
+  ],
+  "distribucion_documento_tema": [
+    [
+      0.03451075388652934,
+      0.9320154371970236,
+      0.03347380891644702
+    ],
+    [
+      0.900493821844927,
+      0.05751675610852142,
+      0.04198942204655155
+    ],
+    [
+      0.8984673281398191,
+      0.05355258461765944,
+      0.04798008724252147
+    ],
+    [
+      0.0424992847658691,
+      0.9156635781080892,
+      0.04183713712604174
+    ],
+    [
+      0.9294479762188961,
+      0.03372223035173579,
+      0.03682979342936811
+    ],
+    [
+      0.9135073636675036,
+      0.04215585605951542,
+      0.044336780272980825
+    ],
+    [
+      0.039010951438234014,
+      0.037371427657236486,
+      0.9236176209045295
+    ],
+    [
+      0.03157440033680361,
+      0.030579048494189204,
+      0.9378465511690073
+    ],
+    [
+      0.04253454057705356,
+      0.04197774298732245,
+      0.915487716435624
+    ],
+    [
+      0.9159600976349318,
+      0.04208216894515651,
+      0.04195773341991178
+    ],
+    [
+      0.04185001671228145,
+      0.04197880233340585,
+      0.9161711809543127
+    ],
+    [
+      0.9149338522424816,
+      0.042078805194867216,
+      0.042987342562651215
+    ]
+  ],
+  "resumen_por_tema_lda": [
+    {
+      "tema_lda": 0,
+      "palabras_top": "órbita, planetas, partido, minutos, huevos",
+      "n_documentos_asignados": 6,
+      "ids_documentos": [
+        1,
+        2,
+        4,
+        5,
+        9,
+        11
+      ],
+      "etiquetas_reales_presentes": {
+        "deporte": 2,
+        "cocina": 2,
+        "astronomía": 2
+      },
+      "etiqueta_real_mayoritaria": "deporte",
+      "cuenta_etiqueta_mayoritaria": 2
+    },
+    {
+      "tema_lda": 1,
+      "palabras_top": "equipo, partido, liga, ganó, dos",
+      "n_documentos_asignados": 2,
+      "ids_documentos": [
+        0,
+        3
+      ],
+      "etiquetas_reales_presentes": {
+        "deporte": 2
+      },
+      "etiqueta_real_mayoritaria": "deporte",
+      "cuenta_etiqueta_mayoritaria": 2
+    },
+    {
+      "tema_lda": 2,
+      "palabras_top": "sal, nebulosa, galaxia, estrellas, ajo",
+      "n_documentos_asignados": 4,
+      "ids_documentos": [
+        6,
+        7,
+        8,
+        10
+      ],
+      "etiquetas_reales_presentes": {
+        "cocina": 2,
+        "astronomía": 2
+      },
+      "etiqueta_real_mayoritaria": "cocina",
+      "cuenta_etiqueta_mayoritaria": 2
+    }
+  ],
+  "tabla_cruce_tema_lda_vs_etiqueta_real": {
+    "0": {
+      "deporte": 2,
+      "cocina": 2,
+      "astronomía": 2
+    },
+    "1": {
+      "deporte": 2
+    },
+    "2": {
+      "cocina": 2,
+      "astronomía": 2
+    }
+  }
+}

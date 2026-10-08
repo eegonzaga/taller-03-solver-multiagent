@@ -1,0 +1,83 @@
+{
+  "perplejidad_por_num_temas": {
+    "2": 107.89088069511578,
+    "3": 137.78770156685167,
+    "4": 156.41981736227808
+  },
+  "tabla_perplejidad": [
+    {
+      "num_temas": 2,
+      "perplejidad": 107.89088069511578,
+      "log_verosimilitud_total": -425.9819520709845
+    },
+    {
+      "num_temas": 3,
+      "perplejidad": 137.78770156685167,
+      "log_verosimilitud_total": -448.23998366150187
+    },
+    {
+      "num_temas": 4,
+      "perplejidad": 156.41981736227808,
+      "log_verosimilitud_total": -459.7814611901169
+    }
+  ],
+  "log_verosimilitud_total_por_num_temas": {
+    "2": -425.9819520709845,
+    "3": -448.23998366150187,
+    "4": -459.7814611901169
+  },
+  "tamano_vocabulario": 71,
+  "total_tokens_corpus": 91,
+  "num_documentos": 12,
+  "ids_documentos": [
+    "d01",
+    "d02",
+    "d03",
+    "d04",
+    "d05",
+    "d06",
+    "d07",
+    "d08",
+    "d09",
+    "d10",
+    "d11",
+    "d12"
+  ],
+  "etiquetas_reales": [
+    "deporte",
+    "deporte",
+    "deporte",
+    "deporte",
+    "cocina",
+    "cocina",
+    "cocina",
+    "cocina",
+    "astronomía",
+    "astronomía",
+    "astronomía",
+    "astronomía"
+  ],
+  "configuracion": {
+    "vectorizador": "CountVectorizer(stop_words=palabras_vacias del enunciado, resto por defecto)",
+    "lda": {
+      "learning_method": "batch",
+      "max_iter": 50,
+      "random_state": 0
+    },
+    "num_temas_evaluados": [
+      2,
+      3,
+      4
+    ],
+    "conjunto_evaluacion": "corpus completo (12 documentos), como pide el enunciado"
+  },
+  "coherencia_con_T1": {
+    "tamano_vocabulario_T1": 71,
+    "tamano_vocabulario_coincide": true,
+    "vocabulario_coincide": true,
+    "perplejidad_3_temas_T1": 137.78770156685167,
+    "perplejidad_3_temas_T2": 137.78770156685167,
+    "diferencia_perplejidad_3_temas": 0.0,
+    "perplejidad_3_temas_coincide": true
+  }
+}

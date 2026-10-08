@@ -1,0 +1,28 @@
+Base: 100,000 vectores de dimensión 128 | 50 consultas nuevas (ajenas a la base) | k=10
+IVF entrenado: 64 celdas, tamaño medio 1562 (min 463, max 3710, std 789.7) [KMeans: 3.5 s]
+
+kNN exacto (N=100,000, k=10): 1.268 ± 0.233 ms/consulta
+  [referencia T1] exacto a N=100000 medido en T1: 1.872 ms/consulta
+
+Nota: con nprobe = nlist = 64 se sondean las 64 celdas (100,000 candidatos únicos = toda la base): el IVF se reduce por construcción a la búsqueda exacta. No se reporta un recall de esa configuración porque sería tautológicamente 1.0 (sin información).
+
+=== Ejercicio 2.2 — tabla recall/speedup (N=100,000, nlist=64, k=10, 50 consultas) ===
+ nprobe |  recall@10 |  lat IVF (ms) |  speedup |  candidatos | comp.teóricas | speedup teór.
+---------------------------------------------------------------------------------------------
+ exacto |     1.0000 |         1.268 |     1.00 |     100,000 |      100000.0 |          1.00
+      1 |     0.8020 |         0.230 |     5.50 |       1,712 |        1626.5 |         61.48
+      2 |     0.9220 |         0.380 |     3.34 |       3,417 |        3189.0 |         31.36
+      4 |     0.9340 |         0.702 |     1.81 |       6,608 |        6314.0 |         15.84
+      8 |     0.9460 |         1.349 |     0.94 |      12,636 |       12564.0 |          7.96
+     16 |     0.9780 |         2.858 |     0.44 |      24,852 |       25064.0 |          3.99
+
+Figura guardada: figura_recall_vs_speedup.png
+
+Cifras principales:
+  tamano_medio_celda = 1562.5
+  nprobe= 1: recall@10 = 0.8020 | speedup = 5.50x | latencia IVF = 0.230 ms
+  nprobe= 2: recall@10 = 0.9220 | speedup = 3.34x | latencia IVF = 0.380 ms
+  nprobe= 4: recall@10 = 0.9340 | speedup = 1.81x | latencia IVF = 0.702 ms
+  nprobe= 8: recall@10 = 0.9460 | speedup = 0.94x | latencia IVF = 1.349 ms
+  nprobe=16: recall@10 = 0.9780 | speedup = 0.44x | latencia IVF = 2.858 ms
+Resultados guardados en resultados.json

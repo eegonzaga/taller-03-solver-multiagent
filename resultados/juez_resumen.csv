@@ -1,0 +1,5 @@
+grupo,n,acuerdo,kappa,aprueba_evaluador,aprueba_juez,juez_aprueba_y_codigo_rechaza,juez_rechaza_y_codigo_aprueba
+completo,43,0.953,0.0,41,43,2,0
+sin_grafo,43,0.907,0.659,36,36,2,2
+control_sin_ejecutar,9,0.556,0.0,5,9,4,0
+total,95,0.895,0.447,82,88,8,2

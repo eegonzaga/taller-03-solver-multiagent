@@ -1,0 +1,109 @@
+{
+  "entrega": {
+    "formato": "pdf",
+    "archivo": "reporte.pdf",
+    "secciones": [
+      "Objetivo",
+      "Método",
+      "Resultados",
+      "Discusión"
+    ],
+    "max_palabras": null,
+    "max_paginas": 2
+  },
+  "subtareas": [
+    {
+      "id": "T1",
+      "titulo": "Parte 1 — LDA con tres temas sobre el corpus mínimo",
+      "tipo": "calculo",
+      "secciones": [
+        "S1"
+      ],
+      "depende_de": [],
+      "objetivo": "Construir el corpus de las doce oraciones (d01–d12, etiquetas reales deporte/cocina/astronomía) tal como aparece en el enunciado (S0), sin descargar corpus externos. Vectorizar con CountVectorizer(stop_words=['el','la','los','las','de','del','en','y','a','un','una','por','para','con','se','su','al','es','después','durante','contra','donde','alrededor']) y resto de parámetros por defecto. Ajustar LatentDirichletAllocation(n_components=3, learning_method='batch', max_iter=50, random_state=0). Reportar: tamaño del vocabulario, las cinco palabras más probables de cada tema y la perplejidad del modelo sobre el corpus.",
+      "figura": false,
+      "resultados": [
+        "tamano_vocabulario",
+        "palabras_top_por_tema",
+        "perplejidad_3_temas"
+      ]
+    },
+    {
+      "id": "T2",
+      "titulo": "Parte 2 — Perplejidad con 2, 3 y 4 temas",
+      "tipo": "calculo",
+      "secciones": [
+        "S2"
+      ],
+      "depende_de": [
+        "T1"
+      ],
+      "objetivo": "Con el mismo CountVectorizer de la Parte 1 (misma lista de palabras vacías) y los mismos parámetros de LDA (learning_method='batch', max_iter=50, random_state=0), ajustar LatentDirichletAllocation con n_components=2, 3 y 4 y reportar la perplejidad de cada modelo sobre el corpus en una sola tabla.",
+      "figura": false,
+      "resultados": [
+        "perplejidad_por_num_temas"
+      ]
+    },
+    {
+      "id": "T3",
+      "titulo": "Parte 3 — Pureza: ¿recupera LDA los temas reales?",
+      "tipo": "calculo",
+      "secciones": [
+        "S3"
+      ],
+      "depende_de": [
+        "T1"
+      ],
+      "objetivo": "Con el modelo de tres temas de la Parte 1, asignar a cada documento (d01–d12) su tema dominante y calcular la pureza: para cada tema de LDA contar los documentos de la etiqueta real más frecuente entre los asignados a él, sumar esas cuentas y dividir por 12. Presentar la asignación por documento en una tabla (id, etiqueta real, tema LDA) e identificar qué documentos quedan mal agrupados.",
+      "figura": false,
+      "resultados": [
+        "asignacion_por_documento",
+        "pureza",
+        "documentos_mal_agrupados"
+      ]
+    },
+    {
+      "id": "T4",
+      "titulo": "Parte 4 y reporte final — Discusión conceptual y armado del PDF",
+      "tipo": "redaccion",
+      "secciones": [
+        "S4",
+        "S5"
+      ],
+      "depende_de": [
+        "T1",
+        "T2",
+        "T3"
+      ],
+      "objetivo": "Redactar el reporte final en PDF (reporte.pdf, máximo dos páginas) con las secciones exactas y en orden: Objetivo, Método, Resultados y Discusión. En Resultados incluir las tablas de las Partes 2 (perplejidad por número de temas) y 3 (asignación por documento y pureza), más el vocabulario, las palabras top por tema y la perplejidad de la Parte 1; toda cifra debe salir de las ejecuciones de T1–T3. En Método describir el pipeline (CountVectorizer con la lista de palabras vacías dada, LDA con n_components=3, learning_method='batch', max_iter=50, random_state=0) e incluir el código. En Discusión responder la Parte 4: qué añade LDA frente a pLSI según Blei et al. (el prior de Dirichlet y el modelo generativo para documentos nuevos) y por qué un corpus de doce oraciones es un mal escenario para LDA; explicar también los documentos mal agrupados de la Parte 3.",
+      "figura": false,
+      "resultados": []
+    }
+  ],
+  "estado_final": [
+    {
+      "id": "T1",
+      "tipo": "calculo",
+      "status": "completado",
+      "intentos": 1
+    },
+    {
+      "id": "T2",
+      "tipo": "calculo",
+      "status": "completado",
+      "intentos": 1
+    },
+    {
+      "id": "T3",
+      "tipo": "calculo",
+      "status": "completado",
+      "intentos": 1
+    },
+    {
+      "id": "T4",
+      "tipo": "redaccion",
+      "status": "para_redactor",
+      "intentos": 0
+    }
+  ]
+}

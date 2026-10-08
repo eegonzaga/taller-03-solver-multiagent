@@ -1,0 +1,34 @@
+Generando base sintética con estructura: N=100,000, D=128 ...
+base: (100000, 128) (float32) | consultas: (50, 128)
+Entrenando KMeans(n_clusters=64, n_init=3, random_state=7) sobre 100,000 vectores ...
+IVF entrenado en 3.6 s: 64 celdas, tamaño medio 1562 (min=463, max=3710, vacías=0)
+
+kNN exacto: latencia media 1.256 ms/consulta (std 0.229 ms)
+
+=== Triángulo recall/latencia — Mini-IVF (N=100,000, nlist=64, k=10, 50 consultas) ===
+nprobe |  recall@10 |  lat IVF (ms) |  speedup× |  candidatos
+--------------------------------------------------------------------
+exacto |     1.0000 |         1.256 |      1.00 |     100,000
+     1 |     0.8020 |         0.199 |      6.31 |       1,712
+     2 |     0.9220 |         0.394 |      3.19 |       3,417
+     4 |     0.9340 |         0.710 |      1.77 |       6,608
+     8 |     0.9460 |         1.178 |      1.07 |      12,636
+    16 |     0.9780 |         2.889 |      0.43 |      24,852
+
+Tamaño medio de celda: 1562.5 vectores (N/nlist = 1562)
+
+Figura guardada: T2_parte2_triangulo_recall_latencia.png
+Figura guardada: T2_parte2_recall_y_speedup_por_nprobe.png
+
+Referencia T1 (kNN exacto, N=100k): 1.164 ms/consulta | medido aquí: 1.256 ms
+
+Resultados guardados en resultados.json
+
+=== CIFRAS PRINCIPALES ===
+tamano_medio_celda = 1562.5000
+latencia_exacta_media_ms = 1.2561
+nprobe= 1: recall@10 = 0.8020 | speedup = 6.31x | latencia IVF = 0.199 ms | candidatos medios = 1712
+nprobe= 2: recall@10 = 0.9220 | speedup = 3.19x | latencia IVF = 0.394 ms | candidatos medios = 3417
+nprobe= 4: recall@10 = 0.9340 | speedup = 1.77x | latencia IVF = 0.710 ms | candidatos medios = 6608
+nprobe= 8: recall@10 = 0.9460 | speedup = 1.07x | latencia IVF = 1.178 ms | candidatos medios = 12636
+nprobe=16: recall@10 = 0.9780 | speedup = 0.43x | latencia IVF = 2.889 ms | candidatos medios = 24852

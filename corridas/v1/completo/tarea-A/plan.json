@@ -1,0 +1,115 @@
+{
+  "entrega": {
+    "formato": "md",
+    "archivo": "reporte.md",
+    "secciones": [
+      "Introducción",
+      "Metodología",
+      "Resultados",
+      "Discusión",
+      "Conclusiones"
+    ],
+    "max_palabras": 1000,
+    "max_paginas": null
+  },
+  "subtareas": [
+    {
+      "id": "T1",
+      "titulo": "Datos y partición única",
+      "tipo": "calculo",
+      "secciones": [
+        "S1"
+      ],
+      "depende_de": [],
+      "objetivo": "Cargar sklearn.datasets.load_digits y reportar número de ejemplos, atributos y clases. Crear la única partición de la tarea: train_test_split con test_size=0.25, stratify=y y random_state=7. Guardar X_train, X_test, y_train, y_test para reuso en las subtareas siguientes y reportar los tamaños de cada conjunto.",
+      "figura": false,
+      "resultados": [
+        "n_ejemplos",
+        "n_atributos",
+        "n_clases",
+        "n_train",
+        "n_test"
+      ]
+    },
+    {
+      "id": "T2",
+      "titulo": "Clasificadores base: GaussianNB vs regresión logística",
+      "tipo": "calculo",
+      "secciones": [
+        "S2"
+      ],
+      "depende_de": [
+        "T1"
+      ],
+      "objetivo": "Con la partición de T1, entrenar GaussianNB con valores por defecto sobre los atributos originales sin escalar, y LogisticRegression(max_iter=3000) sobre atributos estandarizados con StandardScaler ajustado solo con el conjunto de entrenamiento. Evaluar ambos sobre el conjunto de prueba y producir la tabla de exactitud (accuracy) y F1 macro por modelo.",
+      "figura": false,
+      "resultados": [
+        "accuracy_gnb",
+        "f1_macro_gnb",
+        "accuracy_lr",
+        "f1_macro_lr"
+      ]
+    },
+    {
+      "id": "T3",
+      "titulo": "Curva de aprendizaje con submuestras",
+      "tipo": "calculo",
+      "secciones": [
+        "S3"
+      ],
+      "depende_de": [
+        "T1",
+        "T2"
+      ],
+      "objetivo": "Con la partición de T1 y los dos modelos de T2, entrenar con m = 20, 50, 100, 200 y 400 ejemplos de entrenamiento (cada submuestra con train_test_split(X_train, y_train, train_size=m, stratify=y_train, random_state=7)) y con el conjunto de entrenamiento completo. Evaluar siempre sobre el mismo conjunto de prueba de T1. Dibujar exactitud contra número de ejemplos con una curva por modelo y guardar la figura como PNG (curva_aprendizaje.png).",
+      "figura": true,
+      "resultados": [
+        "accuracy_gnb_por_m",
+        "accuracy_lr_por_m",
+        "m_valores"
+      ]
+    },
+    {
+      "id": "T4",
+      "titulo": "Discusión y redacción del reporte",
+      "tipo": "redaccion",
+      "secciones": [
+        "S4",
+        "S5"
+      ],
+      "depende_de": [
+        "T2",
+        "T3"
+      ],
+      "objetivo": "Redactar reporte.md con las secciones en orden: Introducción, Metodología, Resultados (incluye la tabla de la Parte 2 y la figura PNG de la Parte 3), Discusión y Conclusiones. En la Discusión, con las cifras de T2 y T3, indicar si se observa el cruce que predicen Ng y Jordan (generativo mejor con pocos datos, discriminativo mejor asintóticamente), desde qué tamaño conviene cada modelo y, si no se observa el cruce, explicar qué supuesto del modelo generativo puede fallar (independencia condicional entre píxeles vecinos). Máximo 1 000 palabras; toda cifra debe salir de la ejecución del código entregado.",
+      "figura": false,
+      "resultados": []
+    }
+  ],
+  "estado_final": [
+    {
+      "id": "T1",
+      "tipo": "calculo",
+      "status": "completado",
+      "intentos": 1
+    },
+    {
+      "id": "T2",
+      "tipo": "calculo",
+      "status": "completado",
+      "intentos": 1
+    },
+    {
+      "id": "T3",
+      "tipo": "calculo",
+      "status": "completado",
+      "intentos": 1
+    },
+    {
+      "id": "T4",
+      "tipo": "redaccion",
+      "status": "para_redactor",
+      "intentos": 0
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+tarea,agente,llamadas,tokens_entrada,tokens_salida,latencia_s
+R1,indexador,5,3197,3977,41.97
+R1,planificador,1,2631,4128,34.98
+R1,programador,6,26753,88393,697.13
+R1,redactor,2,18266,23587,164.06
+R1,revisor,3,24704,13301,115.49
+R2,indexador,5,4284,6966,71.27
+R2,planificador,1,3725,5965,48.56
+R2,programador,8,38649,286384,1787.5
+R2,redactor,1,6060,17369,96.52
+R2,revisor,2,16730,20562,118.25

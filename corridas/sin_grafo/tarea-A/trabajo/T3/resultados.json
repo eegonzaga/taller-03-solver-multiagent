@@ -1,0 +1,52 @@
+{
+  "subtarea": "T3 - Parte 3 - Curva de aprendizaje",
+  "dataset": "sklearn.datasets.load_digits",
+  "random_state_particion": 7,
+  "test_size_particion": 0.25041736227045075,
+  "random_state_submuestras": 7,
+  "split_reproducido_coincide_T1": true,
+  "n_train": 1347,
+  "n_test": 450,
+  "m_valores": [
+    20,
+    50,
+    100,
+    200,
+    400
+  ],
+  "tam_submuestras": [
+    20,
+    50,
+    100,
+    200,
+    400
+  ],
+  "exactitud_gnb_por_m": {
+    "20": 0.36666666666666664,
+    "50": 0.6022222222222222,
+    "100": 0.7555555555555555,
+    "200": 0.8333333333333334,
+    "400": 0.84,
+    "1347": 0.8555555555555555
+  },
+  "exactitud_lr_por_m": {
+    "20": 0.7577777777777778,
+    "50": 0.8644444444444445,
+    "100": 0.9066666666666666,
+    "200": 0.9555555555555556,
+    "400": 0.9666666666666667,
+    "1347": 0.9644444444444444
+  },
+  "exactitud_gnb_entrenamiento_completo": 0.8555555555555555,
+  "exactitud_lr_entrenamiento_completo": 0.9644444444444444,
+  "diferencia_gnb_menos_lr_por_m": {
+    "20": -0.39111111111111113,
+    "50": -0.26222222222222225,
+    "100": -0.15111111111111108,
+    "200": -0.12222222222222223,
+    "400": -0.1266666666666667,
+    "1347": -0.10888888888888892
+  },
+  "m_cruce_aproximado": null,
+  "figura": "T3_parte3_curva_aprendizaje.png"
+}

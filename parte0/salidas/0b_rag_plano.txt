@@ -1,0 +1,19 @@
+Pregunta del programador: «¿Con qué datos y con qué partición se calcula la curva de aprendizaje?»
+
+1) RAG plano: los 2 fragmentos más parecidos (TF-IDF, coseno)
+   S3 «Parte 3 — La curva de aprendizaje»  sim=0.319
+   S4 «Parte 4 — Discusión»  sim=0.240
+   Hechos en el contexto: 0 de 3 []
+
+2) Los mismos 2, más un salto por depende_de (regla, sin LLM)
+   S3 —depende_de→ S1, S2
+   S4 —depende_de→ (ninguna)
+   Hechos en el contexto: 3 de 3 ['conjunto de datos', 'proporción de prueba', 'prueba intocable']
+
+Todas las aristas depende_de del enunciado:
+   S3 → S1   «…Con la partición de la Parte 1, entrena los dos modelos de la P…»
+   S3 → S2   «…ción de la Parte 1, entrena los dos modelos de la Parte 2 con 20, 50, 100, 200 y 400 ejemp…»
+   S5 → S2   «…oducción, Metodología, Resultados (la tabla de la Parte 2 y la figura de la Parte 3), Disc…»
+   S5 → S3   «…ultados (la tabla de la Parte 2 y la figura de la Parte 3), Discusión y Conclusiones. Máxi…»
+
+RAG plano: 0 de 3 hechos. Con el salto: 3 de 3.

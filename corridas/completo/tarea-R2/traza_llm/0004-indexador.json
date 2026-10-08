@@ -1,0 +1,18 @@
+{
+ "mensajes": [
+  {
+   "role": "system",
+   "content": "Extraes entidades de un texto de un curso de maestría en IA (un enunciado o\nun fragmento de un paper, en español o en inglés).\nTipos permitidos: dataset, metodo, metrica, concepto.\n- dataset: conjuntos de datos concretos (p. ej. «Breast Cancer Wisconsin», «Palmer Penguins»).\n- metodo: algoritmos, modelos o técnicas (p. ej. «Naive Bayes gaussiano», «TF-IDF», «PCA», «SVD»).\n- metrica: medidas de evaluación (p. ej. «accuracy», «F1 macro», «MRR», «entropía»).\n- concepto: ideas teóricas (p. ej. «sesgo y varianza», «temperatura», «gradiente»).\nNombres cortos y canónicos, en español salvo nombres propios (sin artículos). Máximo 12 entidades. Responde solo JSON:\n{\"entidades\": [{\"nombre\": \"...\", \"tipo\": \"dataset|metodo|metrica|concepto\"}]}"
+  },
+  {
+   "role": "user",
+   "content": "Parte 1 — Chunking\n✏\u0000 Ejercicio 1.1\nImplementa chunk_fijo(texto, tamano=300, overlap=80) sobre caracteres. Devuelve una lista\nde strings. Luego observa si algún chunk corta una idea.\n# Ejercicio 1.1 — chunking fijo con solapamiento\n# (a completar)\nCódigo dado:\n# El corpus fragmentado. Vive FUERA del ejercicio porque las Partes 2 y 3 lo\nconsumen:\n# si estuviera dentro de la solución del 1.1, la versión de estudiante no lo\ntendría.\nchunks, origen = [], []\nfor nombre, texto in DOCS.items():\nfor c in chunk_fijo(texto):\nchunks.append(c)\norigen.append(nombre)\nfor i, c in enumerate(chunks):\nprint(f\"[{i}] ({origen[i]}) {c[:70]}...\")\nMira los cortes: con overlap=80, la idea \"hasta un máximo de 5 días\" transferibles aparece completa\nen algún chunk aunque otro la corte. Prueba overlap=0 y vuelve a mirar."
+  }
+ ],
+ "respuesta": {
+  "contenido": "{\"entidades\": [{\"nombre\": \"chunking\", \"tipo\": \"metodo\"}, {\"nombre\": \"chunking fijo\", \"tipo\": \"metodo\"}, {\"nombre\": \"solapamiento\", \"tipo\": \"concepto\"}, {\"nombre\": \"chunk\", \"tipo\": \"concepto\"}]}",
+  "fin": "stop",
+  "tokens_entrada": 483,
+  "tokens_salida": 1091
+ }
+}

@@ -1,0 +1,67 @@
+{
+  "qdrant_client_disponible": true,
+  "qdrant_modo_ejecucion": "embebido_memory",
+  "qdrant_ejecucion_local": true,
+  "qdrant_coleccion": "faqs",
+  "qdrant_dimension_vectores": 64,
+  "qdrant_distancia": "COSINE",
+  "qdrant_num_documentos_upsert": 6,
+  "qdrant_embeddings_metodo": "hashlib.sha256(texto)[:4] little-endian como semilla de np.random.default_rng; normal(64) float32 normalizado (determinista entre corridas)",
+  "qdrant_consulta": "¿cuándo me devuelven el dinero?",
+  "qdrant_filtro_tema": "pagos",
+  "qdrant_limit": 2,
+  "num_puntos_coleccion": 6,
+  "hits_qdrant_filtrados": [
+    {
+      "pos": 1,
+      "score": -0.10180602784901141,
+      "tema": "pagos",
+      "texto": "La factura electrónica se emite al confirmar el pago."
+    },
+    {
+      "pos": 2,
+      "score": -0.11198835242873917,
+      "tema": "pagos",
+      "texto": "Los reembolsos se procesan en 5 a 7 días hábiles."
+    }
+  ],
+  "qdrant_scores_todos_sin_filtro": [
+    {
+      "id": 2,
+      "score": 0.157735403262871,
+      "tema": "cuenta",
+      "texto": "Puedes exportar tus datos en formato CSV desde el panel."
+    },
+    {
+      "id": 4,
+      "score": 0.1462001624241906,
+      "tema": "soporte",
+      "texto": "El soporte atiende de lunes a viernes de 9h a 18h."
+    },
+    {
+      "id": 0,
+      "score": 0.12447350905122045,
+      "tema": "cuenta",
+      "texto": "Para resetear tu contraseña entra a Configuración > Seguridad."
+    },
+    {
+      "id": 5,
+      "score": 0.051534738504831916,
+      "tema": "api",
+      "texto": "La API permite 100 solicitudes por minuto en el plan básico."
+    },
+    {
+      "id": 3,
+      "score": -0.10180602784901141,
+      "tema": "pagos",
+      "texto": "La factura electrónica se emite al confirmar el pago."
+    },
+    {
+      "id": 1,
+      "score": -0.11198835242873917,
+      "tema": "pagos",
+      "texto": "Los reembolsos se procesan en 5 a 7 días hábiles."
+    }
+  ],
+  "qdrant_mecanica": "colección (create_collection: dimensión 64 + Distance.COSINE) → upsert (PointStruct: id + vector + payload {texto, tema}) → query con filtro (query_points: query=embed(pregunta), query_filter tema=='pagos', limit=2; el filtro acota la búsqueda vectorial, no la reemplaza)"
+}

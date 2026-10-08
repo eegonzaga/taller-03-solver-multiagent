@@ -1,0 +1,18 @@
+{
+ "mensajes": [
+  {
+   "role": "system",
+   "content": "Extraes entidades de un texto de un curso de maestría en IA (un enunciado o\nun fragmento de un paper, en español o en inglés).\nTipos permitidos: dataset, metodo, metrica, concepto.\n- dataset: conjuntos de datos concretos (p. ej. «Breast Cancer Wisconsin», «Palmer Penguins»).\n- metodo: algoritmos, modelos o técnicas (p. ej. «Naive Bayes gaussiano», «TF-IDF», «PCA», «SVD»).\n- metrica: medidas de evaluación (p. ej. «accuracy», «F1 macro», «MRR», «entropía»).\n- concepto: ideas teóricas (p. ej. «sesgo y varianza», «temperatura», «gradiente»).\nNombres cortos y canónicos, en español salvo nombres propios (sin artículos). Máximo 12 entidades. Responde solo JSON:\n{\"entidades\": [{\"nombre\": \"...\", \"tipo\": \"dataset|metodo|metrica|concepto\"}]}"
+  },
+  {
+   "role": "user",
+   "content": "Parte 2 — Por qué se divide por √d_k\nCrea una sola vez el generador rng = np.random.default_rng(0). Para d_k = 4, 64 y 512, en ese\norden, toma q = rng.standard_normal(d_k) y después K = rng.standard_normal((10, d_k)),\ny calcula los pesos softmax de los puntajes K @ q sin escalar y escalados por √d_k. Para cada d_k\nreporta el peso máximo y la entropía en bits de las dos distribuciones, en una tabla con cuatro\ndecimales."
+  }
+ ],
+ "respuesta": {
+  "contenido": "{\"entidades\": [{\"nombre\": \"softmax\", \"tipo\": \"metodo\"}, {\"nombre\": \"entropía\", \"tipo\": \"metrica\"}, {\"nombre\": \"pesos de atención\", \"tipo\": \"concepto\"}, {\"nombre\": \"escalamiento por √d_k\", \"tipo\": \"concepto\"}, {\"nombre\": \"producto punto\", \"tipo\": \"concepto\"}, {\"nombre\": \"dimensión de clave\", \"tipo\": \"concepto\"}]}",
+  "fin": "stop",
+  "tokens_entrada": 372,
+  "tokens_salida": 1468
+ }
+}

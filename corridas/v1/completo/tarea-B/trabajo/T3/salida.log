@@ -1,0 +1,17 @@
+=== T3 · Parte 3: Codificación posicional sinusoidal ===
+d_model = 16, posiciones 0..49
+PE[10, 0] = sin(10 / 10000^0)        = -0.5440211109
+PE[10, 1] = cos(10 / 10000^0)        = -0.8390715291
+PE[25, 6] = sin(25 / 10000^(6/16))   = 0.7107539373
+------------------------------------------------------------
+Atención con PE[10] como consulta y PE completo como claves/valores
+Posición con mayor peso : 10
+Peso mayor              : 0.0418133390
+Suma de los pesos       : 1.0000000000
+------------------------------------------------------------
+Verificación de la función de atención contra la Parte 1:
+  pesos coinciden : True
+  salida coincide : True
+------------------------------------------------------------
+Figura guardada   : mapa_calor_pe.png
+Resultados en     : resultados.json

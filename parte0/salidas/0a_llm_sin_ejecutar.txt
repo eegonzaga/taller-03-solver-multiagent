@@ -1,0 +1,27 @@
+Wed Oct  7 00:12:00 -05 2026
+Medido ejecutando el código (scikit-learn, random_state=7):
+   nb_accuracy    0.8556
+   nb_f1_macro    0.8552
+   lr_accuracy    0.9711
+   lr_f1_macro    0.9711
+   nb_m20         0.3667
+   lr_m20         0.7044
+   nb_m50         0.6022
+   lr_m50         0.8511
+   nb_m100        0.7556
+   lr_m100        0.8956
+   nb_m200        0.8333
+   lr_m200        0.9333
+   nb_m400        0.8400
+   lr_m400        0.9667
+   nb_m1347       0.8556
+   lr_m1347       0.9711
+
+LLM sin ejecutar: zai-org/GLM-5.3-Flash, 2026-10-07, 11598 tokens de salida, fin=stop
+   30 cifras con decimales en el reporte:
+   0.844, 0.846, 0.969, 0.968, 0.489, 0.589, 0.100, 0.593, 0.744, 0.151, 0.669, 0.836, 0.167, 0.736, 0.909, 0.173, 0.796, 0.944, 0.148, 0.844, 0.969, 0.125, 0.589, 0.489 …
+
+   Procedencia: 0 de 30 salen de una ejecución (no hubo ninguna).
+   ¿Dice el reporte que las cifras son estimadas? no
+   Cifras que coinciden con alguna medida al redondear: 0 de 30
+   Las de m = 20 (la que decide si hay cruce), según el reporte: ['| 20 | 0.489 | 0.589 | 0.100 |'] · medido: NB 0.3667, LR 0.7044

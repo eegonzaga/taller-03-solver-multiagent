@@ -1,0 +1,115 @@
+{
+  "entrega": {
+    "formato": "ipynb",
+    "archivo": "tarea_B_atencion_transformer.ipynb",
+    "secciones": [
+      "Tarea B — Atención escalada y codificación posicional",
+      "Parte 1 — Atención escalada",
+      "Parte 2 — Por qué se divide por √d_k",
+      "Parte 3 — Codificación posicional",
+      "Parte 4 — Pregunta conceptual"
+    ],
+    "max_palabras": null,
+    "max_paginas": null
+  },
+  "subtareas": [
+    {
+      "id": "T1",
+      "titulo": "Parte 1 — Atención escalada en NumPy",
+      "tipo": "calculo",
+      "secciones": [
+        "S1"
+      ],
+      "depende_de": [],
+      "objetivo": "Implementar en NumPy Attention(Q,K,V)=softmax(QKᵀ/√d_k)V con softmax numéricamente estable (restar el máximo de cada fila). Usar las matrices del enunciado: Q (2×4) = [[1.0,0.0,1.0,0.5],[0.0,2.0,0.0,1.0]], K (3×4) = [[1.0,1.0,0.0,0.0],[0.0,1.0,1.0,0.5],[1.0,0.0,1.0,1.0]], V (3×2) = [[1.0,0.0],[0.0,1.0],[2.0,2.0]]. Calcular y presentar con cuatro decimales la matriz de pesos de atención (2×3) y la salida (2×2).",
+      "figura": false,
+      "resultados": [
+        "pesos_atencion_2x3",
+        "salida_atencion_2x2"
+      ]
+    },
+    {
+      "id": "T2",
+      "titulo": "Parte 2 — Efecto de escalar por √d_k",
+      "tipo": "calculo",
+      "secciones": [
+        "S2"
+      ],
+      "depende_de": [],
+      "objetivo": "Crear una sola vez rng = np.random.default_rng(0). Para d_k = 4, 64 y 512, en ese orden, tomar q = rng.standard_normal(d_k) y después K = rng.standard_normal((10, d_k)). Calcular los pesos softmax de los puntajes K @ q sin escalar y escalados por √d_k. Para cada d_k reportar en una tabla con cuatro decimales el peso máximo y la entropía en bits de las dos distribuciones.",
+      "figura": false,
+      "resultados": [
+        "peso_maximo_sin_escalar",
+        "entropia_bits_sin_escalar",
+        "peso_maximo_escalado",
+        "entropia_bits_escalado"
+      ]
+    },
+    {
+      "id": "T3",
+      "titulo": "Parte 3 — Codificación posicional sinusoidal",
+      "tipo": "calculo",
+      "secciones": [
+        "S3"
+      ],
+      "depende_de": [
+        "T1"
+      ],
+      "objetivo": "Calcular la codificación sinusoidal PE(pos,2i)=sin(pos/10000^(2i/d_model)) y PE(pos,2i+1)=cos(pos/10000^(2i/d_model)) con d_model=16 para las posiciones 0 a 49. Reportar PE[10,0], PE[10,1] y PE[25,6], y dibujar la matriz completa como mapa de calor (PNG). Reutilizando la función de atención de la Parte 1, usar PE[10] como consulta y la matriz PE completa (50×16) como claves y valores; reportar qué posición recibe el mayor peso y cuánto vale.",
+      "figura": true,
+      "resultados": [
+        "PE_10_0",
+        "PE_10_1",
+        "PE_25_6",
+        "posicion_mayor_peso",
+        "peso_mayor",
+        "mapa_calor_pe"
+      ]
+    },
+    {
+      "id": "T4",
+      "titulo": "Parte 4 — Discusión conceptual y ensamblaje del notebook",
+      "tipo": "redaccion",
+      "secciones": [
+        "S4",
+        "S5"
+      ],
+      "depende_de": [
+        "T1",
+        "T2",
+        "T3"
+      ],
+      "objetivo": "Redactar la Parte 4: explicar usando las entropías de la Parte 2 qué problema resuelve la división por √d_k y qué le pasaría al gradiente del softmax sin ella, relacionándolo con lo que dice el paper (Vaswani et al., 2017). Ensamblar el notebook final (.ipynb) ejecutado de principio a fin sin errores, con una celda de Markdown que encabece cada parte, todas las cifras calculadas en el notebook (no escritas a mano), las salidas visibles y el mapa de calor de la Parte 3 incluido.",
+      "figura": false,
+      "resultados": [
+        "discusion_parte_4"
+      ]
+    }
+  ],
+  "estado_final": [
+    {
+      "id": "T1",
+      "tipo": "calculo",
+      "status": "completado",
+      "intentos": 1
+    },
+    {
+      "id": "T2",
+      "tipo": "calculo",
+      "status": "completado",
+      "intentos": 1
+    },
+    {
+      "id": "T3",
+      "tipo": "calculo",
+      "status": "completado",
+      "intentos": 1
+    },
+    {
+      "id": "T4",
+      "tipo": "redaccion",
+      "status": "para_redactor",
+      "intentos": 0
+    }
+  ]
+}

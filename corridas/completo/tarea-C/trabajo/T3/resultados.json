@@ -1,0 +1,278 @@
+{
+  "asignacion_por_documento": [
+    {
+      "id": "d01",
+      "etiqueta_real": "deporte",
+      "tema_lda": 1,
+      "probabilidad_tema_dominante": 0.9320154371970236,
+      "distribucion_temas": [
+        0.03451075388652934,
+        0.9320154371970236,
+        0.03347380891644702
+      ],
+      "etiqueta_mayoritaria_del_tema": "deporte",
+      "bien_agrupado": true
+    },
+    {
+      "id": "d02",
+      "etiqueta_real": "deporte",
+      "tema_lda": 0,
+      "probabilidad_tema_dominante": 0.900493821844927,
+      "distribucion_temas": [
+        0.900493821844927,
+        0.05751675610852142,
+        0.04198942204655155
+      ],
+      "etiqueta_mayoritaria_del_tema": "deporte",
+      "bien_agrupado": true
+    },
+    {
+      "id": "d03",
+      "etiqueta_real": "deporte",
+      "tema_lda": 0,
+      "probabilidad_tema_dominante": 0.8984673281398191,
+      "distribucion_temas": [
+        0.8984673281398191,
+        0.05355258461765944,
+        0.04798008724252147
+      ],
+      "etiqueta_mayoritaria_del_tema": "deporte",
+      "bien_agrupado": true
+    },
+    {
+      "id": "d04",
+      "etiqueta_real": "deporte",
+      "tema_lda": 1,
+      "probabilidad_tema_dominante": 0.9156635781080892,
+      "distribucion_temas": [
+        0.0424992847658691,
+        0.9156635781080892,
+        0.04183713712604174
+      ],
+      "etiqueta_mayoritaria_del_tema": "deporte",
+      "bien_agrupado": true
+    },
+    {
+      "id": "d05",
+      "etiqueta_real": "cocina",
+      "tema_lda": 0,
+      "probabilidad_tema_dominante": 0.9294479762188961,
+      "distribucion_temas": [
+        0.9294479762188961,
+        0.03372223035173579,
+        0.03682979342936811
+      ],
+      "etiqueta_mayoritaria_del_tema": "deporte",
+      "bien_agrupado": false
+    },
+    {
+      "id": "d06",
+      "etiqueta_real": "cocina",
+      "tema_lda": 0,
+      "probabilidad_tema_dominante": 0.9135073636675036,
+      "distribucion_temas": [
+        0.9135073636675036,
+        0.04215585605951542,
+        0.044336780272980825
+      ],
+      "etiqueta_mayoritaria_del_tema": "deporte",
+      "bien_agrupado": false
+    },
+    {
+      "id": "d07",
+      "etiqueta_real": "cocina",
+      "tema_lda": 2,
+      "probabilidad_tema_dominante": 0.9236176209045295,
+      "distribucion_temas": [
+        0.039010951438234014,
+        0.037371427657236486,
+        0.9236176209045295
+      ],
+      "etiqueta_mayoritaria_del_tema": "cocina",
+      "bien_agrupado": true
+    },
+    {
+      "id": "d08",
+      "etiqueta_real": "cocina",
+      "tema_lda": 2,
+      "probabilidad_tema_dominante": 0.9378465511690073,
+      "distribucion_temas": [
+        0.03157440033680361,
+        0.030579048494189204,
+        0.9378465511690073
+      ],
+      "etiqueta_mayoritaria_del_tema": "cocina",
+      "bien_agrupado": true
+    },
+    {
+      "id": "d09",
+      "etiqueta_real": "astronomía",
+      "tema_lda": 2,
+      "probabilidad_tema_dominante": 0.915487716435624,
+      "distribucion_temas": [
+        0.04253454057705356,
+        0.04197774298732245,
+        0.915487716435624
+      ],
+      "etiqueta_mayoritaria_del_tema": "cocina",
+      "bien_agrupado": false
+    },
+    {
+      "id": "d10",
+      "etiqueta_real": "astronomía",
+      "tema_lda": 0,
+      "probabilidad_tema_dominante": 0.9159600976349318,
+      "distribucion_temas": [
+        0.9159600976349318,
+        0.04208216894515651,
+        0.04195773341991178
+      ],
+      "etiqueta_mayoritaria_del_tema": "deporte",
+      "bien_agrupado": false
+    },
+    {
+      "id": "d11",
+      "etiqueta_real": "astronomía",
+      "tema_lda": 2,
+      "probabilidad_tema_dominante": 0.9161711809543127,
+      "distribucion_temas": [
+        0.04185001671228145,
+        0.04197880233340585,
+        0.9161711809543127
+      ],
+      "etiqueta_mayoritaria_del_tema": "cocina",
+      "bien_agrupado": false
+    },
+    {
+      "id": "d12",
+      "etiqueta_real": "astronomía",
+      "tema_lda": 0,
+      "probabilidad_tema_dominante": 0.9149338522424816,
+      "distribucion_temas": [
+        0.9149338522424816,
+        0.042078805194867216,
+        0.042987342562651215
+      ],
+      "etiqueta_mayoritaria_del_tema": "deporte",
+      "bien_agrupado": false
+    }
+  ],
+  "pureza": 0.5,
+  "documentos_mal_agrupados": [
+    "d05",
+    "d06",
+    "d09",
+    "d10",
+    "d11",
+    "d12"
+  ],
+  "detalle_documentos_mal_agrupados": [
+    {
+      "id": "d05",
+      "etiqueta_real": "cocina",
+      "tema_lda": 0,
+      "etiqueta_mayoritaria_del_tema": "deporte",
+      "razon": "su etiqueta real 'cocina' difiere de la etiqueta mayoritaria 'deporte' del tema LDA 0 al que fue asignado"
+    },
+    {
+      "id": "d06",
+      "etiqueta_real": "cocina",
+      "tema_lda": 0,
+      "etiqueta_mayoritaria_del_tema": "deporte",
+      "razon": "su etiqueta real 'cocina' difiere de la etiqueta mayoritaria 'deporte' del tema LDA 0 al que fue asignado"
+    },
+    {
+      "id": "d09",
+      "etiqueta_real": "astronomía",
+      "tema_lda": 2,
+      "etiqueta_mayoritaria_del_tema": "cocina",
+      "razon": "su etiqueta real 'astronomía' difiere de la etiqueta mayoritaria 'cocina' del tema LDA 2 al que fue asignado"
+    },
+    {
+      "id": "d10",
+      "etiqueta_real": "astronomía",
+      "tema_lda": 0,
+      "etiqueta_mayoritaria_del_tema": "deporte",
+      "razon": "su etiqueta real 'astronomía' difiere de la etiqueta mayoritaria 'deporte' del tema LDA 0 al que fue asignado"
+    },
+    {
+      "id": "d11",
+      "etiqueta_real": "astronomía",
+      "tema_lda": 2,
+      "etiqueta_mayoritaria_del_tema": "cocina",
+      "razon": "su etiqueta real 'astronomía' difiere de la etiqueta mayoritaria 'cocina' del tema LDA 2 al que fue asignado"
+    },
+    {
+      "id": "d12",
+      "etiqueta_real": "astronomía",
+      "tema_lda": 0,
+      "etiqueta_mayoritaria_del_tema": "deporte",
+      "razon": "su etiqueta real 'astronomía' difiere de la etiqueta mayoritaria 'deporte' del tema LDA 0 al que fue asignado"
+    }
+  ],
+  "resumen_por_tema": {
+    "0": {
+      "n_documentos": 6,
+      "ids": [
+        "d02",
+        "d03",
+        "d05",
+        "d06",
+        "d10",
+        "d12"
+      ],
+      "etiqueta_mayoritaria": "deporte",
+      "cuenta_mayoritaria": 2,
+      "desglose_etiquetas": {
+        "deporte": 2,
+        "cocina": 2,
+        "astronomía": 2
+      }
+    },
+    "1": {
+      "n_documentos": 2,
+      "ids": [
+        "d01",
+        "d04"
+      ],
+      "etiqueta_mayoritaria": "deporte",
+      "cuenta_mayoritaria": 2,
+      "desglose_etiquetas": {
+        "deporte": 2
+      }
+    },
+    "2": {
+      "n_documentos": 4,
+      "ids": [
+        "d07",
+        "d08",
+        "d09",
+        "d11"
+      ],
+      "etiqueta_mayoritaria": "cocina",
+      "cuenta_mayoritaria": 2,
+      "desglose_etiquetas": {
+        "cocina": 2,
+        "astronomía": 2
+      }
+    }
+  },
+  "mapeo_tema_a_etiqueta": {
+    "0": "deporte",
+    "1": "deporte",
+    "2": "cocina"
+  },
+  "suma_cuentas_mayoritarias": 6,
+  "n_documentos": 12,
+  "n_temas": 3,
+  "fuente_distribucion_documento_tema": "T1.json (diccionario por documento)",
+  "configuracion_lda_parte1": {
+    "n_components": 3,
+    "learning_method": "batch",
+    "max_iter": 50,
+    "random_state": 0,
+    "n_iter_ejecutadas": 50,
+    "n_documentos": 12,
+    "n_tokens_corpus": 91
+  }
+}

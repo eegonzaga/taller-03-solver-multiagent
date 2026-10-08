@@ -1,0 +1,128 @@
+{
+  "entrega": {
+    "formato": "ipynb",
+    "archivo": "rag_minimo.ipynb",
+    "secciones": [
+      "RAG mínimo en ~60 líneas",
+      "Parte 1 — Chunking",
+      "Parte 2 — Índice (embeddings + kNN)",
+      "Parte 3 — Generación con contexto",
+      "Diagnóstico final",
+      "Cierre"
+    ],
+    "max_palabras": null,
+    "max_paginas": null
+  },
+  "subtareas": [
+    {
+      "id": "T1",
+      "titulo": "Parte 1 — Chunking fijo con solapamiento",
+      "tipo": "calculo",
+      "secciones": [
+        "S0",
+        "S1"
+      ],
+      "depende_de": [],
+      "objetivo": "Script autocontenido con los imports y el corpus DOCS dados (3 políticas de NimbusSoft). Implementar chunk_fijo(texto, tamano=300, overlap=80) sobre caracteres que devuelva lista de strings; construir chunks y origen con el bucle dado (vive fuera del ejercicio porque las Partes 2 y 3 lo consumen) e imprimir cada chunk como '[i] (origen) primeros 70 caracteres...'. Observar si algún chunk corta una idea (p. ej. la de los días transferibles 'hasta un máximo de 5 días') y verificar que con overlap=80 esa idea aparece completa en algún chunk aunque otro la corte; repetir la inspección con overlap=0 y anotar la diferencia. Guardar chunks y origen en JSON para las subtareas siguientes.",
+      "figura": false,
+      "resultados": [
+        "num_chunks",
+        "longitud_max_chunk_caracteres",
+        "idea_cortada_overlap_80",
+        "idea_cortada_overlap_0"
+      ]
+    },
+    {
+      "id": "T2",
+      "titulo": "Parte 2 — Índice (embeddings + kNN) y techo del modelo",
+      "tipo": "calculo",
+      "secciones": [
+        "S2"
+      ],
+      "depende_de": [
+        "T1"
+      ],
+      "objetivo": "Cargar chunks y origen de T1. Ejecutar la celda dada del índice: SentenceTransformer paraphrase-multilingual-MiniLM-L12-v2 con embeddings normalizados y fallback TF-IDF si no hay sentence-transformers; imprimir MOTOR y V.shape. Ejecutar la celda de medición del techo: max_seq_length del modelo vs tokens del fragmento más largo según su tokenizador, indicando si cabe entero o cuántos tokens se pierden en silencio (con fallback TF-IDF, el mensaje de que no hay modelo que trunque). Implementar recuperar(pregunta, k=3) -> lista de (score, idx_chunk) ordenada de mayor a menor score por similitud coseno usando el índice V y vec_consulta(pregunta), con esa firma exacta porque la Parte 3 y el ejercicio 3.1 la llaman. Guardar motor, shape y medición de tokens en JSON.",
+      "figura": false,
+      "resultados": [
+        "motor_retrieval",
+        "shape_indice",
+        "tope_tokens_modelo",
+        "tokens_fragmento_mas_largo",
+        "cabe_entero"
+      ]
+    },
+    {
+      "id": "T3",
+      "titulo": "Parte 3 — Generación con contexto y las tres pruebas de fuego",
+      "tipo": "calculo",
+      "secciones": [
+        "S3"
+      ],
+      "depende_de": [
+        "T1",
+        "T2"
+      ],
+      "objetivo": "Con chunks/origen de T1 y recuperar de T2, incluir el código dado de generación: ABSTENCION ('El corpus no contiene información suficiente.'), PLANTILLA con contexto delimitado, armar_prompt(pregunta, k=3), PRECAPTURADAS, generar con la cadena de fallbacks (Anthropic -> H200 USFQ -> Ollama local -> modo inspección con respuesta pre-capturada), responder y se_abstuvo (comparación normalizada sin tildes ni puntuación). Ejecutar el Ejercicio 3.1 con la lista PRUEBAS: (1) '¿puedo trabajar desde el exterior?' (etiqueta exterior), (2) '¿puedo llevar a mi mascota a la oficina?' (etiqueta mascotas), (3) '¿qué necesita aprobación del gerente?' (etiqueta ambigua). Para cada prueba registrar qué chunks recuperó (score, idx, origen y extracto), la respuesta generada y si se abstuvo; analizar si la respuesta se apoya en los chunks recuperados, teniendo como referencia que en la prueba 2 el mejor comportamiento posible es la frase de abstención exacta. Guardar todo en JSON.",
+      "figura": false,
+      "resultados": [
+        "chunks_recuperados_prueba_1",
+        "respuesta_prueba_1",
+        "se_abstuvo_prueba_1",
+        "chunks_recuperados_prueba_2",
+        "respuesta_prueba_2",
+        "se_abstuvo_prueba_2",
+        "chunks_recuperados_prueba_3",
+        "respuesta_prueba_3",
+        "se_abstuvo_prueba_3"
+      ]
+    },
+    {
+      "id": "T4",
+      "titulo": "Diagnóstico final, cierre y ensamblado del notebook",
+      "tipo": "redaccion",
+      "secciones": [
+        "S3",
+        "S4"
+      ],
+      "depende_de": [
+        "T1",
+        "T2",
+        "T3"
+      ],
+      "objetivo": "Redactar el diagnóstico final pedido en S3: de las 4 cajas del pipeline (ingesta / chunking / retrieval / generación), cuál es la más frágil en el proyecto y qué se haría para vigilarla, argumentando con las cifras medidas (cortes del chunking con overlap 80 vs 0, tokens del fragmento más largo vs tope del modelo, chunks recuperados y conducta de abstención en las tres pruebas). Redactar también el Cierre de S4: síntesis del RAG completo (chunking con overlap, índice, retrieval top-k, generación con contexto delimitado y derecho a decir 'no sé') y anticipo de la métrica del día siguiente (Hit Rate, MRR, Recall@k, golden sets). Ensamblar el entregable: notebook .ipynb ejecutado de principio a fin sin errores, con una celda de Markdown encabezando cada parte en el orden fijado, los ejercicios 1.1, 2.1 y 3.1 resueltos y las reflexiones respondidas con las cifras medidas.",
+      "figura": false,
+      "resultados": [
+        "diagnostico_caja_mas_fragil",
+        "plan_vigilancia",
+        "cierre_sintesis"
+      ]
+    }
+  ],
+  "estado_final": [
+    {
+      "id": "T1",
+      "tipo": "calculo",
+      "status": "completado",
+      "intentos": 1
+    },
+    {
+      "id": "T2",
+      "tipo": "calculo",
+      "status": "completado",
+      "intentos": 1
+    },
+    {
+      "id": "T3",
+      "tipo": "calculo",
+      "status": "en_curso",
+      "intentos": 1
+    },
+    {
+      "id": "T4",
+      "tipo": "redaccion",
+      "status": "pendiente",
+      "intentos": 0
+    }
+  ]
+}

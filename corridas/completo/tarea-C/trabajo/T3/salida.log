@@ -1,0 +1,36 @@
+================================================================================
+T3 - Parte 3 - Pureza: ¿recupera LDA los temas reales?
+================================================================================
+Fuente de la distribución documento-tema: T1.json (diccionario por documento)
+
+Tabla de asignación por documento:
+id     etiqueta_real  tema_LDA  p(tema)    etiqueta_del_tema   estado       
+----------------------------------------------------------------------------
+d01    deporte        1         0.932      deporte             OK           
+d02    deporte        0         0.900      deporte             OK           
+d03    deporte        0         0.898      deporte             OK           
+d04    deporte        1         0.916      deporte             OK           
+d05    cocina         0         0.929      deporte             MAL AGRUPADO 
+d06    cocina         0         0.914      deporte             MAL AGRUPADO 
+d07    cocina         2         0.924      cocina              OK           
+d08    cocina         2         0.938      cocina              OK           
+d09    astronomía     2         0.915      cocina              MAL AGRUPADO 
+d10    astronomía     0         0.916      deporte             MAL AGRUPADO 
+d11    astronomía     2         0.916      cocina              MAL AGRUPADO 
+d12    astronomía     0         0.915      deporte             MAL AGRUPADO 
+
+Resumen por tema LDA:
+  Tema 0: 6 documentos ['d02', 'd03', 'd05', 'd06', 'd10', 'd12'] -> etiqueta mayoritaria 'deporte' (2/6); desglose {'deporte': 2, 'cocina': 2, 'astronomía': 2}
+  Tema 1: 2 documentos ['d01', 'd04'] -> etiqueta mayoritaria 'deporte' (2/2); desglose {'deporte': 2}
+  Tema 2: 4 documentos ['d07', 'd08', 'd09', 'd11'] -> etiqueta mayoritaria 'cocina' (2/4); desglose {'cocina': 2, 'astronomía': 2}
+
+Pureza = suma de cuentas mayoritarias (6) / 12 = 0.5
+Documentos mal agrupados: d05, d06, d09, d10, d11, d12
+  - su etiqueta real 'cocina' difiere de la etiqueta mayoritaria 'deporte' del tema LDA 0 al que fue asignado
+  - su etiqueta real 'cocina' difiere de la etiqueta mayoritaria 'deporte' del tema LDA 0 al que fue asignado
+  - su etiqueta real 'astronomía' difiere de la etiqueta mayoritaria 'cocina' del tema LDA 2 al que fue asignado
+  - su etiqueta real 'astronomía' difiere de la etiqueta mayoritaria 'deporte' del tema LDA 0 al que fue asignado
+  - su etiqueta real 'astronomía' difiere de la etiqueta mayoritaria 'cocina' del tema LDA 2 al que fue asignado
+  - su etiqueta real 'astronomía' difiere de la etiqueta mayoritaria 'deporte' del tema LDA 0 al que fue asignado
+
+Resultados guardados en resultados.json

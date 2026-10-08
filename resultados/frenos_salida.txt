@@ -1,0 +1,19 @@
+
+== feliz: status=completado · subtareas=T1:completado(1), T2:completado(1), T3:completado(1), T4:para_redactor(0)
+
+== presupuesto: status=parcial · subtareas=T1:completado(1), T2:pendiente(0), T3:pendiente(0), T4:pendiente(0)
+   freno_presupuesto: {"nodo": "programar", "detalle": "programador: usados 9080 + estimados 7534 > límite 13000 (total 20000, reserva del redactor 7000)"}
+
+== intentos: status=parcial · subtareas=T1:completado(1), T2:fallida(3), T3:completado(1), T4:para_redactor(0)
+   freno_repeticion: {"subtarea": "T2", "intento": 2, "huella": "b06608fbede7095e", "detalle": "script idéntico a uno ya rechazado: no se ejecuta"}
+   freno_repeticion: {"subtarea": "T2", "intento": 3, "huella": "b06608fbede7095e", "detalle": "script idéntico a uno ya rechazado: no se ejecuta"}
+   freno_intentos: {"subtarea": "T2", "intentos": 3, "detalle": "máximo de intentos alcanzado: subtarea fallida, se sigue"}
+
+== timeout: status=completado · subtareas=T1:completado(2), T2:completado(1), T3:completado(1), T4:para_redactor(0)
+   freno_timeout: {"subtarea": "T1", "intento": 1, "limite_s": 3}
+
+== timeout (procesos hijos): {'timeout': True, 'duracion_s': 3.02, 'pid_hijo': 60894, 'hijo_sigue_vivo': False}
+   [persona] T1 pide red: ['línea 3: fetch_openml()'] → NO
+
+== red: status=completado · subtareas=T1:completado(2), T2:completado(1), T3:completado(1), T4:para_redactor(0)
+   freno_red: {"subtarea": "T1", "intento": 1, "motivos": ["línea 3: fetch_openml()"], "decision": "denegado", "quien": "persona_que_deniega"}

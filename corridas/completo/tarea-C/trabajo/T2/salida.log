@@ -1,0 +1,23 @@
+T2 - Parte 2: perplejidad de LDA con 2, 3 y 4 temas
+Documentos: 12 | Vocabulario: 71 terminos | Tokens: 91
+
+Tabla de perplejidad (menor = mejor):
+ num_temas  perplejidad  log_verosimilitud_total
+         2   107.890881              -425.981952
+         3   137.787702              -448.239984
+         4   156.419817              -459.781461
+
+Perplejidad con 2 temas: 107.89088069511578
+Perplejidad con 3 temas: 137.78770156685167
+Perplejidad con 4 temas: 156.41981736227808
+
+Coherencia con la Parte 1 (T1.json):
+  tamano_vocabulario_T1: 71
+  tamano_vocabulario_coincide: True
+  vocabulario_coincide: True
+  perplejidad_3_temas_T1: 137.78770156685167
+  perplejidad_3_temas_T2: 137.78770156685167
+  diferencia_perplejidad_3_temas: 0.0
+  perplejidad_3_temas_coincide: True
+
+Resultados guardados en resultados.json

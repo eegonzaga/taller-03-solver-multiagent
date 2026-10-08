@@ -1,0 +1,18 @@
+{
+ "mensajes": [
+  {
+   "role": "system",
+   "content": "Extraes entidades de un texto de un curso de maestría en IA (un enunciado o\nun fragmento de un paper, en español o en inglés).\nTipos permitidos: dataset, metodo, metrica, concepto.\n- dataset: conjuntos de datos concretos (p. ej. «Breast Cancer Wisconsin», «Palmer Penguins»).\n- metodo: algoritmos, modelos o técnicas (p. ej. «Naive Bayes gaussiano», «TF-IDF», «PCA», «SVD»).\n- metrica: medidas de evaluación (p. ej. «accuracy», «F1 macro», «MRR», «entropía»).\n- concepto: ideas teóricas (p. ej. «sesgo y varianza», «temperatura», «gradiente»).\nNombres cortos y canónicos, en español salvo nombres propios (sin artículos). Máximo 12 entidades. Responde solo JSON:\n{\"entidades\": [{\"nombre\": \"...\", \"tipo\": \"dataset|metodo|metrica|concepto\"}]}"
+  },
+  {
+   "role": "user",
+   "content": "Parte 2 — Mini-IVF: clustering + búsqueda local\nLa receta: (1) k-means agrupa la base en nlist celdas; (2) en consulta, comparar solo contra los\ncentroides y buscar exacto dentro de las nprobe celdas más cercanas.\nCódigo dado:\nfrom sklearn.cluster import KMeans\nN = 100_000\nbase = normalizar(datos_realistas(N))\nNLIST = 64\nkm = KMeans(n_clusters=NLIST, n_init=3, random_state=7).fit(base)\ncentroides = normalizar(km.cluster_centers_.astype(np.float32))\nceldas = [np.where(km.labels_ == c)[0] for c in range(NLIST)]\nprint(f\"IVF entrenado: {NLIST} celdas, tamaño medio {np.mean([len(c) for c in\nceldas]):.0f}\")\n# Ejercicio 2.1 — implementa knn_ivf(consulta, nprobe, k):\n# 1) scores contra centroides → nprobe celdas más cercanas\n# 2) kNN exacto solo dentro de esas celdas (índices globales!)\n# (a completar)\n# Ejercicio 2.2 — para nprobe = 1, 2, 4, 8, 16 mide:\n#   recall@10 (vs. knn_exacto) promedio sobre 50 consultas, y speedup vs. exacto\n# (a completar)\nLa tabla del triángulo recall/latencia: con nprobe pequeño obtienes speedups grandes pero\npierdes vecinos (los de las fronteras entre celdas); subiendo nprobe recuperas recall y pagas\nlatencia. HNSW ofrece el mismo dial (ef_search) con mejor curva — por eso es el default de las\nvector DBs."
+  }
+ ],
+ "respuesta": {
+  "contenido": "{\"entidades\": [{\"nombre\": \"k-means\", \"tipo\": \"metodo\"}, {\"nombre\": \"IVF\", \"tipo\": \"metodo\"}, {\"nombre\": \"kNN exacto\", \"tipo\": \"metodo\"}, {\"nombre\": \"HNSW\", \"tipo\": \"metodo\"}, {\"nombre\": \"centroides\", \"tipo\": \"concepto\"}, {\"nombre\": \"nprobe\", \"tipo\": \"concepto\"}, {\"nombre\": \"ef_search\", \"tipo\": \"concepto\"}, {\"nombre\": \"búsqueda local\", \"tipo\": \"concepto\"}, {\"nombre\": \"base de datos vectorial\", \"tipo\": \"concepto\"}, {\"nombre\": \"recall@10\", \"tipo\": \"metrica\"}, {\"nombre\": \"speedup\", \"tipo\": \"metrica\"}, {\"nombre\": \"latencia\", \"tipo\": \"metrica\"}]}",
+  "fin": "stop",
+  "tokens_entrada": 647,
+  "tokens_salida": 793
+ }
+}

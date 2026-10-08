@@ -1,0 +1,287 @@
+{
+  "asignacion_por_documento": [
+    {
+      "id": "d01",
+      "texto": "El delantero marcó dos goles en el partido de fútbol y el equipo ganó la liga.",
+      "etiqueta_real": "deporte",
+      "tema_lda_dominante": 1,
+      "etiqueta_mayoritaria_del_tema": "deporte",
+      "bien_agrupado": true,
+      "p_tema_0": 0.03451075388652934,
+      "p_tema_1": 0.9320154371970236,
+      "p_tema_2": 0.03347380891644702
+    },
+    {
+      "id": "d02",
+      "texto": "El entrenador del equipo preparó la defensa para el partido final de la liga.",
+      "etiqueta_real": "deporte",
+      "tema_lda_dominante": 0,
+      "etiqueta_mayoritaria_del_tema": "deporte",
+      "bien_agrupado": true,
+      "p_tema_0": 0.900493821844927,
+      "p_tema_1": 0.05751675610852142,
+      "p_tema_2": 0.04198942204655155
+    },
+    {
+      "id": "d03",
+      "texto": "La tenista ganó el torneo después de un partido largo contra la campeona.",
+      "etiqueta_real": "deporte",
+      "tema_lda_dominante": 0,
+      "etiqueta_mayoritaria_del_tema": "deporte",
+      "bien_agrupado": true,
+      "p_tema_0": 0.8984673281398191,
+      "p_tema_1": 0.05355258461765944,
+      "p_tema_2": 0.04798008724252147
+    },
+    {
+      "id": "d04",
+      "texto": "El equipo de baloncesto perdió el partido por un punto en el último segundo.",
+      "etiqueta_real": "deporte",
+      "tema_lda_dominante": 1,
+      "etiqueta_mayoritaria_del_tema": "deporte",
+      "bien_agrupado": true,
+      "p_tema_0": 0.0424992847658691,
+      "p_tema_1": 0.9156635781080892,
+      "p_tema_2": 0.04183713712604174
+    },
+    {
+      "id": "d05",
+      "texto": "La receta lleva harina, huevos y azúcar; la masa se hornea durante treinta minutos.",
+      "etiqueta_real": "cocina",
+      "tema_lda_dominante": 0,
+      "etiqueta_mayoritaria_del_tema": "deporte",
+      "bien_agrupado": false,
+      "p_tema_0": 0.9294479762188961,
+      "p_tema_1": 0.03372223035173579,
+      "p_tema_2": 0.03682979342936811
+    },
+    {
+      "id": "d06",
+      "texto": "Para la salsa se sofríe cebolla y ajo en aceite y se añade tomate.",
+      "etiqueta_real": "cocina",
+      "tema_lda_dominante": 0,
+      "etiqueta_mayoritaria_del_tema": "deporte",
+      "bien_agrupado": false,
+      "p_tema_0": 0.9135073636675037,
+      "p_tema_1": 0.042155856059515426,
+      "p_tema_2": 0.04433678027298083
+    },
+    {
+      "id": "d07",
+      "texto": "El pan se hornea con harina, agua, sal y levadura después de amasar la masa.",
+      "etiqueta_real": "cocina",
+      "tema_lda_dominante": 2,
+      "etiqueta_mayoritaria_del_tema": "cocina",
+      "bien_agrupado": true,
+      "p_tema_0": 0.039010951438234014,
+      "p_tema_1": 0.037371427657236486,
+      "p_tema_2": 0.9236176209045295
+    },
+    {
+      "id": "d08",
+      "texto": "La sopa de verduras lleva cebolla, zanahoria, ajo y sal, y se cocina a fuego lento.",
+      "etiqueta_real": "cocina",
+      "tema_lda_dominante": 2,
+      "etiqueta_mayoritaria_del_tema": "cocina",
+      "bien_agrupado": true,
+      "p_tema_0": 0.03157440033680361,
+      "p_tema_1": 0.030579048494189204,
+      "p_tema_2": 0.9378465511690073
+    },
+    {
+      "id": "d09",
+      "texto": "El telescopio observó una galaxia lejana y varias estrellas de la nebulosa.",
+      "etiqueta_real": "astronomía",
+      "tema_lda_dominante": 2,
+      "etiqueta_mayoritaria_del_tema": "cocina",
+      "bien_agrupado": false,
+      "p_tema_0": 0.04253454057705356,
+      "p_tema_1": 0.04197774298732245,
+      "p_tema_2": 0.915487716435624
+    },
+    {
+      "id": "d10",
+      "texto": "Los planetas giran alrededor de la estrella; la órbita de la Tierra dura un año.",
+      "etiqueta_real": "astronomía",
+      "tema_lda_dominante": 0,
+      "etiqueta_mayoritaria_del_tema": "deporte",
+      "bien_agrupado": false,
+      "p_tema_0": 0.9159600976349318,
+      "p_tema_1": 0.04208216894515651,
+      "p_tema_2": 0.04195773341991178
+    },
+    {
+      "id": "d11",
+      "texto": "La nebulosa es una nube de gas donde nacen estrellas nuevas en la galaxia.",
+      "etiqueta_real": "astronomía",
+      "tema_lda_dominante": 2,
+      "etiqueta_mayoritaria_del_tema": "cocina",
+      "bien_agrupado": false,
+      "p_tema_0": 0.04185001671228145,
+      "p_tema_1": 0.04197880233340585,
+      "p_tema_2": 0.9161711809543127
+    },
+    {
+      "id": "d12",
+      "texto": "El telescopio espacial fotografió planetas y la órbita de una luna de Júpiter.",
+      "etiqueta_real": "astronomía",
+      "tema_lda_dominante": 0,
+      "etiqueta_mayoritaria_del_tema": "deporte",
+      "bien_agrupado": false,
+      "p_tema_0": 0.9149338522424816,
+      "p_tema_1": 0.042078805194867216,
+      "p_tema_2": 0.042987342562651215
+    }
+  ],
+  "pureza": 0.5,
+  "documentos_mal_agrupados": [
+    {
+      "id": "d05",
+      "etiqueta_real": "cocina",
+      "tema_lda_dominante": 0,
+      "etiqueta_mayoritaria_del_tema": "deporte",
+      "p_tema_dominante": 0.9294479762188961
+    },
+    {
+      "id": "d06",
+      "etiqueta_real": "cocina",
+      "tema_lda_dominante": 0,
+      "etiqueta_mayoritaria_del_tema": "deporte",
+      "p_tema_dominante": 0.9135073636675037
+    },
+    {
+      "id": "d09",
+      "etiqueta_real": "astronomía",
+      "tema_lda_dominante": 2,
+      "etiqueta_mayoritaria_del_tema": "cocina",
+      "p_tema_dominante": 0.915487716435624
+    },
+    {
+      "id": "d10",
+      "etiqueta_real": "astronomía",
+      "tema_lda_dominante": 0,
+      "etiqueta_mayoritaria_del_tema": "deporte",
+      "p_tema_dominante": 0.9159600976349318
+    },
+    {
+      "id": "d11",
+      "etiqueta_real": "astronomía",
+      "tema_lda_dominante": 2,
+      "etiqueta_mayoritaria_del_tema": "cocina",
+      "p_tema_dominante": 0.9161711809543127
+    },
+    {
+      "id": "d12",
+      "etiqueta_real": "astronomía",
+      "tema_lda_dominante": 0,
+      "etiqueta_mayoritaria_del_tema": "deporte",
+      "p_tema_dominante": 0.9149338522424816
+    }
+  ],
+  "aciertos_pureza": 6,
+  "n_documentos": 12,
+  "n_temas": 3,
+  "resumen_por_tema_lda": {
+    "0": {
+      "tema_lda": 0,
+      "documentos_asignados": [
+        "d02",
+        "d03",
+        "d05",
+        "d06",
+        "d10",
+        "d12"
+      ],
+      "n_documentos": 6,
+      "cuentas_por_etiqueta_real": {
+        "deporte": 2,
+        "cocina": 2,
+        "astronomía": 2
+      },
+      "etiqueta_real_mayoritaria": "deporte",
+      "cuenta_mayoritaria": 2
+    },
+    "1": {
+      "tema_lda": 1,
+      "documentos_asignados": [
+        "d01",
+        "d04"
+      ],
+      "n_documentos": 2,
+      "cuentas_por_etiqueta_real": {
+        "deporte": 2
+      },
+      "etiqueta_real_mayoritaria": "deporte",
+      "cuenta_mayoritaria": 2
+    },
+    "2": {
+      "tema_lda": 2,
+      "documentos_asignados": [
+        "d07",
+        "d08",
+        "d09",
+        "d11"
+      ],
+      "n_documentos": 4,
+      "cuentas_por_etiqueta_real": {
+        "cocina": 2,
+        "astronomía": 2
+      },
+      "etiqueta_real_mayoritaria": "cocina",
+      "cuenta_mayoritaria": 2
+    }
+  },
+  "temas_dominantes": [
+    1,
+    0,
+    0,
+    1,
+    0,
+    0,
+    2,
+    2,
+    2,
+    0,
+    2,
+    0
+  ],
+  "etiquetas_reales": [
+    "deporte",
+    "deporte",
+    "deporte",
+    "deporte",
+    "cocina",
+    "cocina",
+    "cocina",
+    "cocina",
+    "astronomía",
+    "astronomía",
+    "astronomía",
+    "astronomía"
+  ],
+  "fuente_distribucion_documento_tema": "entradas/T1.json ('distribucion_documento_tema' de la Parte 1)",
+  "fuente_etiquetas_reales": "entradas/T1.json ('temas_reales'; coincide con el enunciado)",
+  "palabras_top_por_tema": {
+    "tema_0": [
+      "órbita",
+      "planetas",
+      "partido",
+      "minutos",
+      "huevos"
+    ],
+    "tema_1": [
+      "equipo",
+      "partido",
+      "liga",
+      "ganó",
+      "dos"
+    ],
+    "tema_2": [
+      "sal",
+      "nebulosa",
+      "galaxia",
+      "estrellas",
+      "ajo"
+    ]
+  }
+}

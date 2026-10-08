@@ -1,0 +1,14 @@
+Parte 2 — Peso máximo y entropía (bits) de los pesos de atención
+Sin escalar vs. escalados por sqrt(d_k) — cuatro decimales
+Entropía máxima posible con 10 claves: log2(10) = 3.3219 bits
+----------------------------------------------------------------------------------------------------
+ d_k  peso_maximo_sin_escalar  entropia_bits_sin_escalar  peso_maximo_escalado_por_raiz_dk  entropia_bits_escalado_por_raiz_dk
+   4                   0.2049                     3.0792                            0.1497                              3.2542
+  64                   0.9511                     0.3537                            0.2480                              2.9802
+ 512                   0.7503                     0.8114                            0.1945                              3.0363
+----------------------------------------------------------------------------------------------------
+d_k=  4 | sin escalar: peso_max=0.2049, H=3.0792 bits | escalado: peso_max=0.1497, H=3.2542 bits
+d_k= 64 | sin escalar: peso_max=0.9511, H=0.3537 bits | escalado: peso_max=0.2480, H=2.9802 bits
+d_k=512 | sin escalar: peso_max=0.7503, H=0.8114 bits | escalado: peso_max=0.1945, H=3.0363 bits
+
+Resultados guardados en resultados.json

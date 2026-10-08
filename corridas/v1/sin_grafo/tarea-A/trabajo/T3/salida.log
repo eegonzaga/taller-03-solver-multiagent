@@ -1,0 +1,34 @@
+Partición de T1: 1347 entrenamiento / 450 prueba
+
+Identificación de la Regresión Logística de T2 (objetivo accuracy_lr = 0.9711111111111111):
+  pipeline_standard_scaler_lr_max_iter_1000          accuracy = 0.9711111111111111  <-- coincide con T2
+  lr_max_iter_1000                                   accuracy = 0.9644444444444444
+  pipeline_standard_scaler_lr_max_iter_10000         accuracy = 0.9711111111111111  <-- coincide con T2
+  lr_max_iter_10000                                  accuracy = 0.9644444444444444
+  pipeline_minmax_scaler_lr_max_iter_1000            accuracy = 0.9777777777777777
+  pipeline_standard_scaler_lr_C0.1_max_iter_1000     accuracy = 0.9755555555555555
+  pipeline_standard_scaler_lr_C10_max_iter_1000      accuracy = 0.9711111111111111  <-- coincide con T2
+  lr_default                                         accuracy = 0.9622222222222222
+
+Modelo LR adoptado (definición de T2): pipeline_standard_scaler_lr_max_iter_1000
+  accuracy_lr (entrenamiento completo) = 0.9711111111111111 | T2 = 0.9711111111111111 | coincide = True
+  accuracy_gnb (entrenamiento completo) = 0.8555555555555555 | T2 = 0.8555555555555555 | coincide = True
+
+Curva de aprendizaje (evaluación siempre sobre el mismo test de T1):
+  m =   20 | Exactitud GNB = 0.366667 | Exactitud LR = 0.704444
+  m =   50 | Exactitud GNB = 0.602222 | Exactitud LR = 0.851111
+  m =  100 | Exactitud GNB = 0.755556 | Exactitud LR = 0.895556
+  m =  200 | Exactitud GNB = 0.833333 | Exactitud LR = 0.933333
+  m =  400 | Exactitud GNB = 0.840000 | Exactitud LR = 0.966667
+  m = 1347 (completo) | Exactitud GNB = 0.855556 | Exactitud LR = 0.971111
+
+Figura guardada: curva_aprendizaje.png
+Resultados guardados en resultados.json
+
+Resumen (exactitud en el conjunto de prueba):
+  m =       20: GNB = 0.366667 | LR = 0.704444
+  m =       50: GNB = 0.602222 | LR = 0.851111
+  m =      100: GNB = 0.755556 | LR = 0.895556
+  m =      200: GNB = 0.833333 | LR = 0.933333
+  m =      400: GNB = 0.840000 | LR = 0.966667
+  m = completo: GNB = 0.855556 | LR = 0.971111

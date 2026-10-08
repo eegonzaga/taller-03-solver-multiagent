@@ -1,0 +1,40 @@
+[info] Leído entradas/T1.json (resultados de la Parte 1).
+
+=== Asignación por documento (tema dominante de LDA vs etiqueta real) ===
+Fuente de la distribución documento-tema: entradas/T1.json ('distribucion_documento_tema' de la Parte 1)
+Fuente de las etiquetas reales: entradas/T1.json ('temas_reales'; coincide con el enunciado)
+ id etiqueta_real  tema_lda_dominante etiqueta_mayoritaria_del_tema  bien_agrupado  p_tema_0  p_tema_1  p_tema_2
+d01       deporte                   1                       deporte           True  0.034511  0.932015  0.033474
+d02       deporte                   0                       deporte           True  0.900494  0.057517  0.041989
+d03       deporte                   0                       deporte           True  0.898467  0.053553  0.047980
+d04       deporte                   1                       deporte           True  0.042499  0.915664  0.041837
+d05        cocina                   0                       deporte          False  0.929448  0.033722  0.036830
+d06        cocina                   0                       deporte          False  0.913507  0.042156  0.044337
+d07        cocina                   2                        cocina           True  0.039011  0.037371  0.923618
+d08        cocina                   2                        cocina           True  0.031574  0.030579  0.937847
+d09    astronomía                   2                        cocina          False  0.042535  0.041978  0.915488
+d10    astronomía                   0                       deporte          False  0.915960  0.042082  0.041958
+d11    astronomía                   2                        cocina          False  0.041850  0.041979  0.916171
+d12    astronomía                   0                       deporte          False  0.914934  0.042079  0.042987
+
+=== Resumen por tema LDA ===
+Tema 0: docs=[d02,d03,d05,d06,d10,d12] | cuentas por etiqueta real={'deporte': 2, 'cocina': 2, 'astronomía': 2} | mayoría='deporte' (2 docs)
+Tema 1: docs=[d01,d04] | cuentas por etiqueta real={'deporte': 2} | mayoría='deporte' (2 docs)
+Tema 2: docs=[d07,d08,d09,d11] | cuentas por etiqueta real={'cocina': 2, 'astronomía': 2} | mayoría='cocina' (2 docs)
+
+Pureza = 6 / 12 = 0.500000
+
+Documentos mal agrupados:
+  d05: etiqueta real='cocina' -> tema 0 (mayoría del tema='deporte', p(tema dominante)=0.9294)
+  d06: etiqueta real='cocina' -> tema 0 (mayoría del tema='deporte', p(tema dominante)=0.9135)
+  d09: etiqueta real='astronomía' -> tema 2 (mayoría del tema='cocina', p(tema dominante)=0.9155)
+  d10: etiqueta real='astronomía' -> tema 0 (mayoría del tema='deporte', p(tema dominante)=0.9160)
+  d11: etiqueta real='astronomía' -> tema 2 (mayoría del tema='cocina', p(tema dominante)=0.9162)
+  d12: etiqueta real='astronomía' -> tema 0 (mayoría del tema='deporte', p(tema dominante)=0.9149)
+
+Palabras top por tema (Parte 1):
+  Tema tema_0: ['órbita', 'planetas', 'partido', 'minutos', 'huevos']
+  Tema tema_1: ['equipo', 'partido', 'liga', 'ganó', 'dos']
+  Tema tema_2: ['sal', 'nebulosa', 'galaxia', 'estrellas', 'ajo']
+
+[ok] Resultados guardados en resultados.json

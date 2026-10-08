@@ -1,0 +1,19 @@
+[Verificación Parte 1] pesos coinciden: True | salida coincide: True
+
+--- Parte 3: Codificación posicional sinusoidal (d_model=16, pos 0..49) ---
+PE[10, 0] = sin(10 / 10000^0)      = -0.5440211108893698
+PE[10, 1] = cos(10 / 10000^0)      = -0.8390715290764524
+PE[25, 6] = sin(25 / 10000^(6/16)) = 0.7107539373458333
+
+Atención con PE[10] como consulta y PE (50x16) como claves/valores (d_k=16):
+  posición 10 -> peso = 0.0418133390
+  posición  9 -> peso = 0.0367635537
+  posición 11 -> peso = 0.0367635537
+  posición  4 -> peso = 0.0283437468
+  posición 16 -> peso = 0.0283437468
+
+Posición con mayor peso: 10
+Valor del mayor peso:    0.04181333902522971
+
+Figuras guardadas: mapa_calor_codificacion_posicional.png, pesos_atencion_PE10.png
+Resultados guardados en resultados.json

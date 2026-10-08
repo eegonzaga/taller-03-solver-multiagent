@@ -1,0 +1,116 @@
+==============================================================================
+VISTA PREVIA - chunk_fijo por defecto (tamano=300, overlap=80)
+==============================================================================
+[0] (politica_vacaciones.md) # Política de vacaciones
+
+## Días asignados
+
+Todo el personal tiene de...
+[1] (politica_vacaciones.md) es no utilizados al cierre del ejercicio se
+transfieren al año siguien...
+[2] (politica_vacaciones.md)  Solicitud y aprobación
+
+Las vacaciones se solicitan en la herramienta...
+[3] (politica_vacaciones.md) vacaciones no consumen días:
+se interrumpe el disfrute y se recupera d...
+[4] (politica_remoto.md) # Política de trabajo en remoto
+
+## Modalidad híbrida
+
+El equipo traba...
+[5] (politica_remoto.md) lica en el calendario compartido.
+
+## Equipamiento
+
+La empresa proporc...
+[6] (politica_remoto.md) os por persona.
+
+## Conectividad y disponibilidad
+
+En horario laboral ...
+[7] (politica_remoto.md) ternativa presencial.
+
+La empresa no reembolsa la fibra doméstica, per...
+[8] (gastos.md) # Política de gastos
+
+## Regla general
+
+Todo gasto se justifica con ti...
+[9] (gastos.md) 
+
+El tren en clase turista es el medio de transporte por defecto.
+El a...
+[10] (gastos.md) taforma corporativa, con un tope de
+120 euros por noche en capitales y...
+[11] (gastos.md)  se imputan al proyecto si asisten al menos
+tres personas y se registr...
+
+--- Observacion de los cortes con overlap=80 (tamano=300, paso=220) ---
+Frase idea: 'hasta un máximo de 5 días' en politica_vacaciones.md, caracteres 294 a 318
+Chunks totales (3 documentos): 12 | por documento: {'politica_vacaciones.md': 4, 'politica_remoto.md': 4, 'gastos.md': 4}
+  Chunk(s) que CORTAN la frase: [0] de politica_vacaciones.md (frontera en el caracter 300)
+    final del chunk que corta:  'cicio se\ntransfieren al año siguiente, hasta '
+    inicio del chunk siguiente: 'es no utilizados al cierre del ejercicio se\nt'
+  La frase SI aparece COMPLETA en el/los chunk(s) [1] del documento (indice global [1]): el solapamiento salva la idea.
+  => idea_cortada (mutilada, sin recuperacion) = False
+
+==============================================================================
+VISTA PREVIA - chunk_fijo con overlap=0 (tamano=300, overlap=0)
+==============================================================================
+[0] (politica_vacaciones.md) # Política de vacaciones
+
+## Días asignados
+
+Todo el personal tiene de...
+[1] (politica_vacaciones.md) un máximo de 5 días.
+
+El disfrute de los días transferidos se solicita...
+[2] (politica_vacaciones.md) zo máximo de 5 días hábiles.
+
+Las bajas médicas durante las vacaciones...
+[3] (politica_remoto.md) # Política de trabajo en remoto
+
+## Modalidad híbrida
+
+El equipo traba...
+[4] (politica_remoto.md) til, pantalla y silla ergonómica. El
+material de oficina en remoto se ...
+[5] (politica_remoto.md) n doméstica falla, hay
+que avisar al responsable y buscar alternativa ...
+[6] (gastos.md) # Política de gastos
+
+## Regla general
+
+Todo gasto se justifica con ti...
+[7] (gastos.md) ere aprobación previa del responsable cuando exista
+una alternativa en...
+[8] (gastos.md) ubre hasta 25 euros al día con ticket.
+Las comidas de equipo se imputa...
+
+--- Observacion de los cortes con overlap=0 (tamano=300, paso=300) ---
+Frase idea: 'hasta un máximo de 5 días' en politica_vacaciones.md, caracteres 294 a 318
+Chunks totales (3 documentos): 9 | por documento: {'politica_vacaciones.md': 3, 'politica_remoto.md': 3, 'gastos.md': 3}
+  Chunk(s) que CORTAN la frase: [0, 1] de politica_vacaciones.md (frontera en el caracter 300)
+    final del chunk que corta:  'cicio se\ntransfieren al año siguiente, hasta '
+    inicio del chunk siguiente: 'un máximo de 5 días.\n\nEl disfrute de los días'
+  La frase NO aparece completa en NINGUN chunk: la idea queda mutilada e irrecuperable desde el indice.
+  => idea_cortada (mutilada, sin recuperacion) = True
+
+==============================================================================
+COMPARACION overlap=80 frente a overlap=0
+==============================================================================
+num_chunks_overlap80 = 12  {'politica_vacaciones.md': 4, 'politica_remoto.md': 4, 'gastos.md': 4}
+num_chunks_overlap0  = 9  {'politica_vacaciones.md': 3, 'politica_remoto.md': 3, 'gastos.md': 3}
+Inflacion empirica del indice num80/num0 = 1.333333 (mas 33.33 por ciento)
+Inflacion teorica C/(C-V) = 300/220 = 1.363636 (mas 36.36 por ciento)
+idea_cortada_overlap80 = False (frase completa en algun chunk: True)
+idea_cortada_overlap0  = True (frase completa en algun chunk: False)
+
+NOTA DE OBSERVACION:
+Con overlap=80 (paso 220) la frase idea 'hasta un máximo de 5 días' (caracteres 294 a 318 de politica_vacaciones.md) queda cortada en la frontera del caracter 300: el chunk 0 termina con 'cicio se\ntransfieren al año siguiente, hasta ', pero la ventana solapada siguiente la contiene COMPLETA (chunk [1] del documento), de modo que la idea es recuperable: idea_cortada_overlap80=False. Con overlap=0 (paso 300) la misma frase cae sobre la frontera del caracter 300: el chunk 0 termina con 'cicio se\ntransfieren al año siguiente, hasta ' y el chunk siguiente empieza con 'un máximo de 5 días.\n\nEl disfrute de los días'; ningun chunk la contiene completa y la idea queda mutilada en los dos fragmentos: idea_cortada_overlap0=True. Diferencia en los cortes: en ambos casos algun chunk corta la frase, pero con solapamiento el corte se repara en la ventana siguiente, mientras que sin solapamiento la frontera parte la frase en dos mitades irrecuperables. Coste del solapamiento: el indice pasa de 9 a 12 chunks (factor 1.3333); la formula teorica C/(C-V) = 300/220 da un factor 1.3636 (mas 36.4 por ciento).
+
+CIFRAS GUARDADAS EN resultados.json:
+  num_chunks_overlap80   = 12
+  num_chunks_overlap0    = 9
+  idea_cortada_overlap80 = False
+  idea_cortada_overlap0  = True

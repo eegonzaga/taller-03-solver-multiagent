@@ -1,0 +1,13 @@
+Dataset identificado: digits
+Particion reproducida de T1: n_train = 1347 , n_test = 450 , random_state = 7 , estratificado = True , error_distribucion = 0
+
+                                        Modelo  Accuracy  F1_macro
+GaussianNB (atributos originales, sin escalar)  0.855556  0.855162
+ LogisticRegression (atributos estandarizados)  0.971111  0.971052
+
+accuracy_gnb = 0.8555555555555555
+f1_macro_gnb = 0.8551624776853188
+accuracy_lr  = 0.9711111111111111
+f1_macro_lr  = 0.9710523343057076
+
+Cifras guardadas en resultados.json

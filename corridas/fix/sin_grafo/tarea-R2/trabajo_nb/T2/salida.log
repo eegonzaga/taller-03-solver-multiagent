@@ -1,0 +1,18 @@
+[T1] cargado entradas/T1.json (24 claves)
+[chunks] 9 fragmentos | origen: entradas/T1.json (clave 'chunks')
+[índice] sentence-transformers no disponible (ModuleNotFoundError: No module named 'sentence_transformers'); uso el fallback TF-IDF.
+Retrieval: léxico (TF-IDF fallback) | índice: (9, 169)
+Sin sentence-transformers no hay modelo que trunque: el fallback TF-IDF lee el fragmento entero.
+
+Demo de recuperar(pregunta, k=3) — consulta: idea_buscada de T1
+  score=0.341799  idx_chunk=1  :: e directo. Los días no disfrutados se transfieren al año siguiente, ha...
+  score=0.251851  idx_chunk=0  :: POLÍTICA DE VACACIONES DE NIMBUSSOFT. Todo empleado tiene derecho a 23...
+  score=0.176911  idx_chunk=3  :: POLÍTICA DE TELETRABAJO DE NIMBUSSOFT. El personal puede trabajar en r...
+
+=== Cifras principales (guardadas en resultados.json) ===
+motor_retrieval: léxico (TF-IDF fallback)
+shape_indice: [9, 169]
+tope_tokens_modelo: None
+tokens_fragmento_mas_largo: None
+cabe_entero: None
+tokens_perdidos_en_silencio: None

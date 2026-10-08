@@ -1,0 +1,18 @@
+{
+ "mensajes": [
+  {
+   "role": "system",
+   "content": "Extraes entidades de un texto de un curso de maestría en IA (un enunciado o\nun fragmento de un paper, en español o en inglés).\nTipos permitidos: dataset, metodo, metrica, concepto.\n- dataset: conjuntos de datos concretos (p. ej. «Breast Cancer Wisconsin», «Palmer Penguins»).\n- metodo: algoritmos, modelos o técnicas (p. ej. «Naive Bayes gaussiano», «TF-IDF», «PCA», «SVD»).\n- metrica: medidas de evaluación (p. ej. «accuracy», «F1 macro», «MRR», «entropía»).\n- concepto: ideas teóricas (p. ej. «sesgo y varianza», «temperatura», «gradiente»).\nNombres cortos y canónicos, en español salvo nombres propios (sin artículos). Máximo 12 entidades. Responde solo JSON:\n{\"entidades\": [{\"nombre\": \"...\", \"tipo\": \"dataset|metodo|metrica|concepto\"}]}"
+  },
+  {
+   "role": "user",
+   "content": "S2·MAR — ANN: mide el trade-off recall / latencia\nMMIA 6013 · Semana 2 · Martes\n1. kNN exacto: medir cómo (no) escala\n2. Mini-IVF con KMeans: recall@10 vs. speedup según nprobe\n3. Qdrant embebido (:memory:) con filtros de metadata\nRequisitos: numpy, scikit-learn, matplotlib. Qdrant: pip install qdrant-client (opcional —\nla parte 3 se salta sola si no está).\nTarea real de MMIA 6013 — actividad de clase de la Semana 2, convertida de notebook a PDF para\nel solver (apartado 2.a del Taller 03 v2). Se conservan el texto y el código que da el profesor; las\nsoluciones de los ejercicios se retiraron.\nEntrega: un notebook de Jupyter (.ipynb) ejecutado de principio a fin sin errores, con una celda de\nMarkdown que encabece cada parte, los ejercicios resueltos y las reflexiones respondidas con las\ncifras medidas.\nCódigo dado:\nimport time\nimport numpy as np\nimport matplotlib.pyplot as plt\nrng = np.random.default_rng(7)\nD = 128  # dimensión de los embeddings sintéticos\n_CENTROS = np.random.default_rng(2026).normal(size=(200, D))  # \"temas\" fijos\ndef datos_realistas(n, d=D):\n\"\"\"Embeddings sintéticos CON estructura: mezcla de 'temas' gaussianos fijos.\nLos embeddings reales viven agrupados por tema — crucial para que IVF\ntenga sentido (con ruido uniforme, ningún índice por clusters funciona).\nBase y consultas comparten los mismos temas, como en un corpus real.\"\"\"\nasignacion = rng.integers(0, len(_CENTROS), size=n)\nX = _CENTROS[asignacion, :d] + 1.5 * rng.normal(size=(n, d))\nreturn X.astype(np.float32)\ndef normalizar(X):\n\"\"\"Vectores a norma 1: así el producto punto es el coseno (sesión 06).\nVive aquí, en el setup, porque las Partes 2 y 3 la usan aunque no hayas\nresuelto el ejercicio 1.1 (hasta el 2026-09-19 estaba dentro de la solución\ny la versión de estudiante fallaba con NameError).\"\"\"\nreturn X / np.linalg.norm(X, axis=-1, keepdims=True)"
+  }
+ ],
+ "respuesta": {
+  "contenido": "{\"entidades\": [{\"nombre\": \"kNN exacto\", \"tipo\": \"metodo\"}, {\"nombre\": \"IVF\", \"tipo\": \"metodo\"}, {\"nombre\": \"KMeans\", \"tipo\": \"metodo\"}, {\"nombre\": \"Qdrant\", \"tipo\": \"metodo\"}, {\"nombre\": \"normalización L2\", \"tipo\": \"metodo\"}, {\"nombre\": \"recall@10\", \"tipo\": \"metrica\"}, {\"nombre\": \"speedup\", \"tipo\": \"metrica\"}, {\"nombre\": \"latencia\", \"tipo\": \"metrica\"}, {\"nombre\": \"similitud coseno\", \"tipo\": \"metrica\"}, {\"nombre\": \"trade-off recall/latencia\", \"tipo\": \"concepto\"}, {\"nombre\": \"nprobe\", \"tipo\": \"concepto\"}, {\"nombre\": \"embeddings\", \"tipo\": \"concepto\"}]}",
+  "fin": "stop",
+  "tokens_entrada": 809,
+  "tokens_salida": 1630
+ }
+}

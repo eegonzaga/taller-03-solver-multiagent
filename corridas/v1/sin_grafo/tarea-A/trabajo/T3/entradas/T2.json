@@ -1,0 +1,9 @@
+{
+  "dataset": "digits",
+  "tam_train": 1347,
+  "tam_test": 450,
+  "accuracy_gnb": 0.8555555555555555,
+  "f1_macro_gnb": 0.8551624776853188,
+  "accuracy_lr": 0.9711111111111111,
+  "f1_macro_lr": 0.9710523343057076
+}

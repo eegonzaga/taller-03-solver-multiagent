@@ -1,0 +1,19 @@
+========================================================================
+T3 · Parte 3 — Qdrant embebido: colección, upsert y query con filtro
+Entorno SIN red: no se intenta ningún servidor (paso de conexión saltado)
+========================================================================
+Colección creada con 6 puntos
+
+Colección 'faqs': 64 dims, Distance.COSINE, 6 puntos (upsert de 6 FAQs)
+Consulta: ¿cuándo me devuelven el dinero?
+Filtro: tema='pagos'   limit=2
+  -0.102 [pagos] La factura electrónica se emite al confirmar el pago.
+  -0.112 [pagos] Los reembolsos se procesan en 5 a 7 días hábiles.
+
+(Nota: con embeddings sintéticos el score no es semántico —
+ el objetivo aquí es la MECÁNICA de colección/upsert/query/filtro.)
+
+Cifras guardadas en resultados.json:
+  num_puntos_coleccion     = 6
+  hits_filtro_pagos_scores = [-0.10180602784901141, -0.11198835242873917]
+  modo_ejecucion           = qdrant_embebido_memory

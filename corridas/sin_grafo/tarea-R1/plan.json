@@ -1,0 +1,111 @@
+{
+  "entrega": {
+    "formato": "ipynb",
+    "archivo": "semana2_ann.ipynb",
+    "secciones": [
+      "Setup",
+      "Parte 1 — kNN exacto: latencia vs. N",
+      "Parte 2 — Mini-IVF: clustering + búsqueda local",
+      "Parte 3 — Qdrant embebido: una vector DB real sin Docker",
+      "Cierre"
+    ],
+    "max_palabras": null,
+    "max_paginas": null
+  },
+  "subtareas": [
+    {
+      "id": "T1",
+      "titulo": "Setup + Parte 1: kNN exacto, latencia vs. N",
+      "tipo": "calculo",
+      "secciones": [
+        "S0",
+        "S1"
+      ],
+      "depende_de": [],
+      "objetivo": "Incluir el código dado del setup (datos_realistas con 200 centros gaussianos fijos, D=128, normalizar a norma 1) e implementar knn_exacto(consulta, base, k) sobre vectores normalizados usando producto punto. Medir el tiempo medio de consulta para N = 10_000, 50_000, 100_000 y 200_000 (varias consultas por N, reportar media en ms), graficar latencia vs. N y verificar que el crecimiento es lineal (O(N·d)).",
+      "figura": true,
+      "resultados": [
+        "latencia_media_ms_por_N",
+        "factor_crecimiento_lineal"
+      ]
+    },
+    {
+      "id": "T2",
+      "titulo": "Parte 2: Mini-IVF con KMeans, recall@10 vs. speedup",
+      "tipo": "calculo",
+      "secciones": [
+        "S2"
+      ],
+      "depende_de": [
+        "T1"
+      ],
+      "objetivo": "Con N=100_000, base = normalizar(datos_realistas(100_000)) y NLIST=64, entrenar KMeans(n_clusters=64, n_init=3, random_state=7), normalizar los centroides y construir las celdas (índices globales por celda). Implementar knn_ivf(consulta, nprobe, k): scores contra centroides → nprobe celdas más cercanas → kNN exacto solo dentro de esas celdas devolviendo índices globales. Para nprobe = 1, 2, 4, 8, 16 medir sobre 50 consultas el recall@10 contra knn_exacto y el speedup de latencia vs. búsqueda exacta; reportar tabla recall/speedup por nprobe, el tamaño medio de celda y una figura del triángulo recall/latencia.",
+      "figura": true,
+      "resultados": [
+        "recall_at10_por_nprobe",
+        "speedup_por_nprobe",
+        "tamano_medio_celda"
+      ]
+    },
+    {
+      "id": "T3",
+      "titulo": "Parte 3: Qdrant embebido con filtros de metadata",
+      "tipo": "calculo",
+      "secciones": [
+        "S3"
+      ],
+      "depende_de": [],
+      "objetivo": "Ejecutar el código dado de Qdrant: intentar conexión a http://localhost:6333 con timeout 3 y caer a modo embebido (:memory:) si no responde; crear la colección 'faqs' (64 dimensiones, distancia COSINE) desde cero, hacer upsert de los 6 documentos con payload {texto, tema} usando embed_demo (semilla vía hashlib.sha256), y consultar '¿cuándo me devuelven el dinero?' con query_filter tema='pagos', limit=2, imprimiendo score, tema y texto de los hits. La parte se salta sola con mensaje si qdrant-client no está instalado. Documentar la mecánica colección → upsert(vector+payload) → query con filtro.",
+      "figura": false,
+      "resultados": [
+        "hits_qdrant_filtrados",
+        "num_puntos_coleccion"
+      ]
+    },
+    {
+      "id": "T4",
+      "titulo": "Cierre y reflexión final + armado del notebook",
+      "tipo": "redaccion",
+      "secciones": [
+        "S4"
+      ],
+      "depende_de": [
+        "T1",
+        "T2",
+        "T3"
+      ],
+      "objetivo": "Redactar la sección de Cierre con los puntos clave (kNN exacto O(N·d) medido; IVF con dial nprobe vs. HNSW con ef_search bajo el mismo triángulo recall/latencia/memoria; flujo Qdrant colección → upsert → query con filtros) y responder la reflexión final con las cifras medidas: (a) para los ~N documentos estimados del proyecto, ¿basta kNN exacto o se necesita un índice ANN, justificado con las latencias de la Parte 1 y el trade-off recall/speedup de la Parte 2; (b) qué motor elegir (Qdrant / pgvector / otro) y por qué operacionalmente. Ensamblar el notebook final .ipynb ejecutado de principio a fin sin errores, con una celda Markdown encabezando cada parte (Setup, Parte 1, Parte 2, Parte 3, Cierre), los ejercicios 1.1, 2.1 y 2.2 resueltos, las figuras embebidas y las reflexiones respondidas.",
+      "figura": false,
+      "resultados": [
+        "reflexion_final_a_ann_vs_exacto",
+        "reflexion_final_b_motor"
+      ]
+    }
+  ],
+  "estado_final": [
+    {
+      "id": "T1",
+      "tipo": "calculo",
+      "status": "completado",
+      "intentos": 1
+    },
+    {
+      "id": "T2",
+      "tipo": "calculo",
+      "status": "completado",
+      "intentos": 1
+    },
+    {
+      "id": "T3",
+      "tipo": "calculo",
+      "status": "fallida",
+      "intentos": 3
+    },
+    {
+      "id": "T4",
+      "tipo": "redaccion",
+      "status": "para_redactor",
+      "intentos": 0
+    }
+  ]
+}

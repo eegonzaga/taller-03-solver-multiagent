@@ -1,0 +1,44 @@
+{
+  "perplejidad_2_temas": 107.89088069511578,
+  "perplejidad_3_temas": 137.78770156685167,
+  "perplejidad_4_temas": 156.41981736227808,
+  "tabla_comparativa": [
+    {
+      "n_temas": 2,
+      "perplejidad": 107.89088069511578,
+      "n_iter": 50
+    },
+    {
+      "n_temas": 3,
+      "perplejidad": 137.78770156685167,
+      "n_iter": 50
+    },
+    {
+      "n_temas": 4,
+      "perplejidad": 156.41981736227808,
+      "n_iter": 50
+    }
+  ],
+  "n_temas_con_menor_perplejidad": 2,
+  "perplejidad_minima": 107.89088069511578,
+  "tamano_vocabulario": 71,
+  "n_documentos": 12,
+  "n_tokens_corpus": 91,
+  "temas_reales": [
+    "deporte",
+    "deporte",
+    "deporte",
+    "deporte",
+    "cocina",
+    "cocina",
+    "cocina",
+    "cocina",
+    "astronomía",
+    "astronomía",
+    "astronomía",
+    "astronomía"
+  ],
+  "perplejidad_3_temas_parte1": 137.78770156685167,
+  "diferencia_perplejidad_3_vs_parte1": 0.0,
+  "vocabulario_igual_al_de_parte1": true
+}

@@ -1,0 +1,23 @@
+==========================================================================
+T1 · Parte 1 — kNN exacto (coseno, D=128): latencia vs. N
+==========================================================================
+k = 10 · consultas por N = 50 (mismas consultas para todo N)
+Verificación top-k vs argsort completo: OK
+--------------------------------------------------------------------------
+        N |  latencia media (ms) |  ms por 1000 vect. |      QPS
+   10,000 |               0.1186 |             0.0119 |   8434.1
+   50,000 |               0.6511 |             0.0130 |   1535.9
+  100,000 |               1.3863 |             0.0139 |    721.3
+  200,000 |               2.5135 |             0.0126 |    397.8
+--------------------------------------------------------------------------
+Ajuste lineal:  latencia(ms) = 0.0126 ms/1000 vect × N + 0.0320 ms
+  R² = 0.996268  |  exponente log-log = 1.0310 (≈ 1 ⇒ escalado O(N·d))
+  razón latencia(200k)/latencia(10k) = 21.20  vs  razón N = 20
+--------------------------------------------------------------------------
+Extrapolación a 10,000,000 vectores: 126.2 ms/consulta (escalo proporcional simple: 125.7 ms)
+  → 7.93 consultas/s por hilo; con presupuesto de 10 ms (≈100 QPS) excede ×13
+--------------------------------------------------------------------------
+CONCLUSIÓN: la latencia del kNN exacto es lineal en N (O(N·d), medido).
+Lineal en N. Con 10M de vectores y tráfico real, esto muere. Entra IVF.
+Cifras → resultados.json · Figura → parte1_latencia_vs_N.png
+Tiempo total del script: 1.0 s

@@ -1,0 +1,114 @@
+{
+  "entrega": {
+    "formato": "ipynb",
+    "archivo": "MMIA6013_semana2_ann.ipynb",
+    "secciones": [
+      "Setup",
+      "Parte 1 — kNN exacto: latencia vs. N",
+      "Parte 2 — Mini-IVF: clustering + búsqueda local",
+      "Parte 3 — Qdrant embebido: una vector DB real sin Docker",
+      "Cierre — Reflexión final"
+    ],
+    "max_palabras": null,
+    "max_paginas": null
+  },
+  "subtareas": [
+    {
+      "id": "T1",
+      "titulo": "Setup + Parte 1: kNN exacto, latencia vs. N",
+      "tipo": "calculo",
+      "secciones": [
+        "S0",
+        "S1"
+      ],
+      "depende_de": [],
+      "objetivo": "Incluir el código dado del setup (rng semilla 7, D=128, datos_realistas con 200 centros gaussianos fijos, normalizar) y resolver el Ejercicio 1.1: implementar knn_exacto(consulta, base, k) sobre vectores normalizados usando producto punto (coseno). Medir el tiempo medio de consulta para N = 10_000, 50_000, 100_000, 200_000 (promediando sobre varias consultas, p.ej. 20, extraídas de la misma distribución), reportar la tabla de latencias y graficar tiempo vs. N para evidenciar el escalado lineal O(N·d). Cerrar con la conclusión: lineal en N, inviable con 10M de vectores.",
+      "figura": true,
+      "resultados": [
+        "tiempo_medio_ms_por_N",
+        "factor_escalado_N10k_a_N200k",
+        "figura_latencia_vs_N"
+      ]
+    },
+    {
+      "id": "T2",
+      "titulo": "Parte 2: Mini-IVF con KMeans, recall@10 vs. speedup",
+      "tipo": "calculo",
+      "secciones": [
+        "S2"
+      ],
+      "depende_de": [
+        "T1"
+      ],
+      "objetivo": "Con el código dado (N=100_000, base normalizada, NLIST=64, KMeans(n_clusters=64, n_init=3, random_state=7), centroides normalizados, celdas por labels): reportar tamaño medio de celda. Resolver el Ejercicio 2.1: implementar knn_ivf(consulta, nprobe, k) — scores contra centroides, elegir las nprobe celdas más cercanas y hacer kNN exacto solo dentro de esas celdas devolviendo índices globales. Resolver el Ejercicio 2.2: para nprobe = 1, 2, 4, 8, 16 medir recall@10 contra knn_exacto (de T1) promediado sobre 50 consultas, y el speedup de latencia vs. búsqueda exacta; presentar la tabla recall/speedup y graficar la curva recall@10 vs. speedup (triángulo recall/latencia, vecinos perdidos en fronteras entre celdas).",
+      "figura": true,
+      "resultados": [
+        "tamano_medio_celda",
+        "recall_at10_por_nprobe",
+        "speedup_por_nprobe",
+        "figura_recall_vs_speedup"
+      ]
+    },
+    {
+      "id": "T3",
+      "titulo": "Parte 3: Qdrant embebido con filtros de metadata",
+      "tipo": "calculo",
+      "secciones": [
+        "S3"
+      ],
+      "depende_de": [],
+      "objetivo": "Ejecutar el código dado de Qdrant: intentar servidor en http://localhost:6333 (timeout 3) y caer a modo embebido QdrantClient(':memory:') si no responde; recrear la colección 'faqs' (64 dims, Distance.COSINE) desde cero, upsert de los 6 FAQs con payload {texto, tema} usando embed_demo (semilla vía hashlib.sha256, vectores norma 1), y consultar '¿cuándo me devuelven el dinero?' con query_filter tema='pagos' y limit=2, imprimiendo score, tema y texto de los hits. Manejar ImportError con el mensaje dado (la parte se salta sola si qdrant-client no está instalado) y verificar que el filtro de metadata efectivamente restringe los resultados. Nota: con embeddings sintéticos el score no es semántico; el objetivo es la mecánica colección/upsert/query/filtro.",
+      "figura": false,
+      "resultados": [
+        "modo_qdrant_usado",
+        "num_puntos_coleccion",
+        "hits_con_filtro_tema_pagos"
+      ]
+    },
+    {
+      "id": "T4",
+      "titulo": "Cierre: reflexión final con cifras medidas y armado del notebook",
+      "tipo": "redaccion",
+      "secciones": [
+        "S4"
+      ],
+      "depende_de": [
+        "T1",
+        "T2",
+        "T3"
+      ],
+      "objetivo": "Redactar la reflexión final respondiendo con las cifras medidas: a) para el número estimado de documentos del proyecto, ¿basta kNN exacto o se necesita un índice ANN? justificar con las latencias de T1 (escalado lineal) y el trade-off recall/speedup de T2; b) qué motor elegir (Qdrant / pgvector / otro) y por qué operacionalmente (despliegue, filtros de metadata como los probados en T3, persistencia, ecosistema). Incluir el resumen del cierre (kNN O(N·d) medido; IVF/HNSW mismo triángulo recall/latencia/memoria; Qdrant colección→upsert→query con filtros) y la nota sobre la sesión siguiente (pipeline RAG y chunking). Ensamblar el notebook final .ipynb con una celda Markdown encabezando cada parte (Setup, Parte 1, Parte 2, Parte 3, Cierre), los ejercicios resueltos, las figuras y las reflexiones, ejecutado de principio a fin sin errores.",
+      "figura": false,
+      "resultados": [
+        "reflexion_a_ann_vs_exacto_con_numeros",
+        "reflexion_b_motor_y_operacion"
+      ]
+    }
+  ],
+  "estado_final": [
+    {
+      "id": "T1",
+      "tipo": "calculo",
+      "status": "completado",
+      "intentos": 1
+    },
+    {
+      "id": "T2",
+      "tipo": "calculo",
+      "status": "completado",
+      "intentos": 2
+    },
+    {
+      "id": "T3",
+      "tipo": "calculo",
+      "status": "completado",
+      "intentos": 2
+    },
+    {
+      "id": "T4",
+      "tipo": "redaccion",
+      "status": "para_redactor",
+      "intentos": 0
+    }
+  ]
+}

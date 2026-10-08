@@ -1,0 +1,302 @@
+{
+  "subtarea": "T1 — Configuración y Parte 1 — chunking fijo con solapamiento",
+  "parametros_chunking": {
+    "tamano_caracteres": 300,
+    "overlap_caracteres": 80,
+    "overlap_comparacion": 0,
+    "unidad": "caracteres"
+  },
+  "num_chunks": 6,
+  "chunks_por_documento": {
+    "politica_vacaciones.md": 2,
+    "politica_remoto.md": 2,
+    "gastos.md": 2
+  },
+  "idea_cortada_overlap80": {
+    "idea": "Los días no utilizados pueden\ntransferirse al año siguiente hasta un máximo de 5 días.",
+    "documento": "politica_vacaciones.md",
+    "posicion_en_documento": [
+      256,
+      342
+    ],
+    "chunks_que_la_cortan": [
+      0
+    ],
+    "chunks_donde_aparece_completa": [
+      1
+    ],
+    "cortada_en_algun_chunk": true,
+    "aparece_completa_en_algun_chunk": true
+  },
+  "idea_cortada_overlap0": {
+    "idea": "Los días no utilizados pueden\ntransferirse al año siguiente hasta un máximo de 5 días.",
+    "documento": "politica_vacaciones.md",
+    "posicion_en_documento": [
+      256,
+      342
+    ],
+    "chunks_que_la_cortan": [
+      0,
+      1
+    ],
+    "chunks_donde_aparece_completa": [],
+    "cortada_en_algun_chunk": true,
+    "aparece_completa_en_algun_chunk": false
+  },
+  "comparacion_overlap_80_vs_0": {
+    "num_chunks_overlap80": 6,
+    "num_chunks_overlap0": 6,
+    "idea_aparece_completa_overlap80": true,
+    "idea_aparece_completa_overlap0": false,
+    "chunks_que_cortan_la_idea_overlap80": [
+      0
+    ],
+    "chunks_que_cortan_la_idea_overlap0": [
+      0,
+      1
+    ],
+    "inflacion_teorica_indice_overlap80": 0.36363636363636354,
+    "inflacion_teorica_indice_overlap0": 0.0,
+    "inflacion_real_corpus_overlap80": 0.20600858369098707,
+    "inflacion_real_corpus_overlap0": 0.0,
+    "lectura": "Con overlap=80 la idea de los días transferibles queda cortada en el/los chunk(s) [0] pero aparece COMPLETA en el/los chunk(s) [1]: el solapamiento la salva (costo: inflación teórica del índice C/(C-V) = 300/220 = +36.36%). Con overlap=0 la misma idea queda cortada en [0, 1] y NO aparece completa en ninguno: sin solapamiento, una idea que cruza la frontera queda mutilada en los dos fragmentos. La subfrase 'hasta un máximo de 5 días' empieza en el carácter 316 del documento, después del primer corte (carácter 300), así que cae entera en el chunk 1 con ambas configuraciones [1] vs [1]; la oración completa de la idea, en cambio, solo sobrevive con overlap=80."
+  },
+  "idea_aparece_completa_overlap80": true,
+  "idea_aparece_completa_overlap0": false,
+  "frase_clave_hasta_max_5_dias_overlap80": {
+    "idea": "hasta un máximo de 5 días",
+    "documento": "politica_vacaciones.md",
+    "posicion_en_documento": [
+      316,
+      341
+    ],
+    "chunks_que_la_cortan": [],
+    "chunks_donde_aparece_completa": [
+      1
+    ],
+    "cortada_en_algun_chunk": false,
+    "aparece_completa_en_algun_chunk": true
+  },
+  "frase_clave_hasta_max_5_dias_overlap0": {
+    "idea": "hasta un máximo de 5 días",
+    "documento": "politica_vacaciones.md",
+    "posicion_en_documento": [
+      316,
+      341
+    ],
+    "chunks_que_la_cortan": [],
+    "chunks_donde_aparece_completa": [
+      1
+    ],
+    "cortada_en_algun_chunk": false,
+    "aparece_completa_en_algun_chunk": true
+  },
+  "num_chunks_overlap0": 6,
+  "chunks_por_documento_overlap0": {
+    "politica_vacaciones.md": 2,
+    "politica_remoto.md": 2,
+    "gastos.md": 2
+  },
+  "longitud_documentos_caracteres": {
+    "politica_vacaciones.md": 446,
+    "politica_remoto.md": 361,
+    "gastos.md": 358
+  },
+  "longitudes_chunks_overlap80": [
+    300,
+    226,
+    300,
+    141,
+    300,
+    138
+  ],
+  "longitudes_chunks_overlap0": [
+    300,
+    146,
+    300,
+    61,
+    300,
+    58
+  ],
+  "caracteres_totales_docs": 1165,
+  "caracteres_totales_chunks_overlap80": 1405,
+  "caracteres_totales_chunks_overlap0": 1165,
+  "inflacion_teorica_overlap80": 0.36363636363636354,
+  "inflacion_teorica_overlap0": 0.0,
+  "inflacion_real_corpus_overlap80": 0.20600858369098707,
+  "inflacion_real_corpus_overlap0": 0.0,
+  "cortes_overlap80": [
+    {
+      "chunk": 0,
+      "documento": "politica_vacaciones.md",
+      "inicio_caracter": 0,
+      "fin_caracter": 300,
+      "empieza_con": "Política de vacaciones de NimbusSoft.\nLos emp",
+      "termina_con": " Los días no utilizados pueden\ntransferirse a"
+    },
+    {
+      "chunk": 1,
+      "documento": "politica_vacaciones.md",
+      "inicio_caracter": 220,
+      "fin_caracter": 446,
+      "empieza_con": "pación a través del portal interno. Los días ",
+      "termina_con": "s de superar el período de prueba de 3\nmeses."
+    },
+    {
+      "chunk": 2,
+      "documento": "politica_remoto.md",
+      "inicio_caracter": 0,
+      "fin_caracter": 300,
+      "empieza_con": "Política de trabajo remoto de NimbusSoft.\nEl ",
+      "termina_con": "aís se requiere aprobación\nde Recursos Humano"
+    },
+    {
+      "chunk": 3,
+      "documento": "politica_remoto.md",
+      "inicio_caracter": 220,
+      "fin_caracter": 361,
+      "empieza_con": "ra trabajar desde el exterior del país se req",
+      "termina_con": " anticipación y un máximo de 60 días por año."
+    },
+    {
+      "chunk": 4,
+      "documento": "gastos.md",
+      "inicio_caracter": 0,
+      "fin_caracter": 300,
+      "empieza_con": "Política de reembolso de gastos de NimbusSoft",
+      "termina_con": " salvo vuelos de más de\n8 horas, donde se per"
+    },
+    {
+      "chunk": 5,
+      "documento": "gastos.md",
+      "inicio_caracter": 220,
+      "fin_caracter": 358,
+      "empieza_con": " deben comprarse en clase económica salvo vue",
+      "termina_con": "a premium con aprobación del gerente de área."
+    }
+  ],
+  "cortes_overlap0": [
+    {
+      "chunk": 0,
+      "documento": "politica_vacaciones.md",
+      "inicio_caracter": 0,
+      "fin_caracter": 300,
+      "empieza_con": "Política de vacaciones de NimbusSoft.\nLos emp",
+      "termina_con": " Los días no utilizados pueden\ntransferirse a"
+    },
+    {
+      "chunk": 1,
+      "documento": "politica_vacaciones.md",
+      "inicio_caracter": 300,
+      "fin_caracter": 446,
+      "empieza_con": "l año siguiente hasta un máximo de 5 días. Du",
+      "termina_con": "s de superar el período de prueba de 3\nmeses."
+    },
+    {
+      "chunk": 2,
+      "documento": "politica_remoto.md",
+      "inicio_caracter": 0,
+      "fin_caracter": 300,
+      "empieza_con": "Política de trabajo remoto de NimbusSoft.\nEl ",
+      "termina_con": "aís se requiere aprobación\nde Recursos Humano"
+    },
+    {
+      "chunk": 3,
+      "documento": "politica_remoto.md",
+      "inicio_caracter": 300,
+      "fin_caracter": 361,
+      "empieza_con": "s con 30 días de anticipación y un máximo de ",
+      "termina_con": " anticipación y un máximo de 60 días por año."
+    },
+    {
+      "chunk": 4,
+      "documento": "gastos.md",
+      "inicio_caracter": 0,
+      "fin_caracter": 300,
+      "empieza_con": "Política de reembolso de gastos de NimbusSoft",
+      "termina_con": " salvo vuelos de más de\n8 horas, donde se per"
+    },
+    {
+      "chunk": 5,
+      "documento": "gastos.md",
+      "inicio_caracter": 300,
+      "fin_caracter": 358,
+      "empieza_con": "mite económica premium con aprobación del ger",
+      "termina_con": "a premium con aprobación del gerente de área."
+    }
+  ],
+  "chunks_overlap80": [
+    {
+      "chunk": 0,
+      "documento": "politica_vacaciones.md",
+      "texto": "Política de vacaciones de NimbusSoft.\nLos empleados a tiempo completo acumulan 1.5 días de vacaciones por mes trabajado,\nhasta un máximo de 18 días por año. Las vacaciones deben solicitarse con al menos\n15 días de anticipación a través del portal interno. Los días no utilizados pueden\ntransferirse a"
+    },
+    {
+      "chunk": 1,
+      "documento": "politica_vacaciones.md",
+      "texto": "pación a través del portal interno. Los días no utilizados pueden\ntransferirse al año siguiente hasta un máximo de 5 días. Durante el primer año,\nlos días solo pueden tomarse después de superar el período de prueba de 3\nmeses."
+    },
+    {
+      "chunk": 2,
+      "documento": "politica_remoto.md",
+      "texto": "Política de trabajo remoto de NimbusSoft.\nEl trabajo remoto está permitido hasta 3 días por semana para todos los roles\nexcepto soporte de infraestructura on-site. Los días remotos se coordinan con el\nlíder de equipo. Para trabajar desde el exterior del país se requiere aprobación\nde Recursos Humano"
+    },
+    {
+      "chunk": 3,
+      "documento": "politica_remoto.md",
+      "texto": "ra trabajar desde el exterior del país se requiere aprobación\nde Recursos Humanos con 30 días de anticipación y un máximo de 60 días por año."
+    },
+    {
+      "chunk": 4,
+      "documento": "gastos.md",
+      "texto": "Política de reembolso de gastos de NimbusSoft.\nLos gastos de viaje se reembolsan presentando factura dentro de los 30 días\nposteriores al gasto. El límite diario de alimentación en viajes es de 45 USD.\nLos pasajes aéreos deben comprarse en clase económica salvo vuelos de más de\n8 horas, donde se per"
+    },
+    {
+      "chunk": 5,
+      "documento": "gastos.md",
+      "texto": " deben comprarse en clase económica salvo vuelos de más de\n8 horas, donde se permite económica premium con aprobación del gerente de área."
+    }
+  ],
+  "chunks_overlap0": [
+    {
+      "chunk": 0,
+      "documento": "politica_vacaciones.md",
+      "texto": "Política de vacaciones de NimbusSoft.\nLos empleados a tiempo completo acumulan 1.5 días de vacaciones por mes trabajado,\nhasta un máximo de 18 días por año. Las vacaciones deben solicitarse con al menos\n15 días de anticipación a través del portal interno. Los días no utilizados pueden\ntransferirse a"
+    },
+    {
+      "chunk": 1,
+      "documento": "politica_vacaciones.md",
+      "texto": "l año siguiente hasta un máximo de 5 días. Durante el primer año,\nlos días solo pueden tomarse después de superar el período de prueba de 3\nmeses."
+    },
+    {
+      "chunk": 2,
+      "documento": "politica_remoto.md",
+      "texto": "Política de trabajo remoto de NimbusSoft.\nEl trabajo remoto está permitido hasta 3 días por semana para todos los roles\nexcepto soporte de infraestructura on-site. Los días remotos se coordinan con el\nlíder de equipo. Para trabajar desde el exterior del país se requiere aprobación\nde Recursos Humano"
+    },
+    {
+      "chunk": 3,
+      "documento": "politica_remoto.md",
+      "texto": "s con 30 días de anticipación y un máximo de 60 días por año."
+    },
+    {
+      "chunk": 4,
+      "documento": "gastos.md",
+      "texto": "Política de reembolso de gastos de NimbusSoft.\nLos gastos de viaje se reembolsan presentando factura dentro de los 30 días\nposteriores al gasto. El límite diario de alimentación en viajes es de 45 USD.\nLos pasajes aéreos deben comprarse en clase económica salvo vuelos de más de\n8 horas, donde se per"
+    },
+    {
+      "chunk": 5,
+      "documento": "gastos.md",
+      "texto": "mite económica premium con aprobación del gerente de área."
+    }
+  ],
+  "verificacion_reconstruccion_overlap0": {
+    "politica_vacaciones.md": true,
+    "politica_remoto.md": true,
+    "gastos.md": true
+  },
+  "verificacion_reconstruccion_overlap80": {
+    "politica_vacaciones.md": false,
+    "politica_remoto.md": false,
+    "gastos.md": false
+  }
+}

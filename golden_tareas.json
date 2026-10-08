@@ -1,0 +1,417 @@
+{
+  "_comentario": "Golden set del solver multiagente. A, B y C: tareas de práctica escritas a partir de los papers del corpus del Taller 02. R1 y R2: tareas reales de la maestría (actividades de clase de la Semana 2 de MMIA 6013). Cada cifra se verifica contra verdad_py: código que deja el valor en `verdad` (nunca un número escrito a mano). Tipos: archivo, secciones, palabras_max, paginas_max, cifra (la verdad aparece en los 160 caracteres que siguen a `etiqueta`), cifra_presente, contiene, ipynb_ejecutado, procedencia y codigo_sin (ningún script ni celda contiene los patrones: la trampa). Cada comprobación lleva `descripcion`, que también usa el juez de la Parte 4.E.",
+  "tareas": [
+    {
+      "id": "A",
+      "pdf": "enunciados/tarea-a-ng-jordan-digitos.pdf",
+      "entregable": "reporte.md",
+      "trampa": "La partición de la Parte 1 es la única; el escalador se ajusta solo con entrenamiento y el conjunto de prueba no se usa para elegir nada. Además, el paper predice un cruce que en estos datos NO ocurre: un solver que escriba de memoria lo afirmará.",
+      "checks": [
+        {
+          "id": "A01",
+          "tipo": "archivo",
+          "patron": "reporte.md",
+          "descripcion": "Entrega el archivo reporte.md"
+        },
+        {
+          "id": "A02",
+          "tipo": "archivo",
+          "patron": "**/*.png",
+          "minimo": 1,
+          "descripcion": "Incluye la figura de la curva de aprendizaje como PNG"
+        },
+        {
+          "id": "A03",
+          "tipo": "secciones",
+          "en_orden": true,
+          "lista": [
+            "Introducción",
+            "Metodología",
+            "Resultados",
+            "Discusión",
+            "Conclusiones"
+          ],
+          "descripcion": "Tiene las secciones Introducción, Metodología, Resultados, Discusión y Conclusiones, en ese orden"
+        },
+        {
+          "id": "A04",
+          "tipo": "palabras_max",
+          "valor": 1000,
+          "descripcion": "No pasa de 1 000 palabras"
+        },
+        {
+          "id": "A05",
+          "tipo": "cifra_presente",
+          "verdad_py": [
+            "import sys; sys.path.insert(0, '.'); import verdades as v",
+            "verdad = v.tarea_a()['n']"
+          ],
+          "tolerancia": 0,
+          "descripcion": "Reporta el número correcto de ejemplos del conjunto de dígitos"
+        },
+        {
+          "id": "A06",
+          "tipo": "cifra",
+          "etiqueta": "(?i)naive|bayes|\\bNB\\b|gaussian",
+          "verdad_py": [
+            "import sys; sys.path.insert(0, '.'); import verdades as v",
+            "verdad = v.tarea_a()['nb_accuracy']"
+          ],
+          "tolerancia": 0.006,
+          "descripcion": "Reporta correctamente la exactitud de Naive Bayes en prueba con el entrenamiento completo"
+        },
+        {
+          "id": "A07",
+          "tipo": "cifra",
+          "etiqueta": "(?i)log[íi]stic|\\bLR\\b|logreg",
+          "verdad_py": [
+            "import sys; sys.path.insert(0, '.'); import verdades as v",
+            "verdad = v.tarea_a()['lr_accuracy']"
+          ],
+          "tolerancia": 0.006,
+          "descripcion": "Reporta correctamente la exactitud de la regresión logística en prueba con el entrenamiento completo"
+        },
+        {
+          "id": "A08",
+          "tipo": "cifra_presente",
+          "verdad_py": [
+            "import sys; sys.path.insert(0, '.'); import verdades as v",
+            "verdad = v.tarea_a()['curva'][20]['nb']"
+          ],
+          "tolerancia": 0.0006,
+          "descripcion": "Reporta correctamente la exactitud de Naive Bayes con 20 ejemplos de entrenamiento"
+        },
+        {
+          "id": "A09",
+          "tipo": "procedencia",
+          "minimo": 0.85,
+          "descripcion": "Las cifras del reporte salen de una ejecución (no están inventadas)"
+        }
+      ]
+    },
+    {
+      "id": "B",
+      "pdf": "enunciados/tarea-b-atencion-vaswani.pdf",
+      "entregable": "*.ipynb",
+      "trampa": "Un único generador default_rng(0) creado una vez y consumido en un orden fijo (q y luego K, para d_k = 4, 64, 512): quien cree un generador por d_k obtiene otras entropías.",
+      "checks": [
+        {
+          "id": "B01",
+          "tipo": "archivo",
+          "patron": "*.ipynb",
+          "descripcion": "Entrega un notebook .ipynb"
+        },
+        {
+          "id": "B02",
+          "tipo": "ipynb_ejecutado",
+          "descripcion": "El notebook está ejecutado de principio a fin sin errores"
+        },
+        {
+          "id": "B03",
+          "tipo": "cifra_presente",
+          "verdad_py": [
+            "import sys; sys.path.insert(0, '.'); import verdades as v",
+            "verdad = v.tarea_b()['pesos'][0, 2]"
+          ],
+          "tolerancia": 0.00051,
+          "descripcion": "Reporta correctamente el peso de atención de la consulta 1 sobre la clave 3"
+        },
+        {
+          "id": "B04",
+          "tipo": "cifra_presente",
+          "verdad_py": [
+            "import sys; sys.path.insert(0, '.'); import verdades as v",
+            "verdad = v.tarea_b()['salida'][1, 1]"
+          ],
+          "tolerancia": 0.00051,
+          "descripcion": "Reporta correctamente la salida de atención de la consulta 2, segunda columna"
+        },
+        {
+          "id": "B05",
+          "tipo": "cifra_presente",
+          "verdad_py": [
+            "import sys; sys.path.insert(0, '.'); import verdades as v",
+            "verdad = v.tarea_b()['escala'][64]['H_sin']"
+          ],
+          "tolerancia": 0.00051,
+          "descripcion": "Reporta correctamente la entropía sin escalar para d_k = 64"
+        },
+        {
+          "id": "B06",
+          "tipo": "cifra_presente",
+          "verdad_py": [
+            "import sys; sys.path.insert(0, '.'); import verdades as v",
+            "verdad = v.tarea_b()['escala'][512]['H_con']"
+          ],
+          "tolerancia": 0.00051,
+          "descripcion": "Reporta correctamente la entropía escalada para d_k = 512"
+        },
+        {
+          "id": "B07",
+          "tipo": "cifra_presente",
+          "verdad_py": [
+            "import sys; sys.path.insert(0, '.'); import verdades as v",
+            "verdad = v.tarea_b()['pe'][25, 6]"
+          ],
+          "tolerancia": 0.00051,
+          "descripcion": "Reporta correctamente PE[25, 6]"
+        },
+        {
+          "id": "B08",
+          "tipo": "archivo",
+          "patron": "**/*.png",
+          "minimo": 1,
+          "o_imagen_en_ipynb": true,
+          "descripcion": "Incluye el mapa de calor de la codificación posicional"
+        },
+        {
+          "id": "B09",
+          "tipo": "procedencia",
+          "minimo": 0.85,
+          "descripcion": "Las cifras del notebook salen de una ejecución"
+        }
+      ]
+    },
+    {
+      "id": "C",
+      "pdf": "enunciados/tarea-c-lda-blei.pdf",
+      "entregable": "reporte.pdf",
+      "trampa": "No descargar ningún corpus (20 Newsgroups, load_dataset): los datos están en el enunciado. Además, el límite de dos páginas.",
+      "checks": [
+        {
+          "id": "C01",
+          "tipo": "archivo",
+          "patron": "reporte.pdf",
+          "descripcion": "Entrega el archivo reporte.pdf"
+        },
+        {
+          "id": "C02",
+          "tipo": "paginas_max",
+          "valor": 2,
+          "descripcion": "El PDF tiene dos páginas como máximo"
+        },
+        {
+          "id": "C03",
+          "tipo": "secciones",
+          "en_orden": true,
+          "lista": [
+            "Objetivo",
+            "Método",
+            "Resultados",
+            "Discusión"
+          ],
+          "descripcion": "Tiene las secciones Objetivo, Método, Resultados y Discusión, en ese orden"
+        },
+        {
+          "id": "C04",
+          "tipo": "cifra",
+          "etiqueta": "(?i)perplej|perplexity",
+          "verdad_py": [
+            "import sys; sys.path.insert(0, '.'); import verdades as v",
+            "verdad = v.tarea_c()['perplejidad'][3]"
+          ],
+          "tolerancia": 0.06,
+          "descripcion": "Reporta correctamente la perplejidad del modelo de tres temas"
+        },
+        {
+          "id": "C05",
+          "tipo": "cifra_presente",
+          "verdad_py": [
+            "import sys; sys.path.insert(0, '.'); import verdades as v",
+            "verdad = v.tarea_c()['perplejidad'][4]"
+          ],
+          "tolerancia": 0.06,
+          "descripcion": "Reporta correctamente la perplejidad del modelo de cuatro temas"
+        },
+        {
+          "id": "C06",
+          "tipo": "cifra",
+          "etiqueta": "(?i)pureza|purity",
+          "verdad_py": [
+            "import sys; sys.path.insert(0, '.'); import verdades as v",
+            "verdad = v.tarea_c()['pureza']"
+          ],
+          "tolerancia": 0.006,
+          "descripcion": "Reporta correctamente la pureza de la asignación de temas"
+        },
+        {
+          "id": "C07",
+          "tipo": "cifra_presente",
+          "verdad_py": [
+            "import sys; sys.path.insert(0, '.'); import verdades as v",
+            "verdad = v.tarea_c()['vocabulario']"
+          ],
+          "tolerancia": 0,
+          "descripcion": "Reporta correctamente el tamaño del vocabulario"
+        },
+        {
+          "id": "C08",
+          "tipo": "codigo_sin",
+          "patrones": [
+            "fetch_20newsgroups",
+            "load_dataset",
+            "[\"']https?://",
+            "download\\s*=\\s*True"
+          ],
+          "descripcion": "No descarga ningún corpus externo (la trampa)"
+        },
+        {
+          "id": "C09",
+          "tipo": "procedencia",
+          "minimo": 0.85,
+          "descripcion": "Las cifras del reporte salen de una ejecución"
+        }
+      ]
+    },
+    {
+      "id": "R1",
+      "pdf": "enunciados/reales/actividad-s2-mar-ann.pdf",
+      "entregable": "*.ipynb",
+      "real": "Actividad de clase S2·MAR (MMIA 6013, Semana 2), convertida de notebook a PDF sin las soluciones.",
+      "trampa": "El código dado intenta primero un servidor Qdrant en http://localhost:6333: es red, y el sandbox no lo deja correr sin una persona. Además, el generador global rng = default_rng(7) se consume en orden a lo largo del notebook.",
+      "nota_verdad": "El recall@10 no es reproducible exacto: KMeans multihilo da 0.916 o 0.926 con nprobe=1 en corridas idénticas (medido). Por eso solo lleva tolerancia 0.015; las comprobaciones exactas van sobre cifras deterministas.",
+      "checks": [
+        {
+          "id": "R101",
+          "tipo": "archivo",
+          "patron": "*.ipynb",
+          "descripcion": "Entrega un notebook .ipynb"
+        },
+        {
+          "id": "R102",
+          "tipo": "ipynb_ejecutado",
+          "descripcion": "El notebook está ejecutado de principio a fin sin errores"
+        },
+        {
+          "id": "R103",
+          "tipo": "cifra_presente",
+          "verdad_py": [
+            "import sys; sys.path.insert(0, '.'); import verdades as v",
+            "verdad = v.real_r1()['tamano_medio']"
+          ],
+          "tolerancia": 0.6,
+          "descripcion": "Reporta el tamaño medio de las celdas del IVF (100 000 vectores en 64 celdas)"
+        },
+        {
+          "id": "R104",
+          "tipo": "cifra",
+          "etiqueta": "(?i)recall",
+          "verdad_py": [
+            "import sys; sys.path.insert(0, '.'); import verdades as v",
+            "verdad = v.real_r1()['recall'][16]"
+          ],
+          "tolerancia": 0.015,
+          "descripcion": "Reporta un recall@10 correcto para nprobe = 16"
+        },
+        {
+          "id": "R105",
+          "tipo": "cifra_presente",
+          "verdad_py": [
+            "import sys; sys.path.insert(0, '.'); import verdades as v",
+            "verdad = abs(v.real_r1()['qdrant_scores'][0])"
+          ],
+          "tolerancia": 0.0006,
+          "descripcion": "Reporta el puntaje del mejor resultado de Qdrant filtrado por tema «pagos» (el signo menos no lo distingue el evaluador)"
+        },
+        {
+          "id": "R106",
+          "tipo": "archivo",
+          "patron": "**/*.png",
+          "minimo": 1,
+          "o_imagen_en_ipynb": true,
+          "descripcion": "Incluye las gráficas de latencia y del trade-off recall/speedup"
+        },
+        {
+          "id": "R107",
+          "tipo": "codigo_sin",
+          "patrones": [
+            "QdrantClient\\(\\s*url",
+            "[\"']https?://"
+          ],
+          "descripcion": "No usa la red: Qdrant en modo embebido, sin servidor por URL (la trampa)"
+        },
+        {
+          "id": "R108",
+          "tipo": "procedencia",
+          "minimo": 0.85,
+          "descripcion": "Las cifras del notebook salen de una ejecución"
+        }
+      ]
+    },
+    {
+      "id": "R2",
+      "pdf": "enunciados/reales/actividad-s2-mie-rag.pdf",
+      "entregable": "*.ipynb",
+      "real": "Actividad de clase S2·MIÉ (MMIA 6013, Semana 2), convertida de notebook a PDF sin las soluciones.",
+      "trampa": "La generación del código dado llama por red a APIs de LLM (la H200 y Ollama, entre otras). En el sandbox no corren sin una persona: hay que usar el «modo inspección» con respuestas precapturadas que trae el propio notebook. Sin sentence-transformers (no está instalado), el índice es el respaldo TF-IDF.",
+      "nota_verdad": "chunk_fijo(300, 80) con la descripción del ejercicio 1.1; otra implementación válida que deje un último fragmento corto cambiaría el número de fragmentos.",
+      "checks": [
+        {
+          "id": "R201",
+          "tipo": "archivo",
+          "patron": "*.ipynb",
+          "descripcion": "Entrega un notebook .ipynb"
+        },
+        {
+          "id": "R202",
+          "tipo": "ipynb_ejecutado",
+          "descripcion": "El notebook está ejecutado de principio a fin sin errores"
+        },
+        {
+          "id": "R203",
+          "tipo": "cifra",
+          "etiqueta": "(?i)chunks|fragmentos",
+          "verdad_py": [
+            "import sys; sys.path.insert(0, '.'); import verdades as v",
+            "verdad = v.real_r2()['n_chunks']"
+          ],
+          "tolerancia": 0,
+          "descripcion": "Reporta el número correcto de fragmentos (300 caracteres, solapamiento 80)"
+        },
+        {
+          "id": "R204",
+          "tipo": "cifra_presente",
+          "verdad_py": [
+            "import sys; sys.path.insert(0, '.'); import verdades as v",
+            "verdad = v.real_r2()['transferir'][0]"
+          ],
+          "tolerancia": 0.0006,
+          "descripcion": "Reporta el puntaje top-1 correcto para «¿Cuántos días de vacaciones puedo transferir al año siguiente?»"
+        },
+        {
+          "id": "R205",
+          "tipo": "cifra_presente",
+          "verdad_py": [
+            "import sys; sys.path.insert(0, '.'); import verdades as v",
+            "verdad = v.real_r2()['exterior'][0]"
+          ],
+          "tolerancia": 0.0006,
+          "descripcion": "Reporta el puntaje top-1 correcto para «¿puedo trabajar desde el exterior?»"
+        },
+        {
+          "id": "R206",
+          "tipo": "contiene",
+          "lista": [
+            "El corpus no contiene información suficiente"
+          ],
+          "descripcion": "Para la pregunta sin respuesta (mascotas), el RAG se abstiene con la frase del curso"
+        },
+        {
+          "id": "R207",
+          "tipo": "codigo_sin",
+          "patrones": [
+            "[\"']https?://",
+            "urlopen\\("
+          ],
+          "descripcion": "No llama a ninguna API por red (la trampa)"
+        },
+        {
+          "id": "R208",
+          "tipo": "procedencia",
+          "minimo": 0.85,
+          "descripcion": "Las cifras del notebook salen de una ejecución"
+        }
+      ]
+    }
+  ]
+}

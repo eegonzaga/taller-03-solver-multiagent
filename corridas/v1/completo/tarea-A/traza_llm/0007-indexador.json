@@ -1,0 +1,18 @@
+{
+ "mensajes": [
+  {
+   "role": "system",
+   "content": "Extraes entidades de un texto de un curso de maestría en IA (un enunciado o\nun fragmento de un paper, en español o en inglés).\nTipos permitidos: dataset, metodo, metrica, concepto.\n- dataset: conjuntos de datos concretos (p. ej. «Breast Cancer Wisconsin», «Palmer Penguins»).\n- metodo: algoritmos, modelos o técnicas (p. ej. «Naive Bayes gaussiano», «TF-IDF», «PCA», «SVD»).\n- metrica: medidas de evaluación (p. ej. «accuracy», «F1 macro», «MRR», «entropía»).\n- concepto: ideas teóricas (p. ej. «sesgo y varianza», «temperatura», «gradiente»).\nNombres cortos y canónicos, en español salvo nombres propios (sin artículos). Máximo 12 entidades. Responde solo JSON:\n{\"entidades\": [{\"nombre\": \"...\", \"tipo\": \"dataset|metodo|metrica|concepto\"}]}"
+  },
+  {
+   "role": "user",
+   "content": "Parte 4 — Discusión\nCon tus cifras, di si se observa el cruce que predicen Ng y Jordan y desde qué tamaño conviene\ncada modelo. Si no se observa, explica qué supuesto del modelo generativo puede fallar en estos\ndatos (piensa en la independencia condicional entre píxeles vecinos)."
+  }
+ ],
+ "respuesta": {
+  "contenido": "{\"entidades\": [{\"nombre\": \"modelo generativo\", \"tipo\": \"concepto\"}, {\"nombre\": \"modelo discriminativo\", \"tipo\": \"concepto\"}, {\"nombre\": \"punto de cruce\", \"tipo\": \"concepto\"}, {\"nombre\": \"tamaño de muestra\", \"tipo\": \"concepto\"}, {\"nombre\": \"independencia condicional\", \"tipo\": \"concepto\"}]}",
+  "fin": "stop",
+  "tokens_entrada": 314,
+  "tokens_salida": 645
+ }
+}

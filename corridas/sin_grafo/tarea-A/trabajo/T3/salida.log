@@ -1,0 +1,18 @@
+=== T3 - Parte 3: Curva de aprendizaje ===
+Dataset: load_digits | train=1347 | test=450 | split coincide con T1: True
+
+Exactitud en el conjunto de prueba (mismo test siempre):
+         m | GaussianNB |     RegLog |    dif GNB-LR
+        20 |     0.3667 |     0.7578 |       -0.3911
+        50 |     0.6022 |     0.8644 |       -0.2622
+       100 |     0.7556 |     0.9067 |       -0.1511
+       200 |     0.8333 |     0.9556 |       -0.1222
+       400 |     0.8400 |     0.9667 |       -0.1267
+  completo |     0.8556 |     0.9644 |       -0.1089
+
+Exactitud GNB (entrenamiento completo): 0.855556
+Exactitud LR  (entrenamiento completo): 0.964444
+Las curvas no se cruzan en los valores de m evaluados.
+
+Figura guardada: T3_parte3_curva_aprendizaje.png
+Resultados guardados: resultados.json

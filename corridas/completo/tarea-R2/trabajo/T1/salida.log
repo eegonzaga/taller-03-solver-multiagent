@@ -1,0 +1,50 @@
+[0] (politica_vacaciones.md) Política de vacaciones de NimbusSoft.
+Los empleados a tiempo completo ...
+[1] (politica_vacaciones.md) pación a través del portal interno. Los días no utilizados pueden
+tran...
+[2] (politica_remoto.md) Política de trabajo remoto de NimbusSoft.
+El trabajo remoto está permi...
+[3] (politica_remoto.md) ra trabajar desde el exterior del país se requiere aprobación
+de Recur...
+[4] (gastos.md) Política de reembolso de gastos de NimbusSoft.
+Los gastos de viaje se ...
+[5] (gastos.md)  deben comprarse en clase económica salvo vuelos de más de
+8 horas, do...
+
+--- Misma fragmentación con overlap=0 (comparación de cortes) ---
+[0] (politica_vacaciones.md) Política de vacaciones de NimbusSoft.
+Los empleados a tiempo completo ...
+[1] (politica_vacaciones.md) l año siguiente hasta un máximo de 5 días. Durante el primer año,
+los ...
+[2] (politica_remoto.md) Política de trabajo remoto de NimbusSoft.
+El trabajo remoto está permi...
+[3] (politica_remoto.md) s con 30 días de anticipación y un máximo de 60 días por año....
+[4] (gastos.md) Política de reembolso de gastos de NimbusSoft.
+Los gastos de viaje se ...
+[5] (gastos.md) mite económica premium con aprobación del gerente de área....
+
+=== CIFRAS PRINCIPALES — T1 · Parte 1 (chunking) ===
+num_chunks (tamano=300, overlap=80): 6
+chunks_por_documento: {'politica_vacaciones.md': 2, 'politica_remoto.md': 2, 'gastos.md': 2}
+num_chunks_overlap0: 6
+chunks_por_documento_overlap0: {'politica_vacaciones.md': 2, 'politica_remoto.md': 2, 'gastos.md': 2}
+
+Idea analizada: "Los días no utilizados pueden transferirse al año siguiente hasta un máximo de 5 días."
+  overlap=80 -> cortada en chunks [0] | completa en chunks [1]
+  overlap=0  -> cortada en chunks [0, 1] | completa en chunks []
+  subfrase 'hasta un máximo de 5 días': completa en [1] (overlap=80) y en [1] (overlap=0)
+
+Observación del corte en 'politica_vacaciones.md':
+  overlap=80 · chunk[0] termina con: ' Los días no utilizados pueden\ntransferirse a'
+  overlap=80 · chunk[1] empieza con: 'pación a través del portal interno. Los días '
+  overlap=0  · chunk[0] termina con: ' Los días no utilizados pueden\ntransferirse a'
+  overlap=0  · chunk[1] empieza con: 'l año siguiente hasta un máximo de 5 días. Du'
+
+Inflación teórica del índice con 300/80: C/(C-V)-1 = 0.363636 (+36.36%)
+Inflación real en este corpus: 0.206009 (overlap=80) vs 0.000000 (overlap=0)
+Reconstrucción exacta del documento con overlap=0: {'politica_vacaciones.md': True, 'politica_remoto.md': True, 'gastos.md': True}
+
+Lectura de la comparación overlap=80 vs overlap=0:
+Con overlap=80 la idea de los días transferibles queda cortada en el/los chunk(s) [0] pero aparece COMPLETA en el/los chunk(s) [1]: el solapamiento la salva (costo: inflación teórica del índice C/(C-V) = 300/220 = +36.36%). Con overlap=0 la misma idea queda cortada en [0, 1] y NO aparece completa en ninguno: sin solapamiento, una idea que cruza la frontera queda mutilada en los dos fragmentos. La subfrase 'hasta un máximo de 5 días' empieza en el carácter 316 del documento, después del primer corte (carácter 300), así que cae entera en el chunk 1 con ambas configuraciones [1] vs [1]; la oración completa de la idea, en cambio, solo sobrevive con overlap=80.
+
+'resultados.json' guardado en la carpeta actual con 29 claves.

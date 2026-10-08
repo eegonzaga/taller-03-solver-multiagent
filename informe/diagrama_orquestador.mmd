@@ -1,0 +1,46 @@
+---
+config:
+  flowchart:
+    curve: linear
+---
+graph TD;
+	__start__([<p>__start__</p>]):::first
+	leer(leer)
+	indexar(indexar)
+	planificar(planificar)
+	validar_plan(validar_plan)
+	elegir_subtarea(elegir_subtarea)
+	investigar(investigar)
+	programar(programar)
+	ejecutar(ejecutar)
+	revisar(revisar)
+	redactar(redactar)
+	verificar(verificar)
+	__end__([<p>__end__</p>]):::last
+	__start__ --> leer;
+	ejecutar --> revisar;
+	elegir_subtarea -.-> investigar;
+	elegir_subtarea -.-> redactar;
+	indexar -.-> __end__;
+	indexar -.-> planificar;
+	investigar -.-> elegir_subtarea;
+	investigar -.-> programar;
+	investigar -.-> redactar;
+	leer -.-> __end__;
+	leer -.-> indexar;
+	planificar -.-> __end__;
+	planificar -.-> validar_plan;
+	programar -.-> ejecutar;
+	programar -.-> redactar;
+	redactar --> verificar;
+	revisar -.-> elegir_subtarea;
+	revisar -.-> programar;
+	revisar -.-> redactar;
+	validar_plan -.-> __end__;
+	validar_plan -.-> elegir_subtarea;
+	validar_plan -.-> planificar;
+	verificar -.-> __end__;
+	verificar -.-> redactar;
+	classDef default fill:#f2f0ff,line-height:1.2
+	classDef first fill-opacity:0
+	classDef last fill:#bfb6fc

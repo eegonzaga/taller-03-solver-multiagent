@@ -1,0 +1,27 @@
+# ── Credenciales: nunca al repositorio (el solver no necesita ninguna para la H200) ──
+.env
+.env.*
+!.env.example
+
+# ── Entorno de Python (se reconstruye con requirements.txt) ──
+.venv/
+__pycache__/
+*.pyc
+
+# ── Sistema y editores ──
+.DS_Store
+.vscode/
+.idea/
+
+# ── Cachés que crean las ejecuciones y no son evidencia ──
+**/.mpl/
+**/.jupyter/
+**/.ipynb_checkpoints/
+
+# ── Índice del corpus ──
+# Se versionan las entidades y los embeddings ya calculados: las entidades las extrae un LLM,
+# así que reconstruirlas daría un grafo distinto (y cuesta ~24 min en la H200). El resto de la
+# caché (trazas internas del indexado, pruebas con el modelo de guion) se regenera solo.
+.cache/*
+!.cache/corpus-entidades-zai_org_glm_5_3_flash.json
+!.cache/embeddings-bge-m3_latest.json

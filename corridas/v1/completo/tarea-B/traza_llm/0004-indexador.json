@@ -1,0 +1,18 @@
+{
+ "mensajes": [
+  {
+   "role": "system",
+   "content": "Extraes entidades de un texto de un curso de maestría en IA (un enunciado o\nun fragmento de un paper, en español o en inglés).\nTipos permitidos: dataset, metodo, metrica, concepto.\n- dataset: conjuntos de datos concretos (p. ej. «Breast Cancer Wisconsin», «Palmer Penguins»).\n- metodo: algoritmos, modelos o técnicas (p. ej. «Naive Bayes gaussiano», «TF-IDF», «PCA», «SVD»).\n- metrica: medidas de evaluación (p. ej. «accuracy», «F1 macro», «MRR», «entropía»).\n- concepto: ideas teóricas (p. ej. «sesgo y varianza», «temperatura», «gradiente»).\nNombres cortos y canónicos, en español salvo nombres propios (sin artículos). Máximo 12 entidades. Responde solo JSON:\n{\"entidades\": [{\"nombre\": \"...\", \"tipo\": \"dataset|metodo|metrica|concepto\"}]}"
+  },
+  {
+   "role": "user",
+   "content": "Parte 1 — Atención escalada\nImplementa en NumPy la atención escalada con un softmax numéricamente estable (resta el máximo\nde cada fila). Calcula la matriz de pesos (2 × 3) y la salida (2 × 2) para las matrices de arriba, y\npreséntalas con cuatro decimales."
+  }
+ ],
+ "respuesta": {
+  "contenido": "{\"entidades\": [{\"nombre\": \"atención escalada\", \"tipo\": \"metodo\"}, {\"nombre\": \"NumPy\", \"tipo\": \"metodo\"}, {\"nombre\": \"softmax\", \"tipo\": \"metodo\"}, {\"nombre\": \"estabilidad numérica\", \"tipo\": \"concepto\"}, {\"nombre\": \"matriz de pesos\", \"tipo\": \"concepto\"}]}",
+  "fin": "stop",
+  "tokens_entrada": 317,
+  "tokens_salida": 436
+ }
+}

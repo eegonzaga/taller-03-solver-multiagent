@@ -1,0 +1,34 @@
+{
+  "motor_retrieval": "léxico (TF-IDF fallback)",
+  "shape_indice": [
+    9,
+    169
+  ],
+  "tope_tokens_modelo": null,
+  "tokens_fragmento_mas_largo": null,
+  "cabe_entero": null,
+  "idx_fragmento_mas_largo": null,
+  "caracteres_fragmento_mas_largo": 300,
+  "tokens_perdidos_en_silencio": null,
+  "mensaje_techo": "Sin sentence-transformers no hay modelo que trunque: el fallback TF-IDF lee el fragmento entero.",
+  "modelo_embeddings": "paraphrase-multilingual-MiniLM-L12-v2",
+  "num_chunks_indexados": 9,
+  "origen_chunks": "entradas/T1.json (clave 'chunks')",
+  "tamano_chunk_caracteres": 300,
+  "overlap_caracteres": 80,
+  "pregunta_demo": "hasta un máximo de 5 días",
+  "demo_top3": [
+    {
+      "score": 0.34179885640089525,
+      "idx_chunk": 1
+    },
+    {
+      "score": 0.25185100110859127,
+      "idx_chunk": 0
+    },
+    {
+      "score": 0.17691080487617028,
+      "idx_chunk": 3
+    }
+  ]
+}
